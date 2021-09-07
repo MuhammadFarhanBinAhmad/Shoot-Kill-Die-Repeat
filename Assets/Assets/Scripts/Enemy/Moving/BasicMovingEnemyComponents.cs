@@ -107,7 +107,7 @@ public class BasicMovingEnemyComponents : EnemyRange
                     {
                         print("Attacking");
                         transform.LookAt(player_Pos);
-                        agent.speed = the_EBS.unit_Speed * 2;
+                        agent.speed = the_EBS.unit_Speed * 5;
                         agent.destination = player_Pos;
                         if (agent.remainingDistance <= agent.stoppingDistance)
                         {

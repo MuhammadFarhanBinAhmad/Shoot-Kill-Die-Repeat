@@ -254,6 +254,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -262,10 +263,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3963241562183589234, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
-  - {fileID: -8896051167825165466, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
+  - {fileID: 2100000, guid: af96b0ca3957ada4ca75658bd6edbb50, type: 2}
+  - {fileID: 2100000, guid: 7788c3819b3f34f43b15fe76cd69fbed, type: 2}
   - {fileID: -6867524174320841699, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
-  - {fileID: 6231023347082624160, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
+  - {fileID: 2100000, guid: 0e3417dc03f565c4682ccfdd7becda0a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -470,6 +471,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -478,8 +480,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8896051167825165466, guid: d1f853b09feaac44cb19e4c9e702e1aa, type: 3}
-  - {fileID: -6867524174320841699, guid: d1f853b09feaac44cb19e4c9e702e1aa, type: 3}
+  - {fileID: 2100000, guid: 0e3417dc03f565c4682ccfdd7becda0a, type: 2}
+  - {fileID: 2100000, guid: 0e3417dc03f565c4682ccfdd7becda0a, type: 2}
   - {fileID: 6231023347082624160, guid: d1f853b09feaac44cb19e4c9e702e1aa, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -696,7 +698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 650097964902344652, guid: f8345dbc890d9ea4cbd237248abeadce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.800003
+      value: -19.77
       objectReference: {fileID: 0}
     - target: {fileID: 650097964902344652, guid: f8345dbc890d9ea4cbd237248abeadce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -730,6 +732,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6629938267267286692, guid: f8345dbc890d9ea4cbd237248abeadce, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: af96b0ca3957ada4ca75658bd6edbb50, type: 2}
+    - target: {fileID: 6629938267267286692, guid: f8345dbc890d9ea4cbd237248abeadce, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7788c3819b3f34f43b15fe76cd69fbed, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8345dbc890d9ea4cbd237248abeadce, type: 3}
 --- !u!4 &6951142136601596948 stripped

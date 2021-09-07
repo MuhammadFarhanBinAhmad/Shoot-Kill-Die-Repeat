@@ -20,13 +20,14 @@ public class TurrentHead : MonoBehaviour
     [Header("Time and Target")]
     public float time_Before_Reset;
     public float timer;
+    public float rotation_Speed;
     public bool target_Lock;
     public Transform current_Target;
 
     public EnemyBasicStats the_EBS;
     public Light mode_Light;
     float t = 0;
-    float min = 1f, max = 5f;
+    float min = 25, max = 100;
 
     private void Start()
     {
@@ -109,8 +110,10 @@ public class TurrentHead : MonoBehaviour
     void TargetLock()
     {
         //target located and lock
+        Vector3 direction = current_Target.position - transform.position;
+        Quaternion turrent_Rotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Lerp(transform.rotation, turrent_Rotation, (Time.deltaTime * rotation_Speed));
 
-        transform.LookAt(current_Target);
         timer = time_Before_Reset;//reset timer each time target is lock
 
         if (Time.time >= next_Time_To_Fire)

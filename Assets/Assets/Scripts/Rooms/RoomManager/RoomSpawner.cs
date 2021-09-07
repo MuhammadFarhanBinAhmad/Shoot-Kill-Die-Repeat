@@ -26,7 +26,6 @@ public class RoomSpawner : MonoBehaviour
     {
         the_RP = FindObjectOfType<RoomPool>();
         SpawnRoom();
-
     }
     /*void Update()
     {
