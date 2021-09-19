@@ -2730,7 +2730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 575f82449df315c4dabd760da30de72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartRoom: {fileID: 0}
+  StartRoom: {fileID: 1709570134}
   Exit_Room: {fileID: 6773654040448469006, guid: 19581e9331023db4297c4c07dbd6dc96, type: 3}
   room_To_Spawned: 1
   room_Pos:
@@ -2742,7 +2742,6 @@ MonoBehaviour:
   - {fileID: 8354180293663022771, guid: 571f45207e60c1647a5f3d6be8297282, type: 3}
   - {fileID: 2095580703621554511, guid: 2d880a3a2e3faf44f9f2601e114f0b1f, type: 3}
   - {fileID: 7725634340770296792, guid: eeefdc3cc1527e54ab05f460a31676b0, type: 3}
-  - {fileID: 6809255935538690017, guid: d45fd5840b229834da61d3cb4b69c678, type: 3}
   - {fileID: 8354180293663022771, guid: 51a2b13f890bc244698694645454f87c, type: 3}
   room_Already_Spawned_Bool: 0000000000
   room_Already_Spawned_GO: []
@@ -2927,6 +2926,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &1709570134 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8691503382532138239, guid: 5517ee4aa223b0541a280e00cd020625, type: 3}
+  m_PrefabInstance: {fileID: 566583629}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1946595972
 Mesh:
   m_ObjectHideFlags: 0

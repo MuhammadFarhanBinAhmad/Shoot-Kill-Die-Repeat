@@ -30,7 +30,6 @@ public class BasicMovingEnemyComponents : EnemyRange
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
         agent.speed = the_EBS.unit_Speed;
         unit_Current_Charging_Time = unit_Charging_Time;
 
@@ -39,7 +38,11 @@ public class BasicMovingEnemyComponents : EnemyRange
     // Update is called once per frame
     void FixedUpdate()
     {
-        CurrentTask();
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(Vector3.zero, out hit, 1000.0f, NavMesh.AllAreas))
+        {
+            CurrentTask();
+        }
     }
     void CurrentTask()
     {
