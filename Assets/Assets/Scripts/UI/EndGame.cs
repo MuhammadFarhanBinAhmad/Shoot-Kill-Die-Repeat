@@ -13,7 +13,7 @@ public class EndGame : MonoBehaviour
         if (other.GetComponent<PlayerManager>() !=null)
         {
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(levels[RoomSpawner.current_Level]);
+            SceneManager.LoadScene(levels[RoomSpawnerV2.current_Level]+1);
             /*endgame_UI.SetActive(true);
             Time.timeScale = 0;*/
 

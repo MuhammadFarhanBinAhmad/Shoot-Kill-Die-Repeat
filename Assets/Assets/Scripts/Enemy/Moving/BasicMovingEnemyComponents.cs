@@ -56,13 +56,17 @@ public class BasicMovingEnemyComponents : EnemyRange
                         {
                             if (agent.remainingDistance <= agent.stoppingDistance)
                             {
-                                if (current_CheckPoint > check_Point.Count - 1)
+                                /*if (current_CheckPoint > check_Point.Count - 1)
                                 {
                                     current_CheckPoint = 0;
                                 }
-                                else
+                                else*/
                                 {
                                     current_CheckPoint++;
+                                    if ((current_CheckPoint > check_Point.Count - 1))
+                                    {
+                                        current_CheckPoint = 0;
+                                    }
                                 }
                             }
                             agent.destination = check_Point[current_CheckPoint].transform.position;
@@ -139,6 +143,5 @@ public class BasicMovingEnemyComponents : EnemyRange
                 }
 
         }
-
     }
 }

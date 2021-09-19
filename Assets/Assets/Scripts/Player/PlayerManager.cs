@@ -127,8 +127,8 @@ public class PlayerManager : MonoBehaviour
     void MovePlayer()
     {
 
-        float H = Input.GetAxisRaw("Horizontal");
-        float V = Input.GetAxisRaw("Vertical") ;
+        float H = Input.GetAxis("Horizontal");
+        float V = Input.GetAxis("Vertical") ;
         //Movement
         Vector3 move = transform.right * H + transform.forward * V;
         the_CC.Move(move * speed_Movement * Time.deltaTime);
@@ -157,16 +157,7 @@ public class PlayerManager : MonoBehaviour
 
     void JumpPlayer()
     {
-        //velocity.y = Mathf.Sqrt(jump_Force * -2 * gravity);
-
-        if (weapon_Inventory.Count > 0 && weapon_Inventory[current_Weapon].the_Round_Type == 8)//Flyer Round
-        {
-            velocity.y = Mathf.Sqrt(jump_Force * 1.5f * -2 * gravity);
-        }
-        else
-        {
-            velocity.y = Mathf.Sqrt(jump_Force * -2 * gravity);
-        }
+        velocity.y = Mathf.Sqrt(jump_Force * -2 * gravity);
     }
 
     void SwitchWeapon(int i)
