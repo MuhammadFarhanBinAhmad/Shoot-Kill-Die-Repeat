@@ -9,6 +9,8 @@ public class RoomSpawnerV2 : MonoBehaviour
     public Transform StartRoom;
     public GameObject Exit_Room;
     [Header("Room Info")]
+    int total_Room_Available;
+    int random_Value;
     public int room_To_Spawned;
     public List<Transform> room_Pos = new List<Transform>();
     public List<GameObject> rooms = new List<GameObject>();
@@ -26,21 +28,31 @@ public class RoomSpawnerV2 : MonoBehaviour
     private void Start()
     {
         GenerateValue();
+        total_Room_Available = 4;
     }
     void GenerateValue()
     {
-        for (int i = 0; i < room_To_Spawned; i++)
+        /*for (int i = 0; i < room_To_Spawned; i++)
         {
-            int rn = Random.Range(0, rooms.Count);
-            if (room_Already_Spawned_Bool[rn])
+            random_Value = Random.Range(0, total_Room_Available);
+            if (room_Already_Spawned_Bool[random_Value])
             {
                 GenerateValue();
                 break;
             }
             else
             {
-                SpawnRoom(rn);
+                SpawnRoom(random_Value);
             }
+        }*/
+        random_Value = Random.Range(0, 4);
+        if (room_Already_Spawned_Bool[random_Value])
+        {
+            GenerateValue();
+        }
+        else
+        {
+            SpawnRoom(random_Value);
         }
     }
     void SpawnRoom(int r)
@@ -54,6 +66,16 @@ public class RoomSpawnerV2 : MonoBehaviour
         {
             SpawnExitRoom();
         }
+        else
+        {
+            GenerateValue();
+        }
+        /*if (room_Already_Spawned_GO.Count > room_To_Spawned)
+        {
+            Destroy(room_Already_Spawned_GO[room_Already_Spawned_GO.Count - 1]);
+            room_Already_Spawned_GO.Remove(room_Already_Spawned_GO[room_Already_Spawned_GO.Count-1]);
+            print("Destroy Room");
+        }*/
     }
     void SpawnExitRoom()
     {

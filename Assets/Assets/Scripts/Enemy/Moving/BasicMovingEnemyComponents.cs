@@ -74,7 +74,6 @@ public class BasicMovingEnemyComponents : EnemyRange
                             }
                             agent.destination = check_Point[current_CheckPoint].transform.position;
                             transform.LookAt(check_Point[current_CheckPoint].transform);
-                            print("Patrolling");
                         }
                     }
                     else
@@ -86,7 +85,6 @@ public class BasicMovingEnemyComponents : EnemyRange
                 }
             case unit_Task.ChargingAttack:
                 {
-                    print("Charging");
                     if (unit_Current_Charging_Time >= 0)
                     {
                         unit_Current_Charging_Time -= Time.deltaTime;
@@ -112,7 +110,6 @@ public class BasicMovingEnemyComponents : EnemyRange
                 {
                     if (the_PM != null)
                     {
-                        print("Attacking");
                         transform.LookAt(player_Pos);
                         agent.speed = the_EBS.unit_Speed * 5;
                         agent.destination = player_Pos;

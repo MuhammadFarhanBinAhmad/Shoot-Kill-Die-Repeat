@@ -11,6 +11,7 @@ public class PlayerUIHUD : MonoBehaviour
     //PLAYER HUD//
     public TextMeshProUGUI ui_Weapon_Ammo,ui_Weapon_Name, ui_Total_Ammo,ui_Total_Coins;
     public BaseGun current_Weapon;
+    public BaseGunV2 current_Weapon_V2;
     //PLAYER GAME UI//
     public GameObject PauseMenu;
     public GameObject GameOverScreen;
@@ -45,7 +46,7 @@ public class PlayerUIHUD : MonoBehaviour
         }
         ui_Total_Coins.text = "X" + PlayerManager.money_Total.ToString();
     }
-
+    //BASEGUNV1
     internal void AmmoUpdate(int i)
     {
         ui_Weapon_Ammo.text = current_Weapon.gun_current_Mag_Capacity.ToString();//Mag
@@ -55,6 +56,16 @@ public class PlayerUIHUD : MonoBehaviour
     {
         ui_Weapon_Name.text = current_Weapon.weapon_Name.ToString();//Weapon Name
     }
+    /*//BASEGUNV2
+    internal void AmmoUpdateV2()
+    {
+        ui_Weapon_Ammo.text = current_Weapon_V2.gun_current_Mag_Capacity.ToString();//Mag
+        ui_Total_Ammo.text = current_Weapon_V2.gun_current_Ammo.ToString();//Ammo
+    }
+    internal void WeaponNameUpdateV2()
+    {
+        ui_Weapon_Name.text = current_Weapon_V2.weapon_Name.ToString();//Weapon Name
+    }*/
     internal void PickableWeaponDetails(string WN)
     {
         pickable_Weapon_Name_GUI.text = WN;

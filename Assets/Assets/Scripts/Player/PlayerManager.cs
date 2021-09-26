@@ -6,18 +6,19 @@ public class PlayerManager : MonoBehaviour
 {
     //Rigidbody the_RB;
     CharacterController the_CC;
+    CameraBob the_CB;
     //Basic
     public BasicCharacterDataStats the_Basic_Stats;
     public float speed_Movement;
     public float health_Player;
     public float health_Player_Current;
     public static int money_Total = 5;
-    //Runnning
+    /*//Runnning
     float total_Stamina = 10;
     float speed_Multiplier = 1.5f;
     float current_Stamina;
     bool currently_Running;
-    bool speed_Multiply;
+    bool speed_Multiply;*/
     //Jumping
     Vector3 velocity;
     public float gravity = -9.81f;
@@ -25,7 +26,8 @@ public class PlayerManager : MonoBehaviour
     public Transform check_Ground;
     public float ground_Distance = 0.5f;
     public LayerMask ground_Layer;
-    bool is_Grounded;
+    //bool is_Grounded;
+    public int number_of_Jumps;
     //Weapon Change
     public List<BaseGun> weapon_Inventory = new List<BaseGun>();
     public int current_Weapon = 0;
@@ -44,11 +46,12 @@ public class PlayerManager : MonoBehaviour
     {
         the_Player_UI_HUD = FindObjectOfType<PlayerUIHUD>();
         the_CC = GetComponent<CharacterController>();
+        the_CB = GetComponent<CameraBob>();
         //set up character stats
         health_Player = the_Basic_Stats.health;
         health_Player_Current = health_Player;
         speed_Movement = the_Basic_Stats.speed;
-        current_Stamina = total_Stamina;
+        //current_Stamina = total_Stamina;
 
         //SwitchWeapon(current_Weapon);//equip 1st weapon at start
     }
@@ -57,7 +60,7 @@ public class PlayerManager : MonoBehaviour
     {
         MovePlayer();
         //JUMP//
-        if (Input.GetButtonDown("Jump") && isGrounded())
+        if (Input.GetButtonDown("Jump") && number_of_Jumps <2)
         {
             JumpPlayer();
         }
@@ -132,6 +135,15 @@ public class PlayerManager : MonoBehaviour
         //Movement
         Vector3 move = transform.right * H + transform.forward * V;
         the_CC.Move(move * speed_Movement * Time.deltaTime);
+
+        if (H != 0 || V != 0)
+        {
+            the_CB.isWalking = true;
+        }
+        else
+        {
+            the_CB.isWalking = false;
+        }
         //Gravity
         velocity.y += gravity * Time.deltaTime;
         the_CC.Move(velocity * Time.deltaTime);
@@ -147,6 +159,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Physics.CheckSphere(check_Ground.position, ground_Distance,ground_Layer))
         {
+            number_of_Jumps = 0;
             return true;
         }
         else
@@ -158,6 +171,7 @@ public class PlayerManager : MonoBehaviour
     void JumpPlayer()
     {
         velocity.y = Mathf.Sqrt(jump_Force * -2 * gravity);
+        number_of_Jumps++;
     }
 
     void SwitchWeapon(int i)
