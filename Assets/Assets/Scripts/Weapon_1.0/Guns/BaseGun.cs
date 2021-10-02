@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseGun : MonoBehaviour
-{
+{ }
+
+/*{
 
     //UI
     PlayerManager the_Player_Manager;
@@ -289,4 +291,4 @@ public class BaseGun : MonoBehaviour
             }
         }
     }
-}
+}*/

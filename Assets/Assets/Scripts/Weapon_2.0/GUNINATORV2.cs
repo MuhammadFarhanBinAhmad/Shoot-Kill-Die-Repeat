@@ -28,20 +28,15 @@ public class GUNINATORV2 : MonoBehaviour
     public List<string> round_Type_Name = new List<string>();
 
     public List<WeaponLevelSO> level_Pistol = new List<WeaponLevelSO>();
+
+    private void Start()
+    {
+
+
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            FindObjectOfType<BaseGunV2>().AddWeaponType(weapon_Type,weapon_Mode);
-        }
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            FindObjectOfType<BaseGunV2>().AddRoundType(round_Type);
-        }
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            FindObjectOfType<BaseGunV2>().AddWeaponLevelStats(level_Pistol[weapon_Level]);
-        }
+
     }
 }

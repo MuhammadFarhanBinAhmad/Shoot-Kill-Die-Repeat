@@ -13,12 +13,6 @@ public class PlayerManager : MonoBehaviour
     public float health_Player;
     public float health_Player_Current;
     public static int money_Total = 5;
-    /*//Runnning
-    float total_Stamina = 10;
-    float speed_Multiplier = 1.5f;
-    float current_Stamina;
-    bool currently_Running;
-    bool speed_Multiply;*/
     //Jumping
     Vector3 velocity;
     public float gravity = -9.81f;
@@ -28,13 +22,7 @@ public class PlayerManager : MonoBehaviour
     public LayerMask ground_Layer;
     //bool is_Grounded;
     public int number_of_Jumps;
-    //Weapon Change
-    public List<BaseGun> weapon_Inventory = new List<BaseGun>();
-    public int current_Weapon = 0;
-    public List<GameObject> weapon_Transform = new List<GameObject>();
-    //WeaponPickup
-    public BaseGun pickable_Weapon;
-
+    public BaseGunV2 the_BGV2;
     //PlayerUI
     PlayerUIHUD the_Player_UI_HUD;
     public GameObject press_E;
@@ -47,6 +35,7 @@ public class PlayerManager : MonoBehaviour
         the_Player_UI_HUD = FindObjectOfType<PlayerUIHUD>();
         the_CC = GetComponent<CharacterController>();
         the_CB = GetComponent<CameraBob>();
+        the_BGV2 = FindObjectOfType<BaseGunV2>();
         //set up character stats
         health_Player = the_Basic_Stats.health;
         health_Player_Current = health_Player;
@@ -67,50 +56,13 @@ public class PlayerManager : MonoBehaviour
         //SWITCH WEAPON//
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            current_Weapon = 0;
-            SwitchWeapon(current_Weapon);
+            the_BGV2.current_Weapon_Equipped = 0;
+            the_Player_UI_HUD.AmmoUpdateV2();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            current_Weapon = 1;
-            SwitchWeapon(current_Weapon);
-        }
-
-        //PICK UP WEAPON
-        if (Input.GetKeyDown(KeyCode.E) && pickable_Weapon != null)
-        {
-            if (weapon_Inventory.Count != 2)
-            {
-                //add weapon to inventory
-                weapon_Inventory.Add(pickable_Weapon);
-                if (weapon_Inventory[0] !=null && weapon_Inventory.Count == 2)
-                {
-                    weapon_Inventory[0].gameObject.SetActive(false);
-                    current_Weapon++;
-                }
-            }
-            else
-            {
-                weapon_Inventory[current_Weapon].GetComponent<Rigidbody>().isKinematic = false;
-                weapon_Inventory[current_Weapon].transform.parent = null;
-                weapon_Inventory[current_Weapon].weapon_Eqip = false;
-                weapon_Inventory[current_Weapon].GetComponent<BoxCollider>().enabled = true;
-                weapon_Inventory[current_Weapon] = pickable_Weapon;
-            }
-            pickable_Weapon.GetComponent<BaseGun>().weapon_Eqip = true;
-            //Set up position
-            pickable_Weapon.transform.parent = weapon_Transform[pickable_Weapon.the_Weapon_Type_Int].transform;
-            pickable_Weapon.transform.position = weapon_Transform[pickable_Weapon.the_Weapon_Type_Int].transform.position;
-            pickable_Weapon.transform.localRotation = Quaternion.Euler(0, 0, 0);
-            //Set up weapon physics
-            pickable_Weapon.GetComponent<Rigidbody>().isKinematic = true;
-            //Set up UI value
-            pickable_Weapon.GetComponent<BaseGun>().SetValue();//this also set up other references
-            pickable_Weapon.GetComponent<BoxCollider>().enabled =false;
-            //set anim
-            pickable_Weapon.GetComponent<BaseGun>().SetAnimator();
-            //Reset picking up values
-            WeaponPickedUpOrLeft();
+            the_BGV2.current_Weapon_Equipped = 1;
+            the_Player_UI_HUD.AmmoUpdateV2();
         }
         //ACCESS STORE//
         if (Input.GetKeyDown(KeyCode.E))
@@ -173,34 +125,9 @@ public class PlayerManager : MonoBehaviour
         velocity.y = Mathf.Sqrt(jump_Force * -2 * gravity);
         number_of_Jumps++;
     }
-
-    void SwitchWeapon(int i)
+    void SwitchWeaponV2()
     {
-        if (weapon_Inventory[0] != null && weapon_Inventory[1] != null)
-        //Switching Weapon
-        switch (i)
-        {
-            case 0:
-                {
-                    weapon_Inventory[0].gameObject.SetActive(true);
-                    weapon_Inventory[0].GetComponent<BaseGun>().weapon_Eqip = true;
-                    weapon_Inventory[1].GetComponent<BaseGun>().weapon_Eqip = false;
-                    weapon_Inventory[1].gameObject.SetActive(false);
-                    break;
-                }
-            case 1:
-                {
-                    weapon_Inventory[0].gameObject.SetActive(false);
-                    weapon_Inventory[0].GetComponent<BaseGun>().weapon_Eqip = false;
-                    weapon_Inventory[1].gameObject.SetActive(true);
-                    weapon_Inventory[1].GetComponent<BaseGun>().weapon_Eqip = true;
-                    break;
-                }
-        }
-        //Update player weapon UI
-        the_Player_UI_HUD.current_Weapon = weapon_Inventory[i];
-        the_Player_UI_HUD.AmmoUpdate(i);
-        the_Player_UI_HUD.WeaponNameUpdate(i);
+
     }
 
     internal void TakeDamage(float Dmg)
@@ -213,19 +140,6 @@ public class PlayerManager : MonoBehaviour
             print("Dead");
         }
     }
-    void WeaponDetected(BaseGun BG)
-    {
-        pickable_Weapon = BG;
-        the_Player_UI_HUD.pickable_Weapon_Name_GUI.gameObject.SetActive(true);
-        the_Player_UI_HUD.PickableWeaponDetails(pickable_Weapon.weapon_Name);
-    }
-    //reset value if player decide to leave the weapon or pick it up
-    void WeaponPickedUpOrLeft()
-    {
-        pickable_Weapon = null;
-        the_Player_UI_HUD.PickableWeaponDetails(null);
-        the_Player_UI_HUD.pickable_Weapon_Name_GUI.gameObject.SetActive(false);
-    }
     public static void ResetPlayerData()
     {
         money_Total = 5;
@@ -233,11 +147,6 @@ public class PlayerManager : MonoBehaviour
     //player able to pick up weapon
     private void OnTriggerEnter(Collider other)
     {
-
-        if (other.GetComponent<BaseGun>() != null)
-        {
-            WeaponDetected(other.GetComponent<BaseGun>());
-        }
         //player enter GUN-inator premise
         if (other.GetComponent<GUNINATORGunCreation>() != null)
         {
@@ -253,8 +162,6 @@ public class PlayerManager : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        WeaponPickedUpOrLeft();
-
         //player leaves GUN-inator premise
         if (the_GUNINATOR !=null)
         {

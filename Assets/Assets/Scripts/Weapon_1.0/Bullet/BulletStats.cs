@@ -157,28 +157,6 @@ public class BulletStats : MonoBehaviour
                             Destroy();
                             break;
                         }
-                    case 6:
-                        {
-                            print("Payback");
-                            other.GetComponent<BaseEnemy>().TakingDamage(bullet_Damage);
-                            FindObjectOfType<PlayerManager>().weapon_Inventory[FindObjectOfType<PlayerManager>().current_Weapon].gun_Total_Ammo++;//Add 1 round to current total ammo
-                            FindObjectOfType<PlayerUIHUD>().AmmoUpdate(FindObjectOfType<PlayerManager>().current_Weapon);
-                            Destroy();
-                            break;
-                        }
-                    case 7:
-                        {
-                            print("QuickPace");
-                            other.GetComponent<BaseEnemy>().TakingDamage(bullet_Damage);
-                            PlayerManager PM = FindObjectOfType<PlayerManager>();
-                            if (PM.speed_Movement <= (PM.the_Basic_Stats.speed * 2))
-                            {
-                                PM.speed_Movement += (PM.the_Basic_Stats.speed / 10);
-                                print("hit");
-                            }
-                            Destroy();
-                            break;
-                        }
                 }
             }
             /*if (other.GetComponent<PlayerManager>() != null)

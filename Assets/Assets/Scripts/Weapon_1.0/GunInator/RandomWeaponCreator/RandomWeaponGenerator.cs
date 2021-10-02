@@ -741,9 +741,9 @@ public class RandomWeaponGenerator : MonoBehaviour
                     break;
                 }
         }
-        SpawnWeapon();
+        //SpawnWeapon();
     }
-    void SpawnWeapon()
+    /*void SpawnWeapon()
     {
         PlayerManager.money_Total -= the_GUNINATORGunCreation.w_Total_Cost;
         GameObject GO = Instantiate(the_Weapon_Body_GO, w_Spawn_Point.transform.position, w_Spawn_Point.transform.rotation);
@@ -773,5 +773,5 @@ public class RandomWeaponGenerator : MonoBehaviour
         NewWeapon = null;
         is_Shotgun = false;
         is_Rocket = false;
-    }
+    }*/
 }

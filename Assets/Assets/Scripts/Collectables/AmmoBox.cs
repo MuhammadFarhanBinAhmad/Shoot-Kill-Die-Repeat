@@ -19,10 +19,10 @@ public class AmmoBox : MonoBehaviour
     void PickUpAmmo(PlayerManager PM)
     {
 
-        ammo_Type = PM.weapon_Inventory[PM.current_Weapon].the_Weapon_Type_Int;
-        /*PM.weapon_Inventory[PM.current_Weapon].gun_Total_Ammo += ammo_To_Give[ammo_Type];//give ammo to respective weapon type
-        FindObjectOfType<PlayerUIHUD>().AmmoUpdate(PM.current_Weapon);*/
-        PM.weapon_Inventory[PM.current_Weapon].AddAmmo(ammo_To_Give[ammo_Type]);
+        //ammo_Type = PM.weapon_Inventory[PM.current_Weapon].the_Weapon_Type_Int;
+        //PM.weapon_Inventory[PM.current_Weapon].gun_Total_Ammo += ammo_To_Give[ammo_Type];//give ammo to respective weapon type
+        FindObjectOfType<PlayerUIHUD>().AmmoUpdateV2();
+        //PM.weapon_Inventory[PM.current_Weapon].AddAmmo(ammo_To_Give[ammo_Type]);
         Destroy(gameObject);
     }
 }

@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0655c04944423c4d8a657dc0eb39122, type: 3}
-  m_Name: Level_04
+  m_Name: Rifle_Level_01
   m_EditorClassIdentifier: 
-  weapon_Level: 4
-  fire_Rate: 1
-  reload_Time: 1
-  min_Damage: 20
-  max_Damage: 25
-  total_Ammo: 100
-  mag_Capacity: 10
+  placeholderName: 
+  weapon_Level: 1
+  weapon_Firing_Mechanism: 0
+  fire_Rate: 0.85
+  reload_Time: 1.5
+  min_Damage: 5
+  max_Damage: 50
+  total_Ammo: 40
+  mag_Capacity: 8
+  is_Shotgun: 0
