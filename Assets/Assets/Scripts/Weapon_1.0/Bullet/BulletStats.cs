@@ -192,5 +192,10 @@ public class BulletStats : MonoBehaviour
             FindObjectOfType<PlayerManager>().TakeDamage(bullet_Damage);
             Destroy();
         }
+        //FOR TEST ONLY
+        if (other.tag == "TestDummy")
+        {
+            Destroy();
+        }
     }
 }

@@ -171,6 +171,12 @@ public class TurrentHead : MonoBehaviour
             current_Target = other.GetComponent<PlayerManager>().transform;
             current_Mode = 1;
         }
+        //FOR TESTING ONLY
+        if (other.tag == "TestDummy")
+        {
+            current_Target = other.transform;
+            current_Mode = 1;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
