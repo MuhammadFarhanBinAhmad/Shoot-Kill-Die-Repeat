@@ -162,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 8004019769701041686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 406.5, y: 48.961, z: 83.81711}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children:
   - {fileID: 8004019769908307484}
   - {fileID: 8004019768586984005}
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 0
+  m_VersionIndex: 3
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -907,6 +907,14 @@ PrefabInstance:
     - target: {fileID: 3327381617373161287, guid: 8922115c100121e449d334b592a200b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327381618270005434, guid: 8922115c100121e449d334b592a200b8, type: 3}
+      propertyPath: m_Range
+      value: 1.7967244
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327381618270005434, guid: 8922115c100121e449d334b592a200b8, type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8922115c100121e449d334b592a200b8, type: 3}
