@@ -25,6 +25,7 @@ public class TurrentHead : MonoBehaviour
     public Transform current_Target;
 
     public EnemyBasicStats the_EBS;
+    public int round_Type;
     public Light mode_Light;
     float t = 0;
     float min = 25, max = 100;
@@ -155,6 +156,7 @@ public class TurrentHead : MonoBehaviour
                             the_Ammo_Pool.bullet_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
                             the_Ammo_Pool.bullet_Pool[i].SetActive(true);
                             the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().bullet_Damage = the_EBS.unit_Damage;
+                            the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().enemy_Round_Type = round_Type;
                             the_Ammo_Pool.bullet_Pool[i].gameObject.tag = "HurtPlayer";
                             break;
                         }

@@ -8630,7 +8630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f257d9c1ba44da4f99a226e3c3c8a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion_Effect: {fileID: 4722291793986598910, guid: e99009be50fa98543bc22f6c3c3d93ca, type: 3}
+  explosion_Effect: {fileID: 4722291793986598910, guid: e99009be50fa98543bc22f6c3c3d93ca,
+    type: 3}
 --- !u!114 &718087703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29118,12 +29119,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 6792882702469620310}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3
-  m_Speed: 75
-  m_Acceleration: 150
+  m_Radius: 2
+  m_Speed: 7.5
+  m_Acceleration: 15
   avoidancePriority: 1
-  m_AngularSpeed: 120
-  m_StoppingDistance: 10
+  m_AngularSpeed: 12
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

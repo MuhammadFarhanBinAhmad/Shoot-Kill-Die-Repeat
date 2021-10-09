@@ -26,6 +26,8 @@ public class PlayerManager : MonoBehaviour
     //PlayerUI
     PlayerUIHUD the_Player_UI_HUD;
     public GameObject press_E;
+    //Effect
+    internal float speed_Debuff_Time, sight_Debuff_Time, fire_Debuff_Time;
 
     public GUNINATORGunCreation the_GUNINATOR;
     public ATM the_ATM;
@@ -49,7 +51,7 @@ public class PlayerManager : MonoBehaviour
     {
         MovePlayer();
         //JUMP//
-        if (Input.GetButtonDown("Jump") && number_of_Jumps <2)
+        if (Input.GetButtonDown("Jump") && number_of_Jumps < 2)
         {
             JumpPlayer();
         }
@@ -75,15 +77,29 @@ public class PlayerManager : MonoBehaviour
             {
                 the_GUNINATOR.OpenStore();
             }
-
         }
+        if (speed_Debuff_Time > 0)
+        {
+            speed_Debuff_Time -= Time.deltaTime;
+            SpeedDebuff();
+        }
+        else
+        {
+            speed_Movement = the_Basic_Stats.speed;
+        }
+
+        /*if (fire_Debuff_Time > 0)
+        {
+            fire_Debuff_Time -= Time.deltaTime;
+            FireDebuff();
+        }*/
     }
 
     void MovePlayer()
     {
 
         float H = Input.GetAxis("Horizontal");
-        float V = Input.GetAxis("Vertical") ;
+        float V = Input.GetAxis("Vertical");
         //Movement
         Vector3 move = transform.right * H + transform.forward * V;
         the_CC.Move(move * speed_Movement * Time.deltaTime);
@@ -100,7 +116,7 @@ public class PlayerManager : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         the_CC.Move(velocity * Time.deltaTime);
 
-        if (isGrounded() && velocity.y <0)
+        if (isGrounded() && velocity.y < 0)
         {
             velocity.y = -2f;
         }
@@ -109,7 +125,7 @@ public class PlayerManager : MonoBehaviour
     //check if player grounded
     internal bool isGrounded()
     {
-        if (Physics.CheckSphere(check_Ground.position, ground_Distance,ground_Layer))
+        if (Physics.CheckSphere(check_Ground.position, ground_Distance, ground_Layer))
         {
             number_of_Jumps = 0;
             return true;
@@ -140,6 +156,19 @@ public class PlayerManager : MonoBehaviour
             print("Dead");
         }
     }
+    void SpeedDebuff()
+    {
+        speed_Movement = the_Basic_Stats.speed/2;
+        print("Sticky");
+    }
+    /*void SightDebuff()
+    {
+
+    }
+    void FireDebuff()
+    {
+
+    }*/
     public static void ResetPlayerData()
     {
         money_Total = 5;

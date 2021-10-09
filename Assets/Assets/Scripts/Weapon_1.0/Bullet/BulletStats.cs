@@ -18,8 +18,9 @@ public class BulletStats : MonoBehaviour
     public bool is_Rocket;
 
     public LayerMask Weapon_Layer;
-
-
+    //For enemy
+    public int enemy_Round_Type;
+    public float debuff_Effect_Time;
     private void Start()
     {
         the_RB = GetComponent<Rigidbody>();
@@ -189,7 +190,22 @@ public class BulletStats : MonoBehaviour
         }
         if (tag == "HurtPlayer" && other.GetComponent<PlayerManager>())
         {
-            FindObjectOfType<PlayerManager>().TakeDamage(bullet_Damage);
+
+            PlayerManager PM = other.GetComponent<PlayerManager>();
+            switch (enemy_Round_Type)
+            {
+                case 0:
+                    {
+                        PM.TakeDamage(bullet_Damage);
+                        break;
+                    }
+                case 1:
+                    {
+                        PM.speed_Debuff_Time = 2;
+                        break;
+                    }
+            }
+
             Destroy();
         }
         //FOR TEST ONLY
