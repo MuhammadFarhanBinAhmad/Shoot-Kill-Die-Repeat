@@ -69,14 +69,14 @@ public class MovingPlatform : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<TestDummy>() != null)
+        if(other.GetComponent<PlayerManager>() != null)
         {
             other.transform.parent = this.transform;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<TestDummy>() != null)
+        if (other.GetComponent<PlayerManager>() != null)
         {
             other.transform.parent = null;
         }

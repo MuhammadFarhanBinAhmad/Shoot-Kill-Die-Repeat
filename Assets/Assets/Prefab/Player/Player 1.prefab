@@ -2215,24 +2215,15 @@ MonoBehaviour:
   speed_Movement: 0
   health_Player: 0
   health_Player_Current: 0
-  gravity: -125
-  jump_Force: 15
+  gravity: -5
+  jump_Force: 1
   check_Ground: {fileID: 6487141642216138027}
   ground_Distance: 0.1
   ground_Layer:
     serializedVersion: 2
-    m_Bits: 256
-  weapon_Inventory: []
-  current_Weapon: 0
-  weapon_Transform:
-  - {fileID: 2146679295}
-  - {fileID: 1984945715}
-  - {fileID: 1772611935}
-  - {fileID: 1517489510}
-  - {fileID: 389918513}
-  - {fileID: 903749132}
-  - {fileID: 1589007307}
-  pickable_Weapon: {fileID: 0}
+    m_Bits: 512
+  number_of_Jumps: 0
+  the_BGV2: {fileID: 0}
   press_E: {fileID: 7291079850258311923}
   the_GUNINATOR: {fileID: 0}
   the_ATM: {fileID: 0}
@@ -3216,6 +3207,7 @@ MonoBehaviour:
   ui_Total_Ammo: {fileID: 6487141643080942592}
   ui_Total_Coins: {fileID: 1685846861105704417}
   current_Weapon: {fileID: 0}
+  the_BGV2: {fileID: 0}
   PauseMenu: {fileID: 6487141643959355064}
   GameOverScreen: {fileID: 0}
   pickable_Weapon_Name_GUI: {fileID: 6027071755527613346}

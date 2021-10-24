@@ -123,8 +123,10 @@ public class BaseGunV2 : MonoBehaviour
                         the_Ammo_Pool.bullet_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
                         the_Ammo_Pool.bullet_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
                         the_Ammo_Pool.bullet_Pool[i].SetActive(true);
-                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().bullet_Damage = Random.Range(current_WM_Eqipped[current_Weapon_Equipped].min_Damage, current_WM_Eqipped[current_Weapon_Equipped].max_Damage);//get damage value
-                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().round_Type = current_WM_Eqipped[current_Weapon_Equipped].current_Round_Type;//set bullet type
+                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().enabled = true;
+                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Speed= 1000;//get damage value
+                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Damage = Random.Range(current_WM_Eqipped[current_Weapon_Equipped].min_Damage, current_WM_Eqipped[current_Weapon_Equipped].max_Damage);//get damage value
+                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().round_Type = current_WM_Eqipped[current_Weapon_Equipped].current_Round_Type;//set bullet type
                         //the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().ElementType(the_Element_Type);//set bullet type
                         //the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().is_Rocket = is_Rocket;
                         //update Weapon UI
@@ -159,8 +161,8 @@ public class BaseGunV2 : MonoBehaviour
                             the_Ammo_Pool.bullet_Pool[i].transform.rotation = q;
 
                             the_Ammo_Pool.bullet_Pool[i].SetActive(true);
-                            the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().bullet_Damage = Random.Range(current_WM_Eqipped[current_Weapon_Equipped].min_Damage, current_WM_Eqipped[current_Weapon_Equipped].max_Damage);//get damage value
-                            the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().round_Type = current_WM_Eqipped[current_Weapon_Equipped].current_Round_Type; ;//set bullet type
+                            the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Damage = Random.Range(current_WM_Eqipped[current_Weapon_Equipped].min_Damage, current_WM_Eqipped[current_Weapon_Equipped].max_Damage);//get damage value
+                            the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().round_Type = current_WM_Eqipped[current_Weapon_Equipped].current_Round_Type; ;//set bullet type
                             //the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().ElementType(the_Element_Type);//set bullet type
                             the_Player_UI_HUD.AmmoUpdateV2();
                             the_Ammo_Pool.bullet_Pool[i].gameObject.tag = "HurtEnemy";

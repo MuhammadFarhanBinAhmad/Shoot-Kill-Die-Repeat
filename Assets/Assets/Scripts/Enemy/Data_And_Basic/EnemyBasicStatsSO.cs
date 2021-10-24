@@ -5,5 +5,5 @@ using UnityEngine;
 public class EnemyBasicStatsSO : ScriptableObject
 {
 
-    public int speed, health, damage;
+    public int speed, health, damage,round_Type,Fire_Rate;
 }

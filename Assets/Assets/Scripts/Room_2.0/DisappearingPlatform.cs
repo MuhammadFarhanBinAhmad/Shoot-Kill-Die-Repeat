@@ -25,7 +25,7 @@ public class DisappearingPlatform : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<TestDummy>() !=null && !platform_Disappear)
+        if (other.GetComponent<PlayerManager>() !=null && !platform_Disappear)
         {
             StartCoroutine("PlatformDisappearTimer");
             print("HIT");

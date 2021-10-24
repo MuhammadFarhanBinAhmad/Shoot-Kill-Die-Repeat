@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class EnemyBasicStats : MonoBehaviour
 {
-
+    [Header("RoundType")]
     public EnemyBasicStatsSO EBSSO;
-
-    public int unit_Speed, unit_Health, unit_Damage;
+    public int unit_Speed, unit_Health, unit_Damage,unit_RoundType,unit_FireRate;
 
     public bool destroy_Parent;
 
     bool dropped_Collectables;
 
-    private void Start()
+    private void Awake()
     {
         unit_Speed = EBSSO.speed;
         unit_Health = EBSSO.health;
         unit_Damage = EBSSO.damage;
+        unit_RoundType = EBSSO.round_Type;
+        unit_FireRate = EBSSO.Fire_Rate;
     }
 
     internal void TakingDamage(int dmg)

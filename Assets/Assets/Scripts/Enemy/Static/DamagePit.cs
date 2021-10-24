@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DamagePit : MonoBehaviour
 {
+    public float damage_Output;
     //TICK ONLY ONE
     [Header("FirePit")]
     public bool fire_Pit;
@@ -11,11 +12,14 @@ public class DamagePit : MonoBehaviour
     public bool fire_Pillar;
     public bool fire_Activated;
 
-    public TestDummy the_TD;
+    PlayerManager the_PM;
+
+    internal BoxCollider the_BC;
     public ParticleSystem the_Fire_VFX;
 
     private void Start()
     {
+        the_BC = GetComponent<BoxCollider>();
         if (fire_Pillar)
         {
             InvokeRepeating("ActivateFire", 0, 2);
@@ -37,23 +41,23 @@ public class DamagePit : MonoBehaviour
 
     void HurtPlayer()
     {
-        if (the_TD !=null)
+        if (the_PM != null)
         {
             if (fire_Pit)
             {
-                the_TD.TakeDamage(10);
+                the_PM.TakeDamage(damage_Output);
             }
             if (fire_Activated)
             {
-                the_TD.TakeDamage(10);
+                the_PM.TakeDamage(damage_Output);
             }
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "TestDummy")
+        if (other.GetComponent<PlayerManager>() != null)
         {
-            the_TD = other.GetComponent<TestDummy>();
+            the_PM = other.GetComponent<PlayerManager>();
             if (fire_Pillar)
             {
                 InvokeRepeating("HurtPlayer", 0, .5f);
@@ -66,9 +70,9 @@ public class DamagePit : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "TestDummy")
+        if (other.GetComponent<PlayerManager>() != null)
         {
-            the_TD = null;
+            the_PM = null;
         }
     }
 }

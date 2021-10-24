@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BasicMovingEnemyComponents : EnemyRange
+public class BasicMovingEnemyComponents : MonoBehaviour
 {
 
+    public PlayerManager the_PM;
     public EnemyBasicStats the_EBS;
     NavMeshAgent agent;
 
@@ -103,6 +104,7 @@ public class BasicMovingEnemyComponents : EnemyRange
                             unit_Current_Charging_Time = unit_Charging_Time;
                             current_UT = unit_Task.Patrolling;
                         }
+                        
                     }
                     break;
                 }
@@ -139,9 +141,25 @@ public class BasicMovingEnemyComponents : EnemyRange
                         unit_Current_Charging_Time = unit_Charging_Time;
                         current_UT = unit_Task.Patrolling;
                     }
+
                     break;
                 }
 
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<PlayerManager>() != null)
+        {
+            print("Hit");
+            the_PM = other.GetComponent<PlayerManager>();
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<PlayerManager>() != null)
+        {
+            the_PM = null;
         }
     }
 }

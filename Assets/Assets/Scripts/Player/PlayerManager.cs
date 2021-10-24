@@ -51,7 +51,7 @@ public class PlayerManager : MonoBehaviour
     {
         MovePlayer();
         //JUMP//
-        if (Input.GetButtonDown("Jump") && number_of_Jumps < 2)
+        if (Input.GetButtonDown("Jump") && number_of_Jumps < 1)
         {
             JumpPlayer();
         }
