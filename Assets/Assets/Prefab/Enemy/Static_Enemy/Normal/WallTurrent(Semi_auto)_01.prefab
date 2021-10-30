@@ -1580,6 +1580,11 @@ MonoBehaviour:
   bullet_Sound: {fileID: 0}
   is_Flame_Thrower: 0
   the_Fire: {fileID: 0}
+  Barrel: {fileID: 0}
+  is_MachineGun: 0
+  barrel_Vector: {x: 0, y: 0, z: 0}
+  barrel_Rot_Speed: 0
+  Rev_Up_Time: 0
   time_Before_Reset: 5
   timer: 0
   rotation_Speed: 15
@@ -1596,7 +1601,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 4
   m_Center: {x: 0, y: 0.019482888, z: -0.10608947}
 --- !u!1 &4186835107268791373
 GameObject:

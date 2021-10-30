@@ -23,7 +23,13 @@ public class TurrentHead : MonoBehaviour
     [Header("FlameThrower")]
     public bool is_Flame_Thrower;
     public DamagePit the_Fire;
-
+    [Header("MachineGun")]
+    public GameObject Barrel;
+    public bool is_MachineGun;
+    [SerializeField] Vector3 barrel_Vector;
+    [SerializeField] float barrel_Rot_Speed;
+    [SerializeField]float Rev_Up_Time;
+    float current_Rev_Up_Time;
     [Header("Time and Target")]
     public float time_Before_Reset;
     public float timer;
@@ -99,11 +105,32 @@ public class TurrentHead : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, turrent_Rotation, (Time.deltaTime * rotation_Speed));
 
         timer = time_Before_Reset;//reset timer each time target is lock
+        if (!is_MachineGun)
+        {
+            if (Time.time >= next_Time_To_Fire)
+            {
+                Shooting();
+            }
+        }
+        else
+        {
+            RevUp();
+        }
+        //print("TargetLock");
+    }
+    //For machinegun only
+    void RevUp()
+    {
+        Barrel.transform.Rotate(barrel_Vector * barrel_Rot_Speed * Time.deltaTime);
+        /*if (current_Rev_Up_Time <= Rev_Up_Time)
+        {
+            current_Rev_Up_Time += Time.deltaTime;
+        }*/
         if (Time.time >= next_Time_To_Fire)
         {
             Shooting();
+            print("hit");
         }
-        //print("TargetLock");
     }
     void TargetLost()
     {
@@ -115,8 +142,22 @@ public class TurrentHead : MonoBehaviour
         }
         else
         {
-            //mode_Light.intensity = 1;
-            current_Mode = 0;
+            if (is_MachineGun)
+            {
+                barrel_Rot_Speed = 0;
+                /*if (current_Rev_Up_Time >= 0)
+                {
+                    current_Rev_Up_Time -= Time.deltaTime;
+                }
+                else
+                {
+                    current_Mode = 0;
+                }*/
+            }
+            else
+            {
+                current_Mode = 0;
+            }
         }
     }
     void Shooting()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class StaticTurrent : MonoBehaviour
 {
     AmmoPool the_Ammo_Pool;
-
+    public EnemyBasicStatsSO EBSSO;
 
     public Transform bullet_Spawn_Point;
     public int bullet_Damage;
@@ -27,7 +27,10 @@ public class StaticTurrent : MonoBehaviour
                 the_Ammo_Pool.bullet_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
                 the_Ammo_Pool.bullet_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
                 the_Ammo_Pool.bullet_Pool[i].SetActive(true);
-                the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Damage = bullet_Damage;
+                the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().enabled = true;
+                the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Speed = EBSSO.speed;
+                the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Damage = EBSSO.damage;
+                the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().round_Type = EBSSO.round_Type;
                 the_Ammo_Pool.bullet_Pool[i].gameObject.tag = "HurtPlayer";
                 break;
             }
