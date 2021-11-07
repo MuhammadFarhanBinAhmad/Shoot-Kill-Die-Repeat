@@ -3010,7 +3010,8 @@ PrefabInstance:
       propertyPath: InitialModule.maxNumParticles
       value: 15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 899520369633268897, guid: d016285bea6726f438c46f5417eed2b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d016285bea6726f438c46f5417eed2b0, type: 3}
 --- !u!4 &6430753211257406960 stripped
 Transform:

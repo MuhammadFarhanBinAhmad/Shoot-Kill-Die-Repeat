@@ -28,5 +28,14 @@ public class DamageInput_HurtEnemy : MonoBehaviour
             /*GetComponent<DropCollectables>().SpawnCollectables();
             Destroy(transform.parent.gameObject);*/
         }
+        if (other.GetComponent<Explosion_Universal>() !=null)
+        {
+            print("hit");
+            the_EBS.TakingDamage(other.GetComponent<Explosion_Universal>().Damage);
+            if (the_EBS.unit_Health <= 0)
+            {
+                Instantiate(explosion_Effect, transform.position, transform.rotation);
+            }
+        }
     }
 }

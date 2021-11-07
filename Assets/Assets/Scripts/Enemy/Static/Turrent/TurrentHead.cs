@@ -80,19 +80,6 @@ public class TurrentHead : MonoBehaviour
                     {
                         TargetLost();
                     }
-
-                    /*mode_Light.intensity = Mathf.Lerp(min, max, t);
-
-                    t += .5f;
-
-                    if (t > 4)
-
-                    {
-                        float temp = max;
-                        max = min;
-                        min = temp;
-                        t = 0.0f;
-                    }*/
                     break;
                 }
         }
@@ -110,6 +97,7 @@ public class TurrentHead : MonoBehaviour
             if (Time.time >= next_Time_To_Fire)
             {
                 Shooting();
+                print("TargetLock");
             }
         }
         else
@@ -145,14 +133,7 @@ public class TurrentHead : MonoBehaviour
             if (is_MachineGun)
             {
                 barrel_Rot_Speed = 0;
-                /*if (current_Rev_Up_Time >= 0)
-                {
-                    current_Rev_Up_Time -= Time.deltaTime;
-                }
-                else
-                {
-                    current_Mode = 0;
-                }*/
+
             }
             else
             {
@@ -163,18 +144,13 @@ public class TurrentHead : MonoBehaviour
     void Shooting()
     {
         {
-            RaycastHit hit;
+            //RaycastHit hit;
 
             if (is_Flame_Thrower)
             {
                 the_Fire.the_BC.enabled = true;
                 the_Fire.the_Fire_VFX.Play();
             }
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 250))
-            {
-                if (hit.transform == current_Target)
-                {
-                    if (!is_Flame_Thrower)
                     {
                         next_Time_To_Fire = Time.time + 1f / fire_Rate;
                         for (int i = 0; i < the_Ammo_Pool.bullet_Pool.Count; i++)
@@ -193,8 +169,6 @@ public class TurrentHead : MonoBehaviour
                             }
                         }
                     }
-                }
-            }
            
         }
     }

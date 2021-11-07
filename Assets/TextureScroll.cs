@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class TextureScroll : MonoBehaviour
 {
-    float speed = 2;
-    float offset;
+    [SerializeField]
+    float speed_y = 2;
+    [SerializeField]
+    float speed_x = 2;
+
+    float offset_y, offset_x;
     Material mat;
 
     private void Start()
@@ -14,7 +18,9 @@ public class TextureScroll : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        offset += (Time.deltaTime * speed) / 10f;
-        mat.mainTextureOffset = new Vector2(0, offset);
+        offset_y += (Time.deltaTime * speed_y) / 10f;
+        offset_x += (Time.deltaTime * speed_x) / 10f;
+
+        mat.mainTextureOffset = new Vector2(offset_x, offset_y);
     }
 }

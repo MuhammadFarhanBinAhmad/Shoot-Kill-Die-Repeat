@@ -8,7 +8,7 @@ public class BasicMovingEnemyComponents : MonoBehaviour
 
     public PlayerManager the_PM;
     public EnemyBasicStats the_EBS;
-    NavMeshAgent agent;
+    internal NavMeshAgent agent;
 
     [Header("Patrolling Spot")]
     public List<Transform> check_Point = new List<Transform>();
@@ -18,6 +18,7 @@ public class BasicMovingEnemyComponents : MonoBehaviour
     Vector3 player_Pos;
     public float unit_Charging_Time = 2;
     public float unit_Current_Charging_Time;
+    public float charge_Speed_Multiplier;
 
     enum unit_Task
     {
@@ -86,6 +87,13 @@ public class BasicMovingEnemyComponents : MonoBehaviour
                 }
             case unit_Task.ChargingAttack:
                 {
+                    if (the_PM != null)
+                    {
+                        Vector3 direction = the_PM.transform.position - transform.position;
+                        Quaternion turrent_Rotation = Quaternion.LookRotation(direction);
+                        transform.rotation = Quaternion.Lerp(transform.rotation, turrent_Rotation, (Time.deltaTime * 10));
+                    }
+
                     if (unit_Current_Charging_Time >= 0)
                     {
                         unit_Current_Charging_Time -= Time.deltaTime;
@@ -113,7 +121,7 @@ public class BasicMovingEnemyComponents : MonoBehaviour
                     if (the_PM != null)
                     {
                         transform.LookAt(player_Pos);
-                        agent.speed = the_EBS.unit_Speed * 5;
+                        agent.speed = the_EBS.unit_Speed * charge_Speed_Multiplier;
                         agent.destination = player_Pos;
                         if (agent.remainingDistance <= agent.stoppingDistance)
                         {

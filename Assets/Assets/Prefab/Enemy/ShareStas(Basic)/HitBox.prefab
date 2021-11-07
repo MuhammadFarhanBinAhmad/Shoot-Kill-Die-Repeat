@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6237093348998890458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6237093348998890459}
+  - component: {fileID: 6237093348998890462}
+  - component: {fileID: 6237093348998890457}
+  - component: {fileID: 6237093348998890456}
+  - component: {fileID: 6237093348998890463}
+  m_Layer: 0
+  m_Name: HitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6237093348998890459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237093348998890458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6237093348998890462
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237093348998890458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.68463326, y: 0.50696176, z: 0.70239973}
+  m_Center: {x: 0.0022211075, y: 0.11770716, z: 0.002220869}
+--- !u!114 &6237093348998890457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237093348998890458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 553d48e5fd65005459c3f6d7d234ce23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  droppable_Collectables:
+  - {fileID: 8355221085025975879, guid: 08eb8e5646c9041489acb6be1585eaec, type: 3}
+  - {fileID: 6247218767408144247, guid: da9801a074f47d348b855c99454af8f4, type: 3}
+  - {fileID: 3939202432181095791, guid: d4b2a2550d2a24b46afd3896857325aa, type: 3}
+  amount_Of_Drop: 010000000100000001000000
+--- !u!114 &6237093348998890456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237093348998890458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f257d9c1ba44da4f99a226e3c3c8a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion_Effect: {fileID: 4722291793986598910, guid: e99009be50fa98543bc22f6c3c3d93ca,
+    type: 3}
+--- !u!114 &6237093348998890463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237093348998890458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79b7c71fb61bef4ab98fbab4832bbc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EBSSO: {fileID: 11400000, guid: 841b89e87fea01341830a2cbb3b4d691, type: 2}
+  unit_Speed: 0
+  unit_Health: 0
+  unit_Damage: 0
+  unit_RoundType: 0
+  unit_FireRate: 0
+  destroy_Parent: 1

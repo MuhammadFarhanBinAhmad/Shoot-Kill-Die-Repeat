@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyBasicStats : MonoBehaviour
 {
@@ -8,8 +9,11 @@ public class EnemyBasicStats : MonoBehaviour
     public EnemyBasicStatsSO EBSSO;
     public int unit_Speed, unit_Health, unit_Damage,unit_RoundType,unit_FireRate;
 
-    public bool destroy_Parent;
+    [SerializeField]
+    NavMeshAgent agent;
 
+    public bool destroy_Parent;
+    internal bool stats_Multipled;
     bool dropped_Collectables;
 
     private void Awake()
@@ -44,6 +48,27 @@ public class EnemyBasicStats : MonoBehaviour
                 }
                 Destroy(transform.parent.gameObject);
             }
+        }
+    }
+    internal void MultipleStats(int buff_Multiplier)
+    {
+        unit_Speed *= buff_Multiplier;
+        agent.speed = unit_Speed;
+        unit_Health *= buff_Multiplier;
+        unit_Damage *= buff_Multiplier;
+        stats_Multipled = true;
+        StartCoroutine(ResetStats(buff_Multiplier));
+    }
+    internal IEnumerator ResetStats(int multiplier)
+    {
+        yield return new WaitForSeconds(5);
+        if (stats_Multipled)
+        {
+            unit_Speed /= multiplier;
+            agent.speed = unit_Speed;
+            unit_Health /= multiplier;
+            unit_Damage /= multiplier;
+            stats_Multipled = false;
         }
     }
 }
