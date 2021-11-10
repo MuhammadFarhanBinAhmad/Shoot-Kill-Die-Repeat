@@ -21,8 +21,8 @@ public class TurrentHead : MonoBehaviour
     float next_Time_To_Fire = 0;
     public AudioSource bullet_Sound;
     [Header("FlameThrower")]
-    public bool is_Flame_Thrower;
-    public DamagePit the_Fire;
+    public bool is_FlameThrower;
+    public FlameThrower the_FlameThrower;
     [Header("MachineGun")]
     public GameObject Barrel;
     public bool is_MachineGun;
@@ -46,6 +46,11 @@ public class TurrentHead : MonoBehaviour
         the_Ammo_Pool = FindObjectOfType<AmmoPool>();
         timer = time_Before_Reset;
         fire_Rate = the_EBS.unit_FireRate;
+        if (is_FlameThrower)
+        {
+            the_FlameThrower.the_TH = this;
+            the_FlameThrower.fire_HitBox.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -74,7 +79,6 @@ public class TurrentHead : MonoBehaviour
                     if (current_Target != null)
                     {
                         TargetLock();
-                        print("hit2");
                     }
                     else
                     {
@@ -92,28 +96,22 @@ public class TurrentHead : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, turrent_Rotation, (Time.deltaTime * rotation_Speed));
 
         timer = time_Before_Reset;//reset timer each time target is lock
-        if (!is_MachineGun)
+        if (is_MachineGun)
+        {
+            RevUp();
+        }
+        else
         {
             if (Time.time >= next_Time_To_Fire)
             {
                 Shooting();
-                print("TargetLock");
             }
         }
-        else
-        {
-            RevUp();
-        }
-        //print("TargetLock");
     }
     //For machinegun only
     void RevUp()
     {
         Barrel.transform.Rotate(barrel_Vector * barrel_Rot_Speed * Time.deltaTime);
-        /*if (current_Rev_Up_Time <= Rev_Up_Time)
-        {
-            current_Rev_Up_Time += Time.deltaTime;
-        }*/
         if (Time.time >= next_Time_To_Fire)
         {
             Shooting();
@@ -139,6 +137,7 @@ public class TurrentHead : MonoBehaviour
             {
                 current_Mode = 0;
             }
+
         }
     }
     void Shooting()
@@ -146,30 +145,31 @@ public class TurrentHead : MonoBehaviour
         {
             //RaycastHit hit;
 
-            if (is_Flame_Thrower)
+            if (is_FlameThrower)
             {
-                the_Fire.the_BC.enabled = true;
-                the_Fire.the_Fire_VFX.Play();
+                the_FlameThrower.fire_HitBox.enabled = true;
             }
+            else
+
+            {
+                next_Time_To_Fire = Time.time + 1f / fire_Rate;
+                for (int i = 0; i < the_Ammo_Pool.bullet_Pool.Count; i++)
+                {
+                    if (!the_Ammo_Pool.bullet_Pool[i].activeInHierarchy)
                     {
-                        next_Time_To_Fire = Time.time + 1f / fire_Rate;
-                        for (int i = 0; i < the_Ammo_Pool.bullet_Pool.Count; i++)
-                        {
-                            if (!the_Ammo_Pool.bullet_Pool[i].activeInHierarchy)
-                            {
-                                the_Ammo_Pool.bullet_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
-                                the_Ammo_Pool.bullet_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
-                                the_Ammo_Pool.bullet_Pool[i].SetActive(true);
-                                the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().enabled = true;
-                                the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Speed = the_EBS.unit_Speed;
-                                the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Damage = the_EBS.unit_Damage;
-                                the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().round_Type = the_EBS.unit_RoundType;
-                                the_Ammo_Pool.bullet_Pool[i].gameObject.tag = "HurtPlayer";
-                                break;
-                            }
-                        }
+                        the_Ammo_Pool.bullet_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
+                        the_Ammo_Pool.bullet_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
+                        the_Ammo_Pool.bullet_Pool[i].SetActive(true);
+                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().enabled = true;
+                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Speed = the_EBS.unit_Speed;
+                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Damage = the_EBS.unit_Damage;
+                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().round_Type = the_EBS.unit_RoundType;
+                        the_Ammo_Pool.bullet_Pool[i].gameObject.tag = "HurtPlayer";
+                        break;
                     }
-           
+                }
+            }
+
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -185,11 +185,10 @@ public class TurrentHead : MonoBehaviour
     {
         if (other.GetComponent<PlayerManager>() != null && current_Target != null)
         {
-            current_Target=  null;
-            if (is_Flame_Thrower)
+            current_Target =  null;
+            if (is_FlameThrower)
             {
-                the_Fire.the_Fire_VFX.Stop();
-                the_Fire.the_BC.enabled = false;
+                the_FlameThrower.ResetFlameThrower();
             }
         }
     }

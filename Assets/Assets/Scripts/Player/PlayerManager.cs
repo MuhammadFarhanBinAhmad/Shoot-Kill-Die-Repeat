@@ -12,7 +12,8 @@ public class PlayerManager : MonoBehaviour
     public float speed_Movement;
     public float health_Player;
     public float health_Player_Current;
-    public static int money_Total = 5;
+    public static int scrap_Total = 10; 
+    public static int money_Total = 10000;
     //Jumping
     Vector3 velocity;
     public float gravity = -9.81f;
@@ -29,8 +30,11 @@ public class PlayerManager : MonoBehaviour
     //Effect
     internal float speed_Debuff_Time, sight_Debuff_Time, fire_Debuff_Time;
 
+    //Others
     public GUNINATORGunCreation the_GUNINATOR;
     public ATM the_ATM;
+
+    internal bool is_Store_Open;
 
     private void Start()
     {
@@ -67,17 +71,7 @@ public class PlayerManager : MonoBehaviour
             the_Player_UI_HUD.AmmoUpdateV2();
         }
         //ACCESS STORE//
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (the_ATM != null)
-            {
-                the_ATM.OpenATM();
-            }
-            if (the_GUNINATOR != null)
-            {
-                the_GUNINATOR.OpenStore();
-            }
-        }
+
         if (speed_Debuff_Time > 0)
         {
             speed_Debuff_Time -= Time.deltaTime;

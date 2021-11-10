@@ -59,7 +59,6 @@ public class MovingPlatform : MonoBehaviour
     }
     public void NextPlatform()
     {
-        print("NEXTPLATFORM");
         point_Number++;
         if (point_Number >= check_Point.Count)
         {

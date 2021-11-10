@@ -7,7 +7,7 @@ public class EnemyBasicStats : MonoBehaviour
 {
     [Header("RoundType")]
     public EnemyBasicStatsSO EBSSO;
-    public int unit_Speed, unit_Health, unit_Damage,unit_RoundType,unit_FireRate;
+    public float unit_Speed, unit_Health, unit_Damage,unit_RoundType,unit_FireRate;
 
     [SerializeField]
     NavMeshAgent agent;
@@ -19,8 +19,8 @@ public class EnemyBasicStats : MonoBehaviour
     private void Awake()
     {
         unit_Speed = EBSSO.speed;
-        unit_Health = EBSSO.health;
-        unit_Damage = EBSSO.damage;
+        unit_Health = (EBSSO.health * FindObjectOfType<LevelManager>().stats_Multiplier[LevelManager.CURRENTLEVEL]);
+        unit_Damage = (EBSSO.damage * FindObjectOfType<LevelManager>().stats_Multiplier[LevelManager.CURRENTLEVEL]);
         unit_RoundType = EBSSO.round_Type;
         unit_FireRate = EBSSO.Fire_Rate;
     }

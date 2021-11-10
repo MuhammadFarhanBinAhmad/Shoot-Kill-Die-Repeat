@@ -8,11 +8,13 @@ public class BaseGunV2 : MonoBehaviour
     PlayerManager the_Player_Manager;
     public PlayerUIHUD the_Player_UI_HUD;
     AmmoPool the_Ammo_Pool;
+    AccessGUNINATOR the_AccessGUNINATOR;
+    AccessWeaponExchange the_AccessWeaponExchange;
 
     /// -------- WeaponData
     [Header("WeaponData")]
     public int current_Weapon_Equipped;
-    public List<WeaponMode> current_WM_Eqipped = new List<WeaponMode>();
+    public List<WeaponMode> current_WM_Installed = new List<WeaponMode>();
 
     string round_Type_Name;
     bool currently_Shooting;
@@ -29,16 +31,18 @@ public class BaseGunV2 : MonoBehaviour
         the_Player_Manager = FindObjectOfType<PlayerManager>();
         the_Ammo_Pool = FindObjectOfType<AmmoPool>();
         the_Player_UI_HUD = FindObjectOfType<PlayerUIHUD>();
+        the_AccessGUNINATOR = FindObjectOfType<AccessGUNINATOR>();
+        the_AccessWeaponExchange = FindObjectOfType<AccessWeaponExchange>();
         the_Player_UI_HUD.AmmoUpdateV2();
 
     }
     private void Update()
     {
         WeaponFireMode();
-        if (current_WM_Eqipped[current_Weapon_Equipped].gun_current_Mag_Capacity < 
-            current_WM_Eqipped[current_Weapon_Equipped].gun_Total_Mag_Capacity && 
+        if (current_WM_Installed[current_Weapon_Equipped].gun_current_Mag_Capacity < 
+            current_WM_Installed[current_Weapon_Equipped].gun_Total_Mag_Capacity && 
             Input.GetKeyDown(KeyCode.R) && !currently_Reloading && 
-            current_WM_Eqipped[current_Weapon_Equipped].gun_current_Ammo > 0)
+            current_WM_Installed[current_Weapon_Equipped].gun_current_Ammo > 0)
         {
             StartReloading();
         }
@@ -46,22 +50,23 @@ public class BaseGunV2 : MonoBehaviour
     void WeaponFireMode()
     {
         //diffent weapon setting
-        switch (current_WM_Eqipped[current_Weapon_Equipped].weapon_Firing_Mechanism)
+        switch (current_WM_Installed[current_Weapon_Equipped].weapon_Firing_Mechanism)
         {
             case 0:
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(0) && Time.time >= current_WM_Installed[current_Weapon_Equipped].next_Time_To_Fire && !the_Player_Manager.is_Store_Open)
                     {
                         ShootWeapon();
+                        current_WM_Installed[current_Weapon_Equipped].next_Time_To_Fire = Time.time + 1f / current_WM_Installed[current_Weapon_Equipped].fire_Rate;
                     }
                 }
                 break;
             case 1:
                 {
-                    if (Input.GetMouseButton(0) && Time.time >= current_WM_Eqipped[current_Weapon_Equipped].next_Time_To_Fire)
+                    if (Input.GetMouseButton(0) && Time.time >= current_WM_Installed[current_Weapon_Equipped].next_Time_To_Fire && !the_Player_Manager.is_Store_Open)
                     {
                         ShootWeapon();
-                        current_WM_Eqipped[current_Weapon_Equipped].next_Time_To_Fire = Time.time + 1f / current_WM_Eqipped[current_Weapon_Equipped].fire_Rate;
+                        current_WM_Installed[current_Weapon_Equipped].next_Time_To_Fire = Time.time + 1f / current_WM_Installed[current_Weapon_Equipped].fire_Rate;
                     }
                 }
                 break;
@@ -75,24 +80,24 @@ public class BaseGunV2 : MonoBehaviour
     }
     IEnumerator Reloading()
     {
-        if (!current_WM_Eqipped[current_Weapon_Equipped].is_Shotgun)
+        if (!current_WM_Installed[current_Weapon_Equipped].is_Shotgun)
         {
-            yield return new WaitForSeconds(current_WM_Eqipped[current_Weapon_Equipped].reload_Time);
+            yield return new WaitForSeconds(current_WM_Installed[current_Weapon_Equipped].reload_Time);
             //count how many ammo spent
-            int AU = current_WM_Eqipped[current_Weapon_Equipped].gun_Total_Mag_Capacity - current_WM_Eqipped[current_Weapon_Equipped].gun_current_Mag_Capacity;
-            current_WM_Eqipped[current_Weapon_Equipped].gun_current_Ammo -= AU;
-            current_WM_Eqipped[current_Weapon_Equipped].gun_current_Mag_Capacity = current_WM_Eqipped[current_Weapon_Equipped].gun_Total_Mag_Capacity;//Refill mag
+            int AU = current_WM_Installed[current_Weapon_Equipped].gun_Total_Mag_Capacity - current_WM_Installed[current_Weapon_Equipped].gun_current_Mag_Capacity;
+            current_WM_Installed[current_Weapon_Equipped].gun_current_Ammo -= AU;
+            current_WM_Installed[current_Weapon_Equipped].gun_current_Mag_Capacity = current_WM_Installed[current_Weapon_Equipped].gun_Total_Mag_Capacity;//Refill mag
             the_Player_UI_HUD.AmmoUpdateV2();//Update UI
             currently_Reloading = false;
         }
         else
         {
-            if (current_WM_Eqipped[current_Weapon_Equipped].gun_current_Mag_Capacity < current_WM_Eqipped[current_Weapon_Equipped].gun_Total_Mag_Capacity)
+            if (current_WM_Installed[current_Weapon_Equipped].gun_current_Mag_Capacity < current_WM_Installed[current_Weapon_Equipped].gun_Total_Mag_Capacity)
             {
-                yield return new WaitForSeconds(current_WM_Eqipped[current_Weapon_Equipped].reload_Time);
+                yield return new WaitForSeconds(current_WM_Installed[current_Weapon_Equipped].reload_Time);
                 //count how many ammo spent
-                current_WM_Eqipped[current_Weapon_Equipped].gun_current_Ammo--;
-                current_WM_Eqipped[current_Weapon_Equipped].gun_current_Mag_Capacity++;
+                current_WM_Installed[current_Weapon_Equipped].gun_current_Ammo--;
+                current_WM_Installed[current_Weapon_Equipped].gun_current_Mag_Capacity++;
                 the_Player_UI_HUD.AmmoUpdateV2();//Update UI
                 StartCoroutine("Reloading");
             }
@@ -107,15 +112,12 @@ public class BaseGunV2 : MonoBehaviour
         //Stop all reloading
         StopCoroutine("Reloading");
         currently_Reloading = false;
-        print("hit1");
 
-        if (current_WM_Eqipped[current_Weapon_Equipped].gun_current_Mag_Capacity > 0)
+        if (current_WM_Installed[current_Weapon_Equipped].gun_current_Mag_Capacity > 0)
         {
-            print("hit2");
 
-            if (!current_WM_Eqipped[current_Weapon_Equipped].is_Shotgun)
+            if (!current_WM_Installed[current_Weapon_Equipped].is_Shotgun)
             {
-                print("hit3");
                 for (int i = 0; i < the_Ammo_Pool.bullet_Pool.Count; i++)
                 {
                     if (!the_Ammo_Pool.bullet_Pool[i].activeInHierarchy)
@@ -125,16 +127,16 @@ public class BaseGunV2 : MonoBehaviour
                         the_Ammo_Pool.bullet_Pool[i].SetActive(true);
                         the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().enabled = true;
                         the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Speed= 1000;//get damage value
-                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Damage = Random.Range(current_WM_Eqipped[current_Weapon_Equipped].min_Damage, current_WM_Eqipped[current_Weapon_Equipped].max_Damage);//get damage value
-                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().round_Type = current_WM_Eqipped[current_Weapon_Equipped].current_Round_Type;//set bullet type
+                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Damage = Random.Range(current_WM_Installed[current_Weapon_Equipped].min_Damage, current_WM_Installed[current_Weapon_Equipped].max_Damage);//get damage value
+                        the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().round_Type = current_WM_Installed[current_Weapon_Equipped].current_Round_Type;//set bullet type
                         //the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().ElementType(the_Element_Type);//set bullet type
                         //the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().is_Rocket = is_Rocket;
                         //update Weapon UI
-                        current_WM_Eqipped[current_Weapon_Equipped].gun_current_Mag_Capacity--;
+                        current_WM_Installed[current_Weapon_Equipped].gun_current_Mag_Capacity--;
                         //the_Player_UI_HUD.AmmoUpdate(the_Player_Manager.current_Weapon);
-                        the_Player_UI_HUD.AmmoUpdateV2();
                         muzzle_Flash.GetComponent<ParticleSystem>().Play();
                         the_Ammo_Pool.bullet_Pool[i].gameObject.tag = "HurtEnemy";
+                        the_Player_UI_HUD.AmmoUpdateV2();
                         break;
                     }
                 }
@@ -161,18 +163,20 @@ public class BaseGunV2 : MonoBehaviour
                             the_Ammo_Pool.bullet_Pool[i].transform.rotation = q;
 
                             the_Ammo_Pool.bullet_Pool[i].SetActive(true);
-                            the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Damage = Random.Range(current_WM_Eqipped[current_Weapon_Equipped].min_Damage, current_WM_Eqipped[current_Weapon_Equipped].max_Damage);//get damage value
-                            the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().round_Type = current_WM_Eqipped[current_Weapon_Equipped].current_Round_Type; ;//set bullet type
+                            the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().enabled = true;
+                            the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Speed = 1000;//get damage value
+                            the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Damage = Random.Range(current_WM_Installed[current_Weapon_Equipped].min_Damage, current_WM_Installed[current_Weapon_Equipped].max_Damage);//get damage value
+                            the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForPlayer>().round_Type = current_WM_Installed[current_Weapon_Equipped].current_Round_Type; ;//set bullet type
                             //the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().ElementType(the_Element_Type);//set bullet type
-                            the_Player_UI_HUD.AmmoUpdateV2();
                             the_Ammo_Pool.bullet_Pool[i].gameObject.tag = "HurtEnemy";
                             //update Weapon UI
                             break;
                         }
                     }
                 }
-                current_WM_Eqipped[current_Weapon_Equipped].gun_current_Mag_Capacity--;
-               //the_Player_UI_HUD.AmmoUpdate(the_Player_Manager.current_Weapon);
+                current_WM_Installed[current_Weapon_Equipped].gun_current_Mag_Capacity--;
+                the_Player_UI_HUD.AmmoUpdateV2();
+                //the_Player_UI_HUD.AmmoUpdate(the_Player_Manager.current_Weapon);
             }
         }
     }

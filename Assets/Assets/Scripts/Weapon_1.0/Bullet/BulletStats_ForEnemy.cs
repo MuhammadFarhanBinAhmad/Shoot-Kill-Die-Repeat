@@ -5,8 +5,8 @@ using UnityEngine;
 public class BulletStats_ForEnemy : MonoBehaviour
 {
     public float bullet_Speed;
-    public int bullet_Damage;
-    public int round_Type;
+    public float bullet_Damage;
+    public float round_Type;
     public float debuff_Effect_Time;
 
     Rigidbody the_RB;

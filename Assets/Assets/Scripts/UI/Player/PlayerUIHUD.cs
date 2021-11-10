@@ -9,8 +9,7 @@ public class PlayerUIHUD : MonoBehaviour
 
     PlayerManager the_PM;
     //PLAYER HUD//
-    public TextMeshProUGUI ui_Weapon_Ammo,ui_Weapon_Name, ui_Total_Ammo,ui_Total_Coins;
-    public BaseGun current_Weapon;
+    public TextMeshProUGUI ui_Current_MAG_Capacity,ui_Weapon_Name, ui_Current_Total_Ammo,ui_Total_Coins;
     public BaseGunV2 the_BGV2;
     //PLAYER GAME UI//
     public GameObject PauseMenu;
@@ -47,29 +46,11 @@ public class PlayerUIHUD : MonoBehaviour
         }
         ui_Total_Coins.text = "X" + PlayerManager.money_Total.ToString();
     }
-    /*//BASEGUNV1
-    internal void AmmoUpdate(int i)
-    {
-        ui_Weapon_Ammo.text = current_Weapon.gun_current_Mag_Capacity.ToString();//Mag
-        ui_Total_Ammo.text = current_Weapon.gun_current_Ammo.ToString();//Ammo
-    }
-    internal void WeaponNameUpdate(int i)
-    {
-        ui_Weapon_Name.text = current_Weapon.weapon_Name.ToString();//Weapon Name
-    }*/
     //BASEGUNV2
     internal void AmmoUpdateV2()
     {
-        ui_Weapon_Ammo.text = the_BGV2.current_WM_Eqipped[the_BGV2.current_Weapon_Equipped].gun_current_Mag_Capacity.ToString();//Mag
-        ui_Total_Ammo.text = the_BGV2.current_WM_Eqipped[the_BGV2.current_Weapon_Equipped].gun_current_Ammo.ToString();//Ammo
-    }
-    /*internal void WeaponNameUpdateV2()
-    {
-        ui_Weapon_Name.text = current_Weapon_V2.weapon_Name.ToString();//Weapon Name
-    }*/
-    internal void PickableWeaponDetails(string WN)
-    {
-        pickable_Weapon_Name_GUI.text = WN;
+        ui_Current_Total_Ammo.text = the_PM.the_BGV2.current_WM_Installed[the_PM.the_BGV2.current_Weapon_Equipped].gun_current_Ammo.ToString();
+        ui_Current_MAG_Capacity.text = the_PM.the_BGV2.current_WM_Installed[the_PM.the_BGV2.current_Weapon_Equipped].gun_current_Mag_Capacity.ToString();
     }
     internal void HealthUpdate()
     {

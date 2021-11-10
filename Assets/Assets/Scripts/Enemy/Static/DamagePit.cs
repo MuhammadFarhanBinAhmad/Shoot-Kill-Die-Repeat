@@ -7,12 +7,12 @@ public class DamagePit : MonoBehaviour
     public float damage_Output;
     //TICK ONLY ONE
     [Header("FirePit")]
-    public bool fire_Pit;
+    public bool is_fire_Pit;
     [Header("FirePillar")]
-    public bool fire_Pillar;
+    public bool is_fire_Pillar;
     public bool fire_Activated;
-
-    PlayerManager the_PM;
+    [SerializeField]
+    internal PlayerManager the_PM;
 
     internal BoxCollider the_BC;
     public ParticleSystem the_Fire_VFX;
@@ -20,7 +20,7 @@ public class DamagePit : MonoBehaviour
     private void Start()
     {
         the_BC = GetComponent<BoxCollider>();
-        if (fire_Pillar)
+        if (is_fire_Pillar)
         {
             InvokeRepeating("ActivateFire", 0, 2);
         }
@@ -43,11 +43,7 @@ public class DamagePit : MonoBehaviour
     {
         if (the_PM != null)
         {
-            if (fire_Pit)
-            {
-                the_PM.TakeDamage(damage_Output);
-            }
-            if (fire_Activated)
+            if (is_fire_Pit || fire_Activated)
             {
                 the_PM.TakeDamage(damage_Output);
             }
@@ -58,13 +54,13 @@ public class DamagePit : MonoBehaviour
         if (other.GetComponent<PlayerManager>() != null)
         {
             the_PM = other.GetComponent<PlayerManager>();
-            if (fire_Pillar)
+            if (is_fire_Pit)
             {
                 InvokeRepeating("HurtPlayer", 0, .5f);
             }
-            if (fire_Pit)
+            if (is_fire_Pillar)
             {
-                InvokeRepeating("HurtPlayer", 0, 1);
+                InvokeRepeating("HurtPlayer", 0, .5f);
             }
         }
     }
