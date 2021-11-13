@@ -6,7 +6,7 @@ using TMPro;
 
 public class PlayerUIHUD : MonoBehaviour
 {
-
+    [SerializeField]
     PlayerManager the_PM;
     //PLAYER HUD//
     public TextMeshProUGUI ui_Current_MAG_Capacity,ui_Weapon_Name, ui_Current_Total_Ammo,ui_Total_Coins;
@@ -18,10 +18,9 @@ public class PlayerUIHUD : MonoBehaviour
     public TextMeshProUGUI pickable_Weapon_Name_GUI;
     public Image p_HealthBar;
 
-    private void Start()
+    private void Awake()
     {
-        the_PM = FindObjectOfType<PlayerManager>();
-        the_BGV2 = FindObjectOfType<BaseGunV2>();
+        the_BGV2 = the_PM.the_BGV2;
     }
 
     private void Update()

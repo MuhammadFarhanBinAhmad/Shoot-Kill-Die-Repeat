@@ -32,6 +32,7 @@ public class WeaponMode : MonoBehaviour
     //0-SemiAuto
     //1-FullAuto
     public int weapon_Firing_Mechanism;
+    public int weapon_Code;
     public bool is_Shotgun;
 
     private void Awake()
@@ -57,8 +58,11 @@ public class WeaponMode : MonoBehaviour
 
         gun_current_Ammo = gun_Total_Ammo;
         gun_current_Mag_Capacity = gun_Total_Mag_Capacity;
+
+        //Weapon Code
         weapon_Firing_Mechanism = the_WLSO.weapon_Firing_Mechanism;
         is_Shotgun = the_WLSO.is_Shotgun;
+        weapon_Code = the_WLSO.weapon_Code;
     }
     public void UpgradeFireRate()
     {

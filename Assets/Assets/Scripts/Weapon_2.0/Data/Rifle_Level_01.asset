@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Rifle_Level_01
   m_EditorClassIdentifier: 
   placeholderName: 
-  weapon_Level: 1
-  weapon_Firing_Mechanism: 0
+  weapon_Code: 2
+  weapon_Cost: 10
   fire_Rate_LEVEL: 0
   fire_Rate_COST: 0a00000019000000320000006400000096000000
   fire_Rate:
@@ -39,4 +39,5 @@ MonoBehaviour:
   total_Ammo_Mag_COST: 0f0000001e000000370000004600000064000000
   total_Ammo: 64000000780000008c000000a0000000c8000000
   mag_Capacity: 0a0000000c0000000e0000001000000014000000
+  weapon_Firing_Mechanism: 0
   is_Shotgun: 0

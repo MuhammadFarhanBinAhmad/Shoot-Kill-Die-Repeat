@@ -27,11 +27,9 @@ public class RandomMovementAI : MonoBehaviour
         }
         if (agent.velocity != Vector3.zero)
         {
-            print("moving");
         }
         else
         {
-            print("is not moving");
         }
     }
 

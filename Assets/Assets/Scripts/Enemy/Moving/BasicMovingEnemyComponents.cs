@@ -130,17 +130,6 @@ public class BasicMovingEnemyComponents : MonoBehaviour
                             current_UT = unit_Task.ChargingAttack;
                         }
 
-                        /*agent.destination = the_PM.transform.position;
-                        if (agent.remainingDistance >= agent.stoppingDistance)
-                        {
-                            transform.LookAt(the_PM.transform.position);
-                        }
-                        else
-                        {
-                            //agent.speed = 0;
-                            unit_Current_Charging_Time = unit_Charging_Time;
-                            current_UT = unit_Task.ChargingAttack;
-                        }*/
                     }
                     else
                     {

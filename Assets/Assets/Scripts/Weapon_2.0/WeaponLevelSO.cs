@@ -6,6 +6,17 @@ using UnityEngine;
 public class WeaponLevelSO : ScriptableObject
 {
     public string placeholderName;
+    [Header("WeaponCode")]
+    public int weapon_Code;
+    public int weapon_Cost;
+    /// <summary>
+    /// 0 - Pistol
+    /// 1 - SubmachineGun
+    /// 2 - Rifle
+    /// 3 - Assault Rifle
+    /// 4 - Shotgun
+    /// 5 - HeavyMachineGun
+    /// </summary>
     //The Element = Current Level/COST
     [Header("FireRate")]
     public int fire_Rate_LEVEL;

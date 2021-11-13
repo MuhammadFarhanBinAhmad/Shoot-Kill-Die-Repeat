@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
     public float speed_Movement;
     public float health_Player;
     public float health_Player_Current;
-    public static int scrap_Total = 10; 
+    public static int scrap_Total = 100; 
     public static int money_Total = 10000;
     //Jumping
     Vector3 velocity;

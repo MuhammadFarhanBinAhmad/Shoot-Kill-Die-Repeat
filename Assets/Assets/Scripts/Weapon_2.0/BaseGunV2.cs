@@ -25,7 +25,7 @@ public class BaseGunV2 : MonoBehaviour
     [Header("SFX & VFX")]
     public GameObject muzzle_Flash;
 
-    void Start()
+    void Awake()
     {
         //ammo pool
         the_Player_Manager = FindObjectOfType<PlayerManager>();
@@ -33,8 +33,10 @@ public class BaseGunV2 : MonoBehaviour
         the_Player_UI_HUD = FindObjectOfType<PlayerUIHUD>();
         the_AccessGUNINATOR = FindObjectOfType<AccessGUNINATOR>();
         the_AccessWeaponExchange = FindObjectOfType<AccessWeaponExchange>();
-        the_Player_UI_HUD.AmmoUpdateV2();
-
+    }
+    private void Start()
+    {
+        //the_Player_UI_HUD.AmmoUpdateV2();
     }
     private void Update()
     {

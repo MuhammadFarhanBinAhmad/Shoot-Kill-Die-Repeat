@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8301091339912612718
 Transform:
@@ -62,8 +62,8 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 345d8c7cb033d7644a6aeb620eb59945, type: 2}
-  - {fileID: -8896051167825165466, guid: 5904acab9dffc8540bc085099591fb71, type: 3}
-  - {fileID: -6867524174320841699, guid: 5904acab9dffc8540bc085099591fb71, type: 3}
+  - {fileID: 2100000, guid: ba282dbc9a69cbb45ad8d66f53af4f80, type: 2}
+  - {fileID: 2100000, guid: ba282dbc9a69cbb45ad8d66f53af4f80, type: 2}
   - {fileID: -3963241562183589234, guid: 5904acab9dffc8540bc085099591fb71, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -97,5 +97,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 0.099999994, z: 0.99999994}
-  m_Center: {x: 0, y: 0.049999997, z: 0}
+  m_Size: {x: 1, y: 0.05, z: 1}
+  m_Center: {x: 0, y: 0.02, z: 0}

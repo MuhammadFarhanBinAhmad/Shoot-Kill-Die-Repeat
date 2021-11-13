@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: AssaultRifle_Level_01
   m_EditorClassIdentifier: 
   placeholderName: 
+  weapon_Code: 3
+  weapon_Cost: 20
   fire_Rate_LEVEL: 0
   fire_Rate_COST: 0a00000019000000320000006400000096000000
   fire_Rate:
-  - 1
-  - 0.9
-  - 0.8
-  - 0.7
-  - 0.6
+  - 4
+  - 5
+  - 5.5
+  - 6
+  - 7
   reload_Time_LEVEL: 0
   reload_Time_COST: 0f0000001e00000037000000460000005a000000
   reload_Time:
@@ -35,7 +37,7 @@ MonoBehaviour:
   max_Damage: 0c0000000f00000014000000190000001e000000
   total_Ammo_Mag_LEVEL: 0
   total_Ammo_Mag_COST: 0f0000001e000000370000004600000064000000
-  total_Ammo: 64000000780000008c000000a0000000c8000000
-  mag_Capacity: 0a0000000c0000000e0000001000000014000000
+  total_Ammo: fa0000002c01000090010000c201000026020000
+  mag_Capacity: 190000001e000000280000002d00000037000000
   weapon_Firing_Mechanism: 1
   is_Shotgun: 0
