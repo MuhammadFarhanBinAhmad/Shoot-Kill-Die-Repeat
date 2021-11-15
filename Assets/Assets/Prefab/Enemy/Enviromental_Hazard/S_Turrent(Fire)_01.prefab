@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5277650559933158297}
   - component: {fileID: 1311543638272707018}
   - component: {fileID: 6695121588011003971}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1364,7 +1364,7 @@ GameObject:
   - component: {fileID: 6430753211033648814}
   - component: {fileID: 6430753211033648801}
   - component: {fileID: 6430753211033648800}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: S_Turrent(Fire)_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2745,6 +2745,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.381
       objectReference: {fileID: 0}
+    - target: {fileID: 899520369639317825, guid: d016285bea6726f438c46f5417eed2b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 899520369639317827, guid: d016285bea6726f438c46f5417eed2b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 899520369639317829, guid: d016285bea6726f438c46f5417eed2b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 899520369658689569, guid: d016285bea6726f438c46f5417eed2b0,
         type: 3}
       propertyPath: lengthInSec
@@ -2994,6 +3009,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire_Pillar_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754865260006050267, guid: d016285bea6726f438c46f5417eed2b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8780516140626565703, guid: d016285bea6726f438c46f5417eed2b0,
         type: 3}

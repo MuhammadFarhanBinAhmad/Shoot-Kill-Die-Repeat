@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5194661752328508751}
   - component: {fileID: 1475665787595620349}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5194661752328508751
 Transform:
@@ -105,12 +105,13 @@ GameObject:
   - component: {fileID: 1170348491375979503}
   - component: {fileID: 4024281317434842917}
   - component: {fileID: 3398366070200442737}
-  m_Layer: 0
+  - component: {fileID: 3091660531249699254}
+  m_Layer: 9
   m_Name: machine_wireless
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2851396858187490378
 Transform:
@@ -193,6 +194,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.74999994, y: 0.27317715, z: 0.49999997}
   m_Center: {x: 0, y: 0.13658857, z: 0}
+--- !u!208 &3091660531249699254
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231863768155586288}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.37500003, y: 0.13, z: 0.25}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.13, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &5795318783249302573
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,12 +222,12 @@ GameObject:
   - component: {fileID: 2664504870791518606}
   - component: {fileID: 278787175668856648}
   - component: {fileID: 8712967007294473262}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2667929445904564735
 Transform:

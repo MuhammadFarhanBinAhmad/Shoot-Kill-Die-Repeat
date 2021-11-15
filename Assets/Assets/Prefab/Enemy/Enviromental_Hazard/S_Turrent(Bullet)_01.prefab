@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1886625451395716401}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet_SP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1886625451788233157}
   - component: {fileID: 1886625451788233154}
   - component: {fileID: 1886625451788233155}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: S_Turrent(Bullet)_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1395,6 +1395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2097b80a9cf19b4a9b7ba6301c50b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EBSSO: {fileID: 0}
   bullet_Spawn_Point: {fileID: 1886625451395716401}
   bullet_Damage: 5
   fire_Rate: 2
@@ -1411,7 +1412,7 @@ GameObject:
   - component: {fileID: 7886017882650003751}
   - component: {fileID: 3616366167556182385}
   - component: {fileID: 1291739575042879271}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,12 +11,14 @@ GameObject:
   - component: {fileID: 8465694770061163798}
   - component: {fileID: 4815450945174352563}
   - component: {fileID: 7293329281109673593}
+  - component: {fileID: 6181519509798586371}
+  - component: {fileID: 90868326456871203}
   m_Layer: 9
   m_Name: pipe_entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8465694770061163798
 Transform:
@@ -83,3 +85,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6181519509798586371
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9094984429814736812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.67988205, y: 0.59592056, z: 0.40333605}
+  m_Center: {x: -0.0023649186, y: 0.2981472, z: -0.29833198}
+--- !u!65 &90868326456871203
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9094984429814736812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.94166565, y: 0.8059921, z: 0.19972229}
+  m_Center: {x: -0.0007491708, y: 0.29976273, z: 0.0038494766}
