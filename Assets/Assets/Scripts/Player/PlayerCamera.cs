@@ -16,7 +16,7 @@ public class PlayerCamera : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.None;
         mouse_Sensitivity_Text.text = mouse_Sensitivity.ToString();
     }
     void Update()

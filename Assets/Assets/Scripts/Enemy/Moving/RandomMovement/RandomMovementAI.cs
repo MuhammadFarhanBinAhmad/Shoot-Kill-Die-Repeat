@@ -27,9 +27,11 @@ public class RandomMovementAI : MonoBehaviour
         }
         if (agent.velocity != Vector3.zero)
         {
+            print("ismoving");
         }
         else
         {
+            print("stuck");
         }
     }
 

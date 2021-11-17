@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3102549584361075668}
   - component: {fileID: 6416561547341246785}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: BC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,9 +55,9 @@ GameObject:
   - component: {fileID: 4413248923341551266}
   - component: {fileID: 761347026262358279}
   - component: {fileID: 3275293817803771341}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: pipe_ringHighEnd
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -94,7 +94,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3923992278805621784}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5222620370594293625}
   - component: {fileID: 4588617983533413133}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: BC_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

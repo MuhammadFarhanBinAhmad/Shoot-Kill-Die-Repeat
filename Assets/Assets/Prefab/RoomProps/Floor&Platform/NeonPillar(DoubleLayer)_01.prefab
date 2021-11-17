@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8124273438165373128}
   - component: {fileID: 8171810371813614559}
   - component: {fileID: 2794109307976062172}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Neon_Pipe_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2495,12 +2495,7 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
-      type: {class: Pipe, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data:
-        m_Thickness: 0.05
-        m_NumberOfSides: 20
-        m_HeightCuts: 0
-        m_Smooth: 1
+      type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
 --- !u!23 &8124273438165373128
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2509,7 +2504,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254792921967221687}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2579,7 +2574,7 @@ GameObject:
   - component: {fileID: 3981773396180655304}
   - component: {fileID: 3197945911600037275}
   - component: {fileID: 5800291927862269085}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Neon_Pipe_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5060,12 +5055,7 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
-      type: {class: Pipe, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data:
-        m_Thickness: 0.05
-        m_NumberOfSides: 20
-        m_HeightCuts: 0
-        m_Smooth: 1
+      type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
 --- !u!23 &3981773396180655304
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5074,7 +5064,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503360286095356518}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -5144,7 +5134,7 @@ GameObject:
   - component: {fileID: 7605542149102278172}
   - component: {fileID: 1791787862721389485}
   - component: {fileID: 6185832863821538022}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Neon_Pipe_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7625,12 +7615,7 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
-      type: {class: Pipe, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data:
-        m_Thickness: 0.05
-        m_NumberOfSides: 20
-        m_HeightCuts: 0
-        m_Smooth: 1
+      type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
 --- !u!23 &7605542149102278172
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7639,7 +7624,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589162164965788383}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -7710,7 +7695,7 @@ GameObject:
   - component: {fileID: 2752340833760398980}
   - component: {fileID: 5428845033945635157}
   - component: {fileID: 1400723839238909468}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9121,11 +9106,7 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
-      type: {class: Cylinder, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data:
-        m_AxisDivisions: 16
-        m_HeightCuts: 0
-        m_Smooth: 1
+      type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
 --- !u!23 &5133614553790446184
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9134,7 +9115,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6654736268602367479}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -9214,7 +9195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1376451200128241598}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: NeonPillar(DoubleLayer)_01
   m_TagString: Ground
   m_Icon: {fileID: 0}

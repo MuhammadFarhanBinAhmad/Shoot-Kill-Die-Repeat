@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1342293245544317299}
   - component: {fileID: 248515280298787184}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1342293245544317299
 Transform:
@@ -104,12 +104,12 @@ GameObject:
   - component: {fileID: 3449506706008347523}
   - component: {fileID: 2570333334153717318}
   - component: {fileID: 1204956200247200505}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: cable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3449506706008347523
 Transform:
@@ -190,12 +190,12 @@ GameObject:
   - component: {fileID: 390563999656127458}
   - component: {fileID: 2490341792774348584}
   - component: {fileID: 2865000493991781402}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: machine_wirelessCable
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3658141663844377671
 Transform:
@@ -228,7 +228,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4147679856641998589}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -290,12 +290,12 @@ GameObject:
   - component: {fileID: 1717833140227499990}
   - component: {fileID: 2300432613826484193}
   - component: {fileID: 643492725818550821}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1505945129604372955
 Transform:

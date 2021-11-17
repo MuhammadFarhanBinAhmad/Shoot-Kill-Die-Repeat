@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.703, y: 0.85183525, z: 0.1}
   m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 899520369639292259}
   m_Father: {fileID: 0}
@@ -46,11 +47,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_Output: 1
-  fire_Pit: 1
-  fire_Pillar: 0
+  is_fire_Pit: 0
+  is_Fire_Interval: 0
+  is_fire_Pillar: 0
   fire_Activated: 0
-  the_BC: {fileID: 0}
-  the_Fire_VFX: {fileID: 0}
+  the_PM: {fileID: 0}
+  the_Fire_VFX: {fileID: 899520369658689571}
 --- !u!65 &5754865260006050266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -205,6 +207,12 @@ PrefabInstance:
 --- !u!4 &899520369639292259 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 06d796ccd85dc4c4b9c98270196715ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 899520369639417825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &899520369658689571 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19800002, guid: 06d796ccd85dc4c4b9c98270196715ae,
     type: 3}
   m_PrefabInstance: {fileID: 899520369639417825}
   m_PrefabAsset: {fileID: 0}

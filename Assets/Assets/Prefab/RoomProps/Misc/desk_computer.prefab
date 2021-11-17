@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 1023865865}
   - component: {fileID: 1023865864}
   - component: {fileID: 1023865863}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Quad_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1023865866
 Transform:
@@ -109,12 +109,12 @@ GameObject:
   - component: {fileID: 2471071306467446781}
   - component: {fileID: 409815519357041463}
   - component: {fileID: 4567224805878154151}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: desk_computer
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1577625289253978200
 Transform:
@@ -147,7 +147,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2210996366217861858}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0

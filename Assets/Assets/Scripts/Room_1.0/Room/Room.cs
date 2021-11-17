@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class Room : MonoBehaviour
 {
     RoomSpawner the_RS;
-    public NavMeshSurface the_NMS;
+    //public NavMeshSurface the_NMS;
 
     public bool room_Completed;
 

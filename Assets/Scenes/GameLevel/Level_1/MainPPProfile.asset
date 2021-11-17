@@ -13,45 +13,33 @@ MonoBehaviour:
   m_Name: Bloom
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
     m_Value: 1
-    min: 0
   intensity:
     m_OverrideState: 1
     m_Value: 0.3
-    min: 0
   scatter:
     m_OverrideState: 0
     m_Value: 0.6
-    min: 0
-    max: 1
   clamp:
     m_OverrideState: 0
     m_Value: 65472
-    min: 0
   tint:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
-    hdr: 0
-    showAlpha: 0
-    showEyeDropper: 1
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
   skipIterations:
     m_OverrideState: 0
     m_Value: 1
-    min: 0
-    max: 16
   dirtTexture:
     m_OverrideState: 0
     m_Value: {fileID: 2800000, guid: a686f16f05edebb4fbba853e1c16c608, type: 3}
   dirtIntensity:
     m_OverrideState: 0
     m_Value: 8
-    min: 0
 --- !u!114 &-2099754954322237123
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -65,20 +53,15 @@ MonoBehaviour:
   m_Name: FilmGrain
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   type:
     m_OverrideState: 1
     m_Value: 3
   intensity:
     m_OverrideState: 1
-    m_Value: 0.35
-    min: 0
-    max: 1
+    m_Value: 0.2
   response:
     m_OverrideState: 1
-    m_Value: 0.25
-    min: 0
-    max: 1
+    m_Value: 0.1
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}

@@ -30,6 +30,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
   m_LocalPosition: {x: -0.054000854, y: -0.4539957, z: -0.71500003}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2409540218690357175}
   m_Father: {fileID: 5352460144932561937}
@@ -129,6 +130,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -28.084679, y: 0.334, z: 0.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5003835100462435920}
   m_Father: {fileID: 0}
@@ -150,7 +152,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6687902102241483916}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -287,9 +289,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 3156b48990ef6a14984c9c15bf3ffcd2,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3156b48990ef6a14984c9c15bf3ffcd2,
+        type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100010, guid: ff6dc36862fe41641bb21568d92147c9, type: 3}
+      objectReference: {fileID: 2100000, guid: ba282dbc9a69cbb45ad8d66f53af4f80, type: 2}
     - target: {fileID: -7511558181221131132, guid: 3156b48990ef6a14984c9c15bf3ffcd2,
         type: 3}
       propertyPath: m_Materials.Array.data[2]

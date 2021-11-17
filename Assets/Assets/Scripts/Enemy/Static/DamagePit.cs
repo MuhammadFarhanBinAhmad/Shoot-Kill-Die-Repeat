@@ -11,6 +11,9 @@ public class DamagePit : MonoBehaviour
     [Header("FirePillar")]
     public bool is_fire_Pillar;
     public bool fire_Activated;
+    [Header("Interval")]
+    public bool is_Fire_Interval;
+    public float time_Interval;
     [SerializeField]
     internal PlayerManager the_PM;
 
@@ -22,7 +25,14 @@ public class DamagePit : MonoBehaviour
         the_BC = GetComponent<BoxCollider>();
         if (is_fire_Pillar)
         {
-            InvokeRepeating("ActivateFire", 0, 2);
+            if (is_Fire_Interval)
+            {
+                InvokeRepeating("ActivateFire", 0, time_Interval);
+            }
+            else
+            {
+                ActivateFire();
+            }
         }
     }
     void ActivateFire()

@@ -31,6 +31,7 @@ Transform:
   m_LocalRotation: {x: 0.50000006, y: 0.4999996, z: 0.5, w: -0.5000004}
   m_LocalPosition: {x: 0.14999962, y: 0.06, z: 0.141}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875286126276656}
   m_RootOrder: 7
@@ -745,7 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994357
   m_Size: {x: 0.2, y: 0.2, z: 0.05}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -755,8 +756,9 @@ MonoBehaviour:
     m_Center: {x: 0.0000000037252903, y: -0.000000029802322, z: -0.0000000037252903}
     m_Extent: {x: 0.10000001, y: 0.1, z: 0.025}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994357
       type: {class: Arch, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Thickness: 0.04
@@ -772,7 +774,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443799634481735439}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -859,6 +861,7 @@ Transform:
   m_LocalRotation: {x: 4.0782646e-15, y: -0.7071065, z: -0.7071071, w: 0.000000011403656}
   m_LocalPosition: {x: -0.14999962, y: 0.18, z: 0.141}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875286126276656}
   m_RootOrder: 9
@@ -1573,7 +1576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994361
   m_Size: {x: 0.2, y: 0.2, z: 0.05}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -1583,8 +1586,9 @@ MonoBehaviour:
     m_Center: {x: 0.0000000037252903, y: -0.000000029802322, z: -0.0000000037252903}
     m_Extent: {x: 0.10000001, y: 0.1, z: 0.025}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994361
       type: {class: Arch, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Thickness: 0.04
@@ -1600,7 +1604,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631718973897117043}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1687,6 +1691,7 @@ Transform:
   m_LocalRotation: {x: 0.7071066, y: 0, z: -0, w: -0.70710707}
   m_LocalPosition: {x: 0.14999962, y: -0.0359, z: -0.139}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875286126276656}
   m_RootOrder: 8
@@ -2401,7 +2406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994382
   m_Size: {x: 0.2, y: 0.2, z: 0.05}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -2411,8 +2416,9 @@ MonoBehaviour:
     m_Center: {x: 0.0000000037252903, y: -0.000000029802322, z: -0.0000000037252903}
     m_Extent: {x: 0.10000001, y: 0.1, z: 0.025}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994382
       type: {class: Arch, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Thickness: 0.04
@@ -2428,7 +2434,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728655963020613548}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2513,6 +2519,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 829649268515410359}
   m_Father: {fileID: 8747875284122243958}
@@ -7163,6 +7170,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 1
+  m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.1
@@ -7186,6 +7194,10 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+  m_MeshWeighting: 1
+  m_MeshWeighting1: 1
+  m_MeshWeighting2: 1
+  m_MeshWeighting3: 1
   m_MaskInteraction: 0
 --- !u!114 &829649268526413943
 MonoBehaviour:
@@ -7228,6 +7240,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.018, y: -0, z: 0.224}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 829649268515410357}
   m_RootOrder: 0
@@ -11778,6 +11791,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
+  m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
@@ -11801,6 +11815,10 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+  m_MeshWeighting: 1
+  m_MeshWeighting1: 1
+  m_MeshWeighting2: 1
+  m_MeshWeighting3: 1
   m_MaskInteraction: 0
 --- !u!1 &1228785181880654689
 GameObject:
@@ -11833,6 +11851,7 @@ Transform:
   m_LocalRotation: {x: 0.49999955, y: -0.5000001, z: -0.5000004, w: -0.49999994}
   m_LocalPosition: {x: -0.14999962, y: 0.063, z: -0.139}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875286126276656}
   m_RootOrder: 6
@@ -12547,7 +12566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994377
   m_Size: {x: 0.2, y: 0.2, z: 0.05}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -12557,8 +12576,9 @@ MonoBehaviour:
     m_Center: {x: 0.0000000037252903, y: -0.000000029802322, z: -0.0000000037252903}
     m_Extent: {x: 0.10000001, y: 0.1, z: 0.025}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994377
       type: {class: Arch, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Thickness: 0.04
@@ -12574,7 +12594,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228785181880654689}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -12661,6 +12681,7 @@ Transform:
   m_LocalRotation: {x: 0.49999955, y: -0.5000001, z: -0.5000004, w: -0.49999994}
   m_LocalPosition: {x: -0.14999962, y: -0.124, z: -0.139}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875286126276656}
   m_RootOrder: 4
@@ -13375,7 +13396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994348
   m_Size: {x: 0.2, y: 0.2, z: 0.05}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -13385,8 +13406,9 @@ MonoBehaviour:
     m_Center: {x: 0.0000000037252903, y: -0.000000029802322, z: -0.0000000037252903}
     m_Extent: {x: 0.10000001, y: 0.1, z: 0.025}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994348
       type: {class: Arch, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Thickness: 0.04
@@ -13402,7 +13424,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393830535208088014}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -13489,6 +13511,7 @@ Transform:
   m_LocalRotation: {x: 0.50000006, y: 0.4999996, z: 0.5, w: -0.5000004}
   m_LocalPosition: {x: 0.14999962, y: -0.1563, z: 0.141}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875286126276656}
   m_RootOrder: 2
@@ -14203,7 +14226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994312
   m_Size: {x: 0.2, y: 0.2, z: 0.05}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -14213,8 +14236,9 @@ MonoBehaviour:
     m_Center: {x: 0.0000000037252903, y: -0.000000029802322, z: -0.0000000037252903}
     m_Extent: {x: 0.10000001, y: 0.1, z: 0.025}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994312
       type: {class: Arch, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Thickness: 0.04
@@ -14230,7 +14254,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4245743348677129978}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -14317,6 +14341,7 @@ Transform:
   m_LocalRotation: {x: 0.7071066, y: 0, z: -0, w: -0.70710707}
   m_LocalPosition: {x: 0.14999962, y: 0.169, z: -0.139}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875286126276656}
   m_RootOrder: 1
@@ -15031,7 +15056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994345
   m_Size: {x: 0.2, y: 0.2, z: 0.05}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -15041,8 +15066,9 @@ MonoBehaviour:
     m_Center: {x: 0.0000000037252903, y: -0.000000029802322, z: -0.0000000037252903}
     m_Extent: {x: 0.10000001, y: 0.1, z: 0.025}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994345
       type: {class: Arch, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Thickness: 0.04
@@ -15058,7 +15084,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5305478468418597362}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -15145,6 +15171,7 @@ Transform:
   m_LocalRotation: {x: 4.0782646e-15, y: -0.7071065, z: -0.7071071, w: 0.000000011403656}
   m_LocalPosition: {x: -0.14999962, y: -0.0112, z: 0.141}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875286126276656}
   m_RootOrder: 3
@@ -15859,7 +15886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994314
   m_Size: {x: 0.2, y: 0.2, z: 0.05}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -15869,8 +15896,9 @@ MonoBehaviour:
     m_Center: {x: 0.0000000037252903, y: -0.000000029802322, z: -0.0000000037252903}
     m_Extent: {x: 0.10000001, y: 0.1, z: 0.025}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994314
       type: {class: Arch, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Thickness: 0.04
@@ -15886,7 +15914,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7067788758127123077}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -15975,6 +16003,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -24.970423, y: 0.877, z: 3.7942953}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 829649268515410357}
   - {fileID: 8747875284814849124}
@@ -20820,7 +20849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994306
   m_Size: {x: 0.7, y: 0.1, z: 0.7}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -20830,8 +20859,9 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.35, y: 0.05, z: 0.35}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994306
       type: {class: Cylinder, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_AxisDivisions: 16
@@ -20910,10 +20940,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.1
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 2
+  m_Acceleration: 1
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 2
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -20968,6 +20998,7 @@ Transform:
   m_LocalRotation: {x: 1, y: -0, z: -0, w: -0.00000035762784}
   m_LocalPosition: {x: 0, y: -0.5029, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8747875284942241875}
   m_Father: {fileID: 8747875286126276656}
@@ -21853,7 +21884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994325
   m_Size: {x: 0.075, y: 0.5, z: 0.075}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -21863,8 +21894,9 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0.0000000018626451}
     m_Extent: {x: 0.0375, y: 0.25, z: 0.0375}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994325
       type: {class: Cylinder, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_AxisDivisions: 10
@@ -21878,7 +21910,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747875284209730820}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -21965,6 +21997,7 @@ Transform:
   m_LocalRotation: {x: -0.000000011403656, y: -0.7071069, z: 0.7071067, w: 1.2660605e-25}
   m_LocalPosition: {x: -0.15, y: -0.000000059604645, z: -0.14100099}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875284942241875}
   m_RootOrder: 3
@@ -22679,7 +22712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994323
   m_Size: {x: 0.2, y: 0.2, z: 0.05}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -22689,8 +22722,9 @@ MonoBehaviour:
     m_Center: {x: 0.0000000037252903, y: -0.000000029802322, z: -0.0000000037252903}
     m_Extent: {x: 0.10000001, y: 0.1, z: 0.025}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994323
       type: {class: Arch, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Thickness: 0.04
@@ -22706,7 +22740,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747875284438083560}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -22793,6 +22827,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.359, z: 7.9714014e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875284122243958}
   m_RootOrder: 2
@@ -23179,7 +23214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994318
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -23189,8 +23224,9 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.25, y: 0.25, z: 0.25}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994318
       type: {class: Cylinder, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_AxisDivisions: 4
@@ -23204,7 +23240,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747875284658140905}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -23291,6 +23327,7 @@ Transform:
   m_LocalRotation: {x: -1.6543612e-24, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.086, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875284122243958}
   m_RootOrder: 1
@@ -34863,7 +34900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994308
   m_Size: {x: 0.7, y: 0.1, z: 0.7}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -34873,8 +34910,9 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.35, y: 0.05, z: 0.34999996}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994308
       type: {class: Torus, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Rows: 16
@@ -34891,7 +34929,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747875284814849125}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -34978,6 +35016,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.422, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5952281511137300071}
   - {fileID: 8747875286077017680}
@@ -37157,7 +37196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994384
   m_Size: {x: 0.2, y: 0.2, z: 0.2}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -37167,8 +37206,9 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0.5}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994384
       type: {class: Sphere, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Subdivisions: 1
@@ -37181,7 +37221,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747875284942241876}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -37268,6 +37308,7 @@ Transform:
   m_LocalRotation: {x: 0.50000024, y: 0.49999985, z: -0.4999998, w: 0.50000024}
   m_LocalPosition: {x: 0.15, y: 0, z: -0.141}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875284942241875}
   m_RootOrder: 2
@@ -37982,7 +38023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994362
   m_Size: {x: 0.2, y: 0.2, z: 0.05}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -37992,8 +38033,9 @@ MonoBehaviour:
     m_Center: {x: 0.0000000037252903, y: -0.000000029802322, z: -0.0000000037252903}
     m_Extent: {x: 0.10000001, y: 0.1, z: 0.025}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994362
       type: {class: Arch, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Thickness: 0.04
@@ -38009,7 +38051,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747875285068376080}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -38096,6 +38138,7 @@ Transform:
   m_LocalRotation: {x: 0.49999976, y: -0.50000024, z: 0.5000003, w: 0.49999973}
   m_LocalPosition: {x: -0.15, y: -0.000000059604645, z: 0.1390009}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875284942241875}
   m_RootOrder: 4
@@ -38810,7 +38853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994386
   m_Size: {x: 0.2, y: 0.2, z: 0.05}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -38820,8 +38863,9 @@ MonoBehaviour:
     m_Center: {x: 0.0000000037252903, y: -0.000000029802322, z: -0.0000000037252903}
     m_Extent: {x: 0.10000001, y: 0.1, z: 0.025}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994386
       type: {class: Arch, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Thickness: 0.04
@@ -38837,7 +38881,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747875285408741926}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -38924,6 +38968,7 @@ Transform:
   m_LocalRotation: {x: 1, y: -0, z: -0, w: -0.00000035762784}
   m_LocalPosition: {x: 0, y: -0.262, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875286126276656}
   m_RootOrder: 0
@@ -41266,7 +41311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994379
   m_Size: {x: 0.55, y: 0.1, z: 0.55}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -41276,8 +41321,9 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.275, y: 0.05, z: 0.275}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994379
       type: {class: Cylinder, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_AxisDivisions: 16
@@ -41291,7 +41337,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747875286070057222}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -41378,6 +41424,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.15, y: -0, z: 0.139}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875284942241875}
   m_RootOrder: 1
@@ -42092,7 +42139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994331
   m_Size: {x: 0.2, y: 0.2, z: 0.05}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -42102,8 +42149,9 @@ MonoBehaviour:
     m_Center: {x: 0.0000000037252903, y: -0.000000029802322, z: -0.0000000037252903}
     m_Extent: {x: 0.10000001, y: 0.1, z: 0.025}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994331
       type: {class: Arch, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Thickness: 0.04
@@ -42119,7 +42167,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747875286077017681}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -42206,6 +42254,7 @@ Transform:
   m_LocalRotation: {x: -1, y: -0, z: -0, w: -0.00000035762784}
   m_LocalPosition: {x: 0, y: 0.3491, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8747875286070057221}
   - {fileID: 5357770495388582349}
@@ -43470,7 +43519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994376
   m_Size: {x: 0.4, y: 0.02, z: 0.4}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -43480,8 +43529,9 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.2, y: 0.01, z: 0.2}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994376
       type: {class: Cylinder, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_AxisDivisions: 4
@@ -43519,7 +43569,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747875286126276657}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -43584,6 +43634,7 @@ Transform:
   m_LocalRotation: {x: -1.6543612e-24, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.584, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8747875284122243958}
   m_RootOrder: 3
@@ -55156,7 +55207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 3835355291771994349
   m_Size: {x: 0.7, y: 0.1, z: 0.7}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -55166,8 +55217,9 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.35, y: 0.05, z: 0.34999996}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 3835355291771994349
       type: {class: Torus, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data:
         m_Rows: 16
@@ -55184,7 +55236,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747875286172207673}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0

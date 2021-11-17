@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 6118710586152287753}
   - component: {fileID: 1591744150842707188}
   - component: {fileID: 7919226651529956091}
-  - component: {fileID: 8136359914134572140}
-  - component: {fileID: -6564457316484281370}
+  - component: {fileID: 1468074853093427129}
+  - component: {fileID: 5972137718135761975}
   m_Layer: 0
   m_Name: Bullet(ForEnemy)
   m_TagString: Untagged
@@ -213,7 +213,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8136359914134572140
+--- !u!114 &1468074853093427129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,14 +229,11 @@ MonoBehaviour:
   bullet_Damage: 0
   round_Type: 0
   debuff_Effect_Time: 0
-  acid_Smoke: {fileID: 4430152650456827401, guid: a46899c349a4efd478c327674ed15b8a,
-    type: 3}
-  small_Explosion: {fileID: 1000013462590818, guid: e3514290e512ae4409135c4fbaf29034,
-    type: 3}
-  large_Explosion: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
-    type: 3}
+  acid_Smoke: {fileID: 0}
+  small_Explosion: {fileID: 0}
+  large_Explosion: {fileID: 0}
   is_Rocket: 0
---- !u!114 &-6564457316484281370
+--- !u!114 &5972137718135761975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
