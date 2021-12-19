@@ -56,6 +56,7 @@ public class AccessWeaponExchange : MonoBehaviour
     void SendWeaponData()
     {
         the_WeaponExchange.players_Gun = the_PlayerManager.the_BGV2;
+        the_WeaponExchange.UpdateWeaponExchangeButtonsUI();
     }
     void RemoveWeaponData()
     {

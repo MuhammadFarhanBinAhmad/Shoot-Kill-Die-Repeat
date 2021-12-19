@@ -33,7 +33,7 @@ public class BulletStats_ForPlayer : MonoBehaviour
 
     void OnEnable()
     {
-        Invoke("Destroy", 2.5f);//delete itself after a certain time has pass
+        Invoke("Destroy", 5f);//delete itself after a certain time has pass
     }
     void OnDisable()
     {

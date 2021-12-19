@@ -24,7 +24,10 @@ public class EnemyBasicStats : MonoBehaviour
         unit_RoundType = EBSSO.round_Type;
         unit_FireRate = EBSSO.Fire_Rate;
     }
-
+    private void Start()
+    {
+        FindObjectOfType<RoomInformation>().enemy_Total.Add(this);
+    }
     internal void TakingDamage(int dmg)
     {
         unit_Health -= dmg;
@@ -37,6 +40,8 @@ public class EnemyBasicStats : MonoBehaviour
                     GetComponent<DropCollectables>().SpawnCollectables();
                     dropped_Collectables = true;
                 }
+                FindObjectOfType<RoomInformation>().enemy_Total.Remove(this);
+                FindObjectOfType<RoomInformation>().CheckTotalEnemy();
                 Destroy(gameObject);
             }
             else
@@ -46,6 +51,8 @@ public class EnemyBasicStats : MonoBehaviour
                     GetComponent<DropCollectables>().SpawnCollectables();
                     dropped_Collectables = true;
                 }
+                FindObjectOfType<RoomInformation>().enemy_Total.Remove(this);
+                FindObjectOfType<RoomInformation>().CheckTotalEnemy();
                 Destroy(transform.parent.gameObject);
             }
         }
