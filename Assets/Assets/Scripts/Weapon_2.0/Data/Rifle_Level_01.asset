@@ -12,30 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0655c04944423c4d8a657dc0eb39122, type: 3}
   m_Name: Rifle_Level_01
   m_EditorClassIdentifier: 
-  placeholderName: 
+  placeholderName: Rifle
   weapon_Code: 2
   weapon_Cost: 10
   fire_Rate_LEVEL: 0
   fire_Rate_COST: 0a00000019000000320000006400000096000000
   fire_Rate:
   - 1
-  - 0.9
-  - 0.8
-  - 0.7
-  - 0.6
+  - 0.75
+  - 1
+  - 1.5
+  - 2.5
   reload_Time_LEVEL: 0
   reload_Time_COST: 0f0000001e00000037000000460000005a000000
   reload_Time:
   - 1
+  - 1.25
+  - 1.05
   - 0.9
   - 0.8
-  - 0.7
-  - 0.6
   min_max_Damage_LEVEL: 0
   min_max_Damage_COST: 1400000028000000410000005a00000069000000
-  min_Damage: 0a0000000c000000100000001400000019000000
-  max_Damage: 0c0000000f00000014000000190000001e000000
+  min_Damage: 320000004b000000640000007d00000096000000
+  max_Damage: 500000006e00000096000000e1000000fa000000
   total_Ammo_Mag_LEVEL: 0
+  bullet_Active_Time: 7
   total_Ammo_Mag_COST: 0f0000001e000000370000004600000064000000
   total_Ammo: 64000000780000008c000000a0000000c8000000
   mag_Capacity: 0a0000000c0000000e0000001000000014000000

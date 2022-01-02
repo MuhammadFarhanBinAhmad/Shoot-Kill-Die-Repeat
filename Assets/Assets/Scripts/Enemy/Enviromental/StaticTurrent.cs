@@ -20,18 +20,18 @@ public class StaticTurrent : MonoBehaviour
 
     void FireProjectile()
     {
-        for (int i = 0; i < the_Ammo_Pool.bullet_Pool.Count; i++)
+        for (int i = 0; i < the_Ammo_Pool.bullet_Enemy_Pool.Count; i++)
         {
-            if (!the_Ammo_Pool.bullet_Pool[i].activeInHierarchy)
+            if (!the_Ammo_Pool.bullet_Enemy_Pool[i].activeInHierarchy)
             {
-                the_Ammo_Pool.bullet_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
-                the_Ammo_Pool.bullet_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
-                the_Ammo_Pool.bullet_Pool[i].SetActive(true);
-                the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().enabled = true;
-                the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Speed = EBSSO.speed;
-                the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Damage = EBSSO.damage;
-                the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats_ForEnemy>().round_Type = EBSSO.round_Type;
-                the_Ammo_Pool.bullet_Pool[i].gameObject.tag = "HurtPlayer";
+                the_Ammo_Pool.bullet_Enemy_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
+                the_Ammo_Pool.bullet_Enemy_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
+                the_Ammo_Pool.bullet_Enemy_Pool[i].SetActive(true);
+                the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().enabled = true;
+                the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Speed = EBSSO.speed;
+                the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Damage = EBSSO.damage;
+                the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().round_Type = EBSSO.round_Type;
+                the_Ammo_Pool.bullet_Enemy_Pool[i].gameObject.tag = "HurtPlayer";
                 break;
             }
         }

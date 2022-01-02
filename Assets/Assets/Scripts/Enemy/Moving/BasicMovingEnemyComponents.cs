@@ -19,6 +19,8 @@ public class BasicMovingEnemyComponents : MonoBehaviour
     public float unit_Charging_Time = 2;
     public float unit_Current_Charging_Time;
     public float charge_Speed_Multiplier;
+    [SerializeField]
+    bool is_Hit;
 
     enum unit_Task
     {
@@ -40,11 +42,23 @@ public class BasicMovingEnemyComponents : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         NavMeshHit hit;
         if (NavMesh.SamplePosition(Vector3.zero, out hit, 1000.0f, NavMesh.AllAreas))
         {
             CurrentTask();
         }
+    }
+    internal void IsKnockBack()
+    {
+        StartCoroutine("KnockBack");
+    }
+    IEnumerator KnockBack()
+    {
+        is_Hit = true;
+        agent.speed /= charge_Speed_Multiplier;
+        yield return new WaitForSeconds(0.25f);
+        is_Hit = false;
     }
     void CurrentTask()
     {
@@ -52,7 +66,7 @@ public class BasicMovingEnemyComponents : MonoBehaviour
         {
             case unit_Task.Patrolling:
                 {
-                    if (agent.speed < the_EBS.unit_Speed)
+                    if (agent.speed < the_EBS.unit_Speed && !is_Hit)
                     {
                         agent.speed = the_EBS.unit_Speed;
                     }
@@ -118,10 +132,17 @@ public class BasicMovingEnemyComponents : MonoBehaviour
                 }
             case unit_Task.Attacking:
                 {
+                    if (!is_Hit)
+                    {
+                        agent.speed = the_EBS.unit_Speed * charge_Speed_Multiplier;
+                    }
+                    else
+                    {
+                        agent.speed = the_EBS.unit_Speed;
+                    }
                     if (the_PM != null)
                     {
                         transform.LookAt(player_Pos);
-                        agent.speed = the_EBS.unit_Speed * charge_Speed_Multiplier;
                         agent.destination = player_Pos;
                         if (agent.remainingDistance <= agent.stoppingDistance)
                         {
@@ -148,7 +169,6 @@ public class BasicMovingEnemyComponents : MonoBehaviour
     {
         if (other.GetComponent<PlayerManager>() != null)
         {
-            print("Hit");
             the_PM = other.GetComponent<PlayerManager>();
         }
     }

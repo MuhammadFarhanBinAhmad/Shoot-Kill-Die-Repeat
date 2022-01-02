@@ -10,6 +10,7 @@ public class WeaponMode : MonoBehaviour
     /// -------- CurrentWeaponInfo
     [Header("CurrentWeaponInfo")]
     //public int current_Weapon_Type;
+    public string current_Weapon_Name;
     public int current_Weapon_Mode;
     public int current_Weapon_Level;
     public int current_Round_Type;
@@ -18,6 +19,7 @@ public class WeaponMode : MonoBehaviour
     public int total_Ammo_Mag_LEVEL;
     internal int gun_Total_Mag_Capacity, gun_Total_Ammo;
     public int gun_current_Mag_Capacity, gun_current_Ammo;
+    public float bullet_Active_Time;
     [Header("Rate & Reload")]
     [SerializeField]
     public int reload_Time_LEVEL;
@@ -55,11 +57,12 @@ public class WeaponMode : MonoBehaviour
         max_Damage = the_WLSO.max_Damage[min_max_Damage_LEVEL];
         gun_Total_Ammo = the_WLSO.total_Ammo[total_Ammo_Mag_LEVEL];
         gun_Total_Mag_Capacity = the_WLSO.mag_Capacity[total_Ammo_Mag_LEVEL];
-
+        bullet_Active_Time = the_WLSO.bullet_Active_Time;
         gun_current_Ammo = gun_Total_Ammo;
         gun_current_Mag_Capacity = gun_Total_Mag_Capacity;
 
         //Weapon Code
+        current_Weapon_Name = the_WLSO.placeholderName;
         weapon_Firing_Mechanism = the_WLSO.weapon_Firing_Mechanism;
         is_Shotgun = the_WLSO.is_Shotgun;
         weapon_Code = the_WLSO.weapon_Code;

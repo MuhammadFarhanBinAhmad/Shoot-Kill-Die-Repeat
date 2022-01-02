@@ -12,11 +12,6 @@ public class BuffBox : MonoBehaviour
     {
         if (!BE.stats_Multipled)
         {
-            /*BE.unit_Speed *= buff_Multiplier;
-            BE.unit_Health *= buff_Multiplier;
-            BE.unit_Damage *= buff_Multiplier;
-            BE.stats_Multipled = true;
-            BE.StartCoroutine(BE.ResetStats(buff_Multiplier));*/
             BE.MultipleStats(buff_Multiplier);
         }
     }

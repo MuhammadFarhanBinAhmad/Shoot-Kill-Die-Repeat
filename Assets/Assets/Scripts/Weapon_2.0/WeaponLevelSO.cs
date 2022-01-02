@@ -32,6 +32,7 @@ public class WeaponLevelSO : ScriptableObject
     public List<int> min_Damage, max_Damage;
     [Header("Ammo/Mag")]
     public int total_Ammo_Mag_LEVEL;
+    public float bullet_Active_Time;
     public List<int> total_Ammo_Mag_COST;
     public List<int> total_Ammo;
     public List<int> mag_Capacity;

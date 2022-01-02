@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletStats_ForEnemy : MonoBehaviour
 {
-    public float bullet_Speed;
+    internal float bullet_Speed;
     public float bullet_Damage;
     public float round_Type;
     public float debuff_Effect_Time;
@@ -27,7 +27,7 @@ public class BulletStats_ForEnemy : MonoBehaviour
 
     void OnEnable()
     {
-        Invoke("Destroy", 2.5f);//delete itself after a certain time has pass
+        Invoke("Destroy", 4f);//delete itself after a certain time has pass
     }
     void OnDisable()
     {
@@ -56,7 +56,12 @@ public class BulletStats_ForEnemy : MonoBehaviour
 
                 case 1:
                     {
-                        PM.speed_Debuff_Time = 2;
+                        PM.StartCoroutine("SpeedDebuffEffect");
+                        break;
+                    }
+                case 2:
+                    {
+                        PM.StartCoroutine("FireDamageEffect");
                         break;
                     }
             }

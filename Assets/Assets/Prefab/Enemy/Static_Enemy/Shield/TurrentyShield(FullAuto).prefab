@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 768551531799160600}
   - component: {fileID: 8472744246572697472}
   - component: {fileID: 2939801709445997682}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HitBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f257d9c1ba44da4f99a226e3c3c8a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion_Effect: {fileID: 4722291793986598910, guid: e99009be50fa98543bc22f6c3c3d93ca, type: 3}
+  explosion_Effect: {fileID: 8170782747127229968, guid: 45b48e2828e690341a884e42f4d9d2a3, type: 3}
 --- !u!114 &8472744246572697472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,14 +89,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79b7c71fb61bef4ab98fbab4832bbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EBSSO: {fileID: 11400000, guid: db6d1ef88d0739f4c9f9a21183f04e7c, type: 2}
-  unit_Speed: 0
+  text_Damage: {fileID: 2010621070729509879, guid: 5b6a662ffaf77f64a90957a1130e833b, type: 3}
+  EBSSO: {fileID: 11400000, guid: 0b788bb0f1cc53843ae7d5baced77bfc, type: 2}
   unit_Health: 0
   unit_Damage: 0
+  destroy_Parent: 1
+  gameobject_Parent: {fileID: 0}
+  is_ProjectileEnemy: 1
   unit_RoundType: 0
   unit_FireRate: 0
-  agent: {fileID: 0}
-  destroy_Parent: 1
+  is_MovingEnemy: 0
+  unit_Speed: 0
+  the_BMEC: {fileID: 0}
+  is_StaticEnemy: 0
 --- !u!1 &6687902102241483916
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +116,7 @@ GameObject:
   - component: {fileID: 8337707426155959610}
   - component: {fileID: 1297296698863378138}
   - component: {fileID: 3459098550026955954}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TurrentyShield(FullAuto)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -125,7 +130,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6687902102241483916}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -28.084679, y: 0.334, z: 0.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -161,7 +166,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 874e3a7a48dd0824aaffb69c50e53d26, type: 2}
+  - {fileID: 2100000, guid: 35ec0b035111ab341aa7911e867d8048, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -285,9 +290,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: bbbd991ae1749f94f8a95c00f5258103, type: 2}
+    - target: {fileID: 570127074719945593, guid: 3156b48990ef6a14984c9c15bf3ffcd2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3156b48990ef6a14984c9c15bf3ffcd2, type: 3}
       propertyPath: m_Name
       value: machine_barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3156b48990ef6a14984c9c15bf3ffcd2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3156b48990ef6a14984c9c15bf3ffcd2, type: 3}

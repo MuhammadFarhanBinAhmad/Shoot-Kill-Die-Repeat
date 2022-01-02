@@ -8,16 +8,22 @@ public class PlayerUIHUD : MonoBehaviour
 {
     [SerializeField]
     PlayerManager the_PM;
-    //PLAYER HUD//
-    public TextMeshProUGUI ui_Current_MAG_Capacity,ui_Weapon_Name, ui_Current_Total_Ammo,ui_Total_Coins;
     public BaseGunV2 the_BGV2;
+    //PLAYER HUD//
+    [Header("Ammo")]
+    public TextMeshProUGUI ui_Current_MAG_Capacity,
+        ui_Weapon_Name, 
+        ui_Current_Total_Ammo,
+        ui_Total_Coins;
     //PLAYER GAME UI//
+    [Header("Menu")]
     public GameObject PauseMenu;
     public GameObject GameOverScreen;
     bool menu_Open;
-    public TextMeshProUGUI pickable_Weapon_Name_GUI;
+    [Header("Health")]
     public Image p_HealthBar;
-
+    public GameObject p_DamageEffect;
+    public TextMeshProUGUI t_HealthBar;
     private void Awake()
     {
         the_BGV2 = the_PM.the_BGV2;
@@ -51,9 +57,20 @@ public class PlayerUIHUD : MonoBehaviour
         ui_Current_Total_Ammo.text = the_PM.the_BGV2.current_WM_Installed[the_PM.the_BGV2.current_Weapon_Equipped].gun_current_Ammo.ToString();
         ui_Current_MAG_Capacity.text = the_PM.the_BGV2.current_WM_Installed[the_PM.the_BGV2.current_Weapon_Equipped].gun_current_Mag_Capacity.ToString();
     }
+    internal void DamageUI()
+    {
+        StartCoroutine("DamageEffectUI");
+    }
+    IEnumerator DamageEffectUI()
+    {
+        p_DamageEffect.SetActive(true);
+        yield return new WaitForSeconds(0.25f);
+        p_DamageEffect.SetActive(false);
+    }
     internal void HealthUpdate()
     {
         p_HealthBar.fillAmount = the_PM.health_Player_Current / the_PM.health_Player;
+        t_HealthBar.text = the_PM.health_Player_Current.ToString();
     }
     internal void GameOver()
     {

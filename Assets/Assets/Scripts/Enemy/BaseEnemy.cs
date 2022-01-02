@@ -108,6 +108,7 @@ public class BaseEnemy : MonoBehaviour
 
     public void TakingDamage(float dmg)
     {
+        print(dmg);
         health -= dmg;
         GameObject DUI = Instantiate(damage_UI, transform.position, transform.rotation);
         if (DUI.GetComponent<DamageUI>()!=null)

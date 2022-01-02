@@ -32929,7 +32929,7 @@ GameObject:
   - component: {fileID: 6144154708356995735}
   - component: {fileID: 6144154708356995734}
   - component: {fileID: 6144154708356995733}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32962,8 +32962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f257d9c1ba44da4f99a226e3c3c8a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion_Effect: {fileID: 4722291793986598910, guid: e99009be50fa98543bc22f6c3c3d93ca,
-    type: 3}
+  explosion_Effect: {fileID: 8170782747127229968, guid: 45b48e2828e690341a884e42f4d9d2a3, type: 3}
 --- !u!114 &6144154708356995735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32992,14 +32991,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79b7c71fb61bef4ab98fbab4832bbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text_Damage: {fileID: 2010621070729509879, guid: 5b6a662ffaf77f64a90957a1130e833b, type: 3}
   EBSSO: {fileID: 11400000, guid: b814c33b735179746aa8dfb650e32953, type: 2}
-  unit_Speed: 0
   unit_Health: 0
   unit_Damage: 0
+  destroy_Parent: 1
+  gameobject_Parent: {fileID: 1931891955026396244}
+  is_ProjectileEnemy: 1
   unit_RoundType: 0
   unit_FireRate: 0
-  agent: {fileID: 0}
-  destroy_Parent: 1
+  is_MovingEnemy: 0
+  unit_Speed: 0
+  the_BMEC: {fileID: 0}
+  is_StaticEnemy: 0
 --- !u!65 &6144154708356995733
 BoxCollider:
   m_ObjectHideFlags: 0

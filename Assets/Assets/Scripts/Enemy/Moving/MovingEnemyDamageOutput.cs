@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovingEnemyDamageOutput : MonoBehaviour
 {
     public EnemyBasicStats the_EBS;
+    public GameObject go_Parent;
 
     [Header("For Kamikaze")]
     public bool is_Kamikaze;
@@ -18,7 +19,7 @@ public class MovingEnemyDamageOutput : MonoBehaviour
             if (is_Kamikaze)
             {
                 Instantiate(explosion_VFX, transform.position, transform.rotation);
-                Destroy(transform.parent.gameObject);
+                Destroy(go_Parent.gameObject);
             }
         }
     }

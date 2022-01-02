@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0655c04944423c4d8a657dc0eb39122, type: 3}
   m_Name: Pistol_Level_01
   m_EditorClassIdentifier: 
-  placeholderName: 
+  placeholderName: Pistol
+  weapon_Code: 0
+  weapon_Cost: 0
   fire_Rate_LEVEL: 0
   fire_Rate_COST: 0a00000019000000320000006400000096000000
   fire_Rate:
@@ -31,9 +33,10 @@ MonoBehaviour:
   - 0.6
   min_max_Damage_LEVEL: 0
   min_max_Damage_COST: 1400000028000000410000005a00000069000000
-  min_Damage: 0a0000000c000000100000001400000019000000
-  max_Damage: 0c0000000f00000014000000190000001e000000
+  min_Damage: 0a00000014000000230000003200000046000000
+  max_Damage: 2300000037000000460000005500000064000000
   total_Ammo_Mag_LEVEL: 0
+  bullet_Active_Time: 2.5
   total_Ammo_Mag_COST: 0f0000001e000000370000004600000064000000
   total_Ammo: 64000000780000008c000000a0000000c8000000
   mag_Capacity: 0a0000000c0000000e0000001000000014000000

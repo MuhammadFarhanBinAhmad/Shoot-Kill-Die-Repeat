@@ -16,22 +16,23 @@ public class DamageInput_HurtEnemy : MonoBehaviour
     {
         if (other.GetComponent<BulletStats_ForPlayer>() != null && other.GetComponent<BulletStats_ForPlayer>().tag == "HurtEnemy")
         {
+            BulletStats_ForPlayer BSFP = other.GetComponent<BulletStats_ForPlayer>();
+            int new_Bullet_Damage;
             //Instantiate(explosion_Effect, transform.position, transform.rotation);
-            //FindObjectOfType<Room>().enemy_Left.Remove(this.transform.parent.gameObject);
-            //FindObjectOfType<Room>().CheckEnemy();
-            the_EBS.TakingDamage(other.GetComponent<BulletStats_ForPlayer>().bullet_Damage);
+
+            float P = (int)Mathf.Round((BSFP.bullet_Active_Up_Time / BSFP.bullet_Active_Time) * 100);//percent
+            new_Bullet_Damage = (int)Mathf.Round((P / 100) * BSFP.bullet_Damage);
+            the_EBS.TakingDamage(new_Bullet_Damage,this.gameObject);
             if (the_EBS.unit_Health <= 0)
             {
                 Instantiate(explosion_Effect, transform.position, transform.rotation);
             }
-            other.GetComponent<BulletStats_ForPlayer>().Destroy();
-            /*GetComponent<DropCollectables>().SpawnCollectables();
-            Destroy(transform.parent.gameObject);*/
+            BSFP.Destroy();
         }
         if (other.GetComponent<Explosion_Universal>() !=null)
         {
             print("hit");
-            the_EBS.TakingDamage(other.GetComponent<Explosion_Universal>().Damage);
+            the_EBS.TakingDamage(other.GetComponent<Explosion_Universal>().Damage, this.gameObject);
             if (the_EBS.unit_Health <= 0)
             {
                 Instantiate(explosion_Effect, transform.position, transform.rotation);

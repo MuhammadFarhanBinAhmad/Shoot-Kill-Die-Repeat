@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using EZCameraShake;
 
 public class PlayerCamera : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerCamera : MonoBehaviour
     float x_Rotation;
 
     public TMP_InputField mouse_Sensitivity_Text;
+
+    public Animator the_Anim;
 
     void Start()
     {
@@ -31,7 +34,7 @@ public class PlayerCamera : MonoBehaviour
         {
             if (hit.transform.tag == "Enemy" && hit.transform.GetComponent<EnemyBasicStats>() != null)
             {
-                print(hit.transform.GetComponent<EnemyBasicStats>().unit_Health);
+                //print(hit.transform.GetComponent<EnemyBasicStats>().unit_Health);
             }
 
         }

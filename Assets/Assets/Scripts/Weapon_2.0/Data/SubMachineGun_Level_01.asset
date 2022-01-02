@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0655c04944423c4d8a657dc0eb39122, type: 3}
   m_Name: SubMachineGun_Level_01
   m_EditorClassIdentifier: 
-  placeholderName: 
+  placeholderName: SubMachineGun
   weapon_Code: 1
   weapon_Cost: 5
   fire_Rate_LEVEL: 0
   fire_Rate_COST: 0a00000019000000320000006400000096000000
   fire_Rate:
-  - 5
-  - 6
-  - 7.5
-  - 9
-  - 10
+  - 5.5
+  - 6.5
+  - 8
+  - 9.5
+  - 11
   reload_Time_LEVEL: 0
   reload_Time_COST: 0f0000001e00000037000000460000005a000000
   reload_Time:
@@ -33,9 +33,10 @@ MonoBehaviour:
   - 0.6
   min_max_Damage_LEVEL: 0
   min_max_Damage_COST: 1400000028000000410000005a00000069000000
-  min_Damage: 0a0000000c000000100000001400000019000000
-  max_Damage: 0c0000000f00000014000000190000001e000000
+  min_Damage: 0a000000190000002d0000003c0000004b000000
+  max_Damage: 1900000028000000370000004b0000005a000000
   total_Ammo_Mag_LEVEL: 0
+  bullet_Active_Time: 3
   total_Ammo_Mag_COST: 0f0000001e000000370000004600000064000000
   total_Ammo: c8000000fa0000002c0100005e010000f4010000
   mag_Capacity: 14000000190000001e0000002300000032000000

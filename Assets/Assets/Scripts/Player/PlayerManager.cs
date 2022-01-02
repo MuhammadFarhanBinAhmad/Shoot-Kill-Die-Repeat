@@ -7,12 +7,13 @@ public class PlayerManager : MonoBehaviour
     //Rigidbody the_RB;
     CharacterController the_CC;
     CameraBob the_CB;
+    PlayerCamera the_PC;
     //Basic
     public BasicCharacterDataStats the_Basic_Stats;
     public float speed_Movement;
     public float health_Player;
     public float health_Player_Current;
-    public static int scrap_Total = 100; 
+    public static int scrap_Total = 100;
     public static int money_Total = 10000;
     //Jumping
     Vector3 velocity;
@@ -70,25 +71,7 @@ public class PlayerManager : MonoBehaviour
             the_BGV2.current_Weapon_Equipped = 1;
             the_Player_UI_HUD.AmmoUpdateV2();
         }
-        //ACCESS STORE//
-
-        if (speed_Debuff_Time > 0)
-        {
-            speed_Debuff_Time -= Time.deltaTime;
-            SpeedDebuff();
-        }
-        else
-        {
-            speed_Movement = the_Basic_Stats.speed;
-        }
-
-        /*if (fire_Debuff_Time > 0)
-        {
-            fire_Debuff_Time -= Time.deltaTime;
-            FireDebuff();
-        }*/
     }
-
     void MovePlayer()
     {
 
@@ -143,12 +126,40 @@ public class PlayerManager : MonoBehaviour
     internal void TakeDamage(float Dmg)
     {
         health_Player_Current -= Dmg;
+
         the_Player_UI_HUD.HealthUpdate();
+        the_Player_UI_HUD.DamageUI();
+
         if (health_Player_Current <= 0)
         {
             the_Player_UI_HUD.GameOver();
             print("Dead");
         }
+    }
+    /// <Taking Fire Damage Effect>
+    internal IEnumerator FireDamageEffect()
+    {
+        InvokeRepeating("TakingFireDamage", 0, 1);
+        yield return new WaitForSeconds(5);
+        StopFireDamage(); ;
+    }
+    void TakingFireDamage()
+    {
+        TakeDamage(2);
+        print("TakingFireDmg");
+    }
+    void StopFireDamage()
+    {
+        CancelInvoke();
+        print("StopFireDamage");
+    }
+    /// <Taking Speed Debug Effect>
+    internal IEnumerator SpeedDebuffEffect()
+    {
+        SpeedDebuff();
+        yield return new WaitForSeconds(2);
+        speed_Movement = the_Basic_Stats.speed;
+
     }
     void SpeedDebuff()
     {
@@ -158,11 +169,8 @@ public class PlayerManager : MonoBehaviour
     /*void SightDebuff()
     {
 
-    }
-    void FireDebuff()
-    {
-
     }*/
+
     public static void ResetPlayerData()
     {
         money_Total = 5;
