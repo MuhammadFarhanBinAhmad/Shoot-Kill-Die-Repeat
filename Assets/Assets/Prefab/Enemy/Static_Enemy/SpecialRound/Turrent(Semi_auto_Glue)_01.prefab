@@ -17977,8 +17977,6 @@ MonoBehaviour:
   fire_Rate: 0
   bullet_Spawn_Point: {fileID: 6144154708315226455}
   bullet_Sound: {fileID: 0}
-  is_FlameThrower: 0
-  the_FlameThrower: {fileID: 0}
   Barrel: {fileID: 0}
   is_MachineGun: 0
   barrel_Vector: {x: 0, y: 0, z: 0}
@@ -32929,7 +32927,7 @@ GameObject:
   - component: {fileID: 6144154708356995735}
   - component: {fileID: 6144154708356995734}
   - component: {fileID: 6144154708356995733}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33003,6 +33001,8 @@ MonoBehaviour:
   is_MovingEnemy: 0
   unit_Speed: 0
   the_BMEC: {fileID: 0}
+  the_RME: {fileID: 0}
+  agent: {fileID: 0}
   is_StaticEnemy: 0
 --- !u!65 &6144154708356995733
 BoxCollider:

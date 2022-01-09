@@ -14,7 +14,10 @@ public class BaseGunV2 : MonoBehaviour
     /// -------- WeaponData
     [Header("WeaponData")]
     public int current_Weapon_Equipped;
+    public GameObject go_current_Weapon_Equipped;
     public List<WeaponMode> current_WM_Installed = new List<WeaponMode>();
+    public List<GameObject> WM_Installed_GameObject = new List<GameObject>();
+    public List<Transform> weapon_Pos = new List<Transform>();
 
     string round_Type_Name;
     bool currently_Shooting;
@@ -39,6 +42,13 @@ public class BaseGunV2 : MonoBehaviour
     }
     private void Start()
     {
+        go_current_Weapon_Equipped = current_WM_Installed[current_Weapon_Equipped].weapon_GameObject;
+        GameObject GO =Instantiate(go_current_Weapon_Equipped, transform.position, transform.rotation);
+        GO.transform.parent = GameObject.Find("t_Pistol").transform;
+        WM_Installed_GameObject.Add(GO);
+        go_current_Weapon_Equipped = GO;
+        bullet_Spawn_Point = go_current_Weapon_Equipped.transform.Find("SpawnBullet_Pos").transform;
+        bullet_Spawn_Point.transform.position = go_current_Weapon_Equipped.transform.Find("SpawnBullet_Pos").position;
     }
     private void Update()
     {
@@ -50,6 +60,27 @@ public class BaseGunV2 : MonoBehaviour
         {
             StartReloading();
         }
+    }
+    internal void ChangeWeaponModel()
+    {
+        if (go_current_Weapon_Equipped != null)
+        {
+            //Remove current weapon
+            Destroy(go_current_Weapon_Equipped);
+            go_current_Weapon_Equipped = null;
+            //Spawn new weapon
+            go_current_Weapon_Equipped = current_WM_Installed[current_Weapon_Equipped].weapon_GameObject;
+            GameObject GO = Instantiate(go_current_Weapon_Equipped, transform.position, transform.rotation);
+            //Place new place in new position
+            GO.transform.parent = weapon_Pos[current_WM_Installed[current_Weapon_Equipped].weapon_Code].transform;
+            GO.transform.position = new Vector3(0,0,0);
+
+            //Grab all necessary stats/values
+            WM_Installed_GameObject[current_Weapon_Equipped] = go_current_Weapon_Equipped;
+            go_current_Weapon_Equipped = GO;
+            bullet_Spawn_Point = go_current_Weapon_Equipped.transform.Find("SpawnBullet_Pos").transform;
+        }
+
     }
     void WeaponFireMode()
     {

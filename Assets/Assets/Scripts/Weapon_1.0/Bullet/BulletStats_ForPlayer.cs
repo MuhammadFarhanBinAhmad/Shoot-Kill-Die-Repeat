@@ -55,17 +55,30 @@ public class BulletStats_ForPlayer : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-
+        if (other.GetComponent<EnemyBasicStats>() != null)
+        {
+            bullet_Speed = 0;
+            for (int i = 0; i < the_AmmoPool.enemy_Hit_Spark_Pool.Count; i++)
+            {
+                if (!the_AmmoPool.enemy_Hit_Spark_Pool[i].activeInHierarchy)
+                {
+                    the_AmmoPool.enemy_Hit_Spark_Pool[i].transform.position = other.transform.position;
+                    the_AmmoPool.enemy_Hit_Spark_Pool[i].transform.rotation = Quaternion.LookRotation(-transform.forward);
+                    the_AmmoPool.enemy_Hit_Spark_Pool[i].SetActive(true);
+                    break;
+                }
+            }
+        }
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground") || other.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
             bullet_Speed = 0;
-            for (int i = 0; i < the_AmmoPool.spark_Pool.Count; i++)
+            for (int i = 0; i < the_AmmoPool.misc_Spark_Pool.Count; i++)
             {
-                if (!the_AmmoPool.spark_Pool[i].activeInHierarchy)
+                if (!the_AmmoPool.misc_Spark_Pool[i].activeInHierarchy)
                 {
-                    the_AmmoPool.spark_Pool[i].transform.position = transform.position;
-                    the_AmmoPool.spark_Pool[i].transform.rotation = Quaternion.LookRotation(-transform.forward);
-                    the_AmmoPool.spark_Pool[i].SetActive(true);
+                    the_AmmoPool.misc_Spark_Pool[i].transform.position = other.transform.position;
+                    the_AmmoPool.misc_Spark_Pool[i].transform.rotation = Quaternion.LookRotation(-transform.forward);
+                    the_AmmoPool.misc_Spark_Pool[i].SetActive(true);
                     break;
                 }
             }

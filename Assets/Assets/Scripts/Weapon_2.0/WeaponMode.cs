@@ -36,6 +36,7 @@ public class WeaponMode : MonoBehaviour
     public int weapon_Firing_Mechanism;
     public int weapon_Code;
     public bool is_Shotgun;
+    public GameObject weapon_GameObject;
 
     private void Awake()
     {
@@ -66,6 +67,9 @@ public class WeaponMode : MonoBehaviour
         weapon_Firing_Mechanism = the_WLSO.weapon_Firing_Mechanism;
         is_Shotgun = the_WLSO.is_Shotgun;
         weapon_Code = the_WLSO.weapon_Code;
+
+        //weapon model
+        weapon_GameObject = the_WLSO.weapon_Gameobject;
     }
     public void UpgradeFireRate()
     {

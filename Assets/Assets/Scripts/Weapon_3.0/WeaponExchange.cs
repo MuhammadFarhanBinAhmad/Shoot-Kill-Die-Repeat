@@ -29,6 +29,7 @@ public class WeaponExchange : MonoBehaviour
         {
             players_Gun.current_WM_Installed[players_Gun.current_Weapon_Equipped].the_WLSO = WLSO;
             players_Gun.current_WM_Installed[players_Gun.current_Weapon_Equipped].ImplementWeaponData();
+            players_Gun.ChangeWeaponModel();
             players_Gun.the_Player_UI_HUD.AmmoUpdateV2();
             UpdateWeaponExchangeButtonsUI();
         }
@@ -61,6 +62,7 @@ public class WeaponExchange : MonoBehaviour
         //players_Gun.current_WM_Installed.Add(weapon_Default);
         GameObject weapon_New = Instantiate(weapon_Default.gameObject, transform.position, transform.rotation);
         players_Gun.current_WM_Installed.Add(weapon_New.GetComponent<WeaponMode>());
-        weapon_New.transform.parent = player_WeaponModes.transform;
+        players_Gun.WM_Installed_GameObject.Add(weapon_New.GetComponent<WeaponMode>().weapon_GameObject);
+        weapon_New.transform.parent = players_Gun.transform.parent;
     }
 }

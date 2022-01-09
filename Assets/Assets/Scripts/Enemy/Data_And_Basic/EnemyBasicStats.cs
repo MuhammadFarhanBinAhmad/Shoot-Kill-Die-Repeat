@@ -55,6 +55,10 @@ public class EnemyBasicStats : MonoBehaviour
         {
 
         }
+        if(GetComponentInParent<RoomInformation>() !=null)
+        {
+            GetComponentInParent<RoomInformation>().enemy_Total.Add(this) ;
+        }
     }
 
     internal void TakingDamage(int dmg,GameObject GO)
@@ -70,7 +74,7 @@ public class EnemyBasicStats : MonoBehaviour
         Quaternion current_Rotation = Quaternion.LookRotation(-direction);
         //GameObject TD = Instantiate(text_Damage, GO.transform.position, current_Rotation);
         AmmoPool AP = FindObjectOfType<AmmoPool>();
-        for (int i = 0; i < AP.spark_Pool.Count; i++)
+        for (int i = 0; i < AP.text_Damage_Pool.Count; i++)
         {
             if (!AP.text_Damage_Pool[i].activeInHierarchy)
             {
@@ -91,8 +95,8 @@ public class EnemyBasicStats : MonoBehaviour
                     GetComponent<DropCollectables>().SpawnCollectables();
                     dropped_Collectables = true;
                 }
-                //FindObjectOfType<RoomInformation>().enemy_Total.Remove(this);
-                //FindObjectOfType<RoomInformation>().CheckTotalEnemy();
+                FindObjectOfType<RoomInformation>().enemy_Total.Remove(this);
+                FindObjectOfType<RoomInformation>().CheckTotalEnemy();
                 Destroy(gameObject);
             }
             else
@@ -102,8 +106,8 @@ public class EnemyBasicStats : MonoBehaviour
                     GetComponent<DropCollectables>().SpawnCollectables();
                     dropped_Collectables = true;
                 }
-                //FindObjectOfType<RoomInformation>().enemy_Total.Remove(this);
-                //FindObjectOfType<RoomInformation>().CheckTotalEnemy();
+                FindObjectOfType<RoomInformation>().enemy_Total.Remove(this);
+                FindObjectOfType<RoomInformation>().CheckTotalEnemy();
                 Destroy(gameobject_Parent);
             }
         }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class WeaponLevelSO : ScriptableObject
 {
     public string placeholderName;
+    public GameObject weapon_Gameobject;
     [Header("WeaponCode")]
     public int weapon_Code;
     public int weapon_Cost;

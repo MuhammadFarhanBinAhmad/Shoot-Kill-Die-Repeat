@@ -30152,8 +30152,6 @@ MonoBehaviour:
   fire_Rate: 2
   bullet_Spawn_Point: {fileID: 5147505395840699745}
   bullet_Sound: {fileID: 0}
-  is_FlameThrower: 0
-  the_FlameThrower: {fileID: 0}
   Barrel: {fileID: 2278493890726201788}
   is_MachineGun: 1
   barrel_Vector: {x: 0, y: 0, z: 1}
@@ -35346,6 +35344,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2897708012563565039}
     m_Modifications:
+    - target: {fileID: 158547884325949747, guid: 4966be9e964d6b34ca434f8ddebcd483, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656206311304576795, guid: 4966be9e964d6b34ca434f8ddebcd483, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2939801709445997682, guid: 4966be9e964d6b34ca434f8ddebcd483, type: 3}
       propertyPath: gameobject_Parent
       value: 
@@ -35392,6 +35398,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5352460144932561937, guid: 4966be9e964d6b34ca434f8ddebcd483, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572648823165518170, guid: 4966be9e964d6b34ca434f8ddebcd483, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6687902102241483916, guid: 4966be9e964d6b34ca434f8ddebcd483, type: 3}

@@ -17371,6 +17371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   the_EBS: {fileID: 363608150096673210}
+  go_Parent: {fileID: 0}
   is_Kamikaze: 0
   explosion_VFX: {fileID: 8170782747127229968, guid: 45b48e2828e690341a884e42f4d9d2a3, type: 3}
 --- !u!1 &5464657555867488767
@@ -26078,6 +26079,7 @@ MonoBehaviour:
   unit_Speed: 0
   the_BMEC: {fileID: 6433095850664635625}
   the_RME: {fileID: 0}
+  agent: {fileID: 0}
   is_StaticEnemy: 0
 --- !u!1 &6633120270707934326
 GameObject:

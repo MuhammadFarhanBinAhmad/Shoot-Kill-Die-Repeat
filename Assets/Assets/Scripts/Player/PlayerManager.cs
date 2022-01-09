@@ -64,11 +64,13 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             the_BGV2.current_Weapon_Equipped = 0;
+            the_BGV2.ChangeWeaponModel();
             the_Player_UI_HUD.AmmoUpdateV2();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             the_BGV2.current_Weapon_Equipped = 1;
+            the_BGV2.ChangeWeaponModel();
             the_Player_UI_HUD.AmmoUpdateV2();
         }
     }

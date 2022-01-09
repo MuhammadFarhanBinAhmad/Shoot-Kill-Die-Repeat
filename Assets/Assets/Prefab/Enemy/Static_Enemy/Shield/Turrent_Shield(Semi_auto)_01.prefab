@@ -5946,8 +5946,6 @@ MonoBehaviour:
   fire_Rate: 2
   bullet_Spawn_Point: {fileID: 5147505395840699745}
   bullet_Sound: {fileID: 0}
-  is_FlameThrower: 0
-  the_FlameThrower: {fileID: 0}
   Barrel: {fileID: 0}
   is_MachineGun: 0
   barrel_Vector: {x: 0, y: 0, z: 0}
@@ -25789,6 +25787,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2897708012563565039}
     m_Modifications:
+    - target: {fileID: 2383440908062356261, guid: 9636714f036e3514a878b300ea836965, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043229093458746637, guid: 9636714f036e3514a878b300ea836965, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351184477875606440, guid: 9636714f036e3514a878b300ea836965, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5352460144932561937, guid: 9636714f036e3514a878b300ea836965, type: 3}
       propertyPath: m_RootOrder
       value: 2

@@ -1574,8 +1574,6 @@ MonoBehaviour:
   fire_Rate: 2
   bullet_Spawn_Point: {fileID: 4186835105691130727}
   bullet_Sound: {fileID: 0}
-  is_FlameThrower: 0
-  the_FlameThrower: {fileID: 0}
   Barrel: {fileID: 0}
   is_MachineGun: 0
   barrel_Vector: {x: 0, y: 0, z: 0}
@@ -28662,7 +28660,7 @@ GameObject:
   - component: {fileID: 4907570704336269511}
   - component: {fileID: 4907570704336269510}
   - component: {fileID: 4907570704336269509}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: HitBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -28749,4 +28747,6 @@ MonoBehaviour:
   is_MovingEnemy: 0
   unit_Speed: 0
   the_BMEC: {fileID: 0}
+  the_RME: {fileID: 0}
+  agent: {fileID: 0}
   is_StaticEnemy: 0
