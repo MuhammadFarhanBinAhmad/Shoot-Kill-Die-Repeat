@@ -15,7 +15,7 @@ public class Coin : MonoBehaviour
         if(other.GetComponent<PlayerManager>() != null)
         {
             value_To_Give = Random.Range(min_Value, max_Value);
-            PlayerManager.money_Total += value_To_Give * multiplier;
+            PlayerManager.money_Total += value_To_Give * ((int)Mathf.Round(FindObjectOfType<LevelManager>().stats_Multiplier[LevelManager.CURRENTLEVEL]));
             Destroy(gameObject);
         }
     }

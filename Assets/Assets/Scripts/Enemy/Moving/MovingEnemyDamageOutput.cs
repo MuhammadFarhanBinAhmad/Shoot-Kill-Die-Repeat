@@ -19,6 +19,7 @@ public class MovingEnemyDamageOutput : MonoBehaviour
             if (is_Kamikaze)
             {
                 Instantiate(explosion_VFX, transform.position, transform.rotation);
+                the_EBS.TakingDamage((int)the_EBS.unit_Health, this.gameObject);
                 Destroy(go_Parent.gameObject);
             }
         }

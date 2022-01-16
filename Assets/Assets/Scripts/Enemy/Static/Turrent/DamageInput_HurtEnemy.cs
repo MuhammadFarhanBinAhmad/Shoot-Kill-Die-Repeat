@@ -19,10 +19,11 @@ public class DamageInput_HurtEnemy : MonoBehaviour
             BulletStats_ForPlayer BSFP = other.GetComponent<BulletStats_ForPlayer>();
             int new_Bullet_Damage;
             //Instantiate(explosion_Effect, transform.position, transform.rotation);
-
+            //Damage value drop over time
             float P = (int)Mathf.Round((BSFP.bullet_Active_Up_Time / BSFP.bullet_Active_Time) * 100);//percent
             new_Bullet_Damage = (int)Mathf.Round((P / 100) * BSFP.bullet_Damage);
             the_EBS.TakingDamage(new_Bullet_Damage,this.gameObject);
+
             if (the_EBS.unit_Health <= 0)
             {
                 Instantiate(explosion_Effect, transform.position, transform.rotation);

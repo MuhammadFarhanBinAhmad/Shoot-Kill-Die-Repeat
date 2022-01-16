@@ -15,7 +15,7 @@ public class SpawnDamageText : MonoBehaviour
     
     void FixedUpdate()
     {
-        the_RB.velocity = transform.up * Time.deltaTime * 25;
+        the_RB.velocity = transform.up * Time.deltaTime * 30;
         if (dmg)
         {
             StartCoroutine("DestroyGameObject");

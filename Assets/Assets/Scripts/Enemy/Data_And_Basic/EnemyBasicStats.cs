@@ -78,7 +78,7 @@ public class EnemyBasicStats : MonoBehaviour
         {
             if (!AP.text_Damage_Pool[i].activeInHierarchy)
             {
-                AP.text_Damage_Pool[i].transform.position = new Vector3(transform.position.x + (Random.Range(-.1f, .1f)), transform.position.y, transform.position.z + (Random.Range(-.1f, .1f)));
+                AP.text_Damage_Pool[i].transform.position = new Vector3(transform.position.x + (Random.Range(-.1f, .1f)), transform.position.y+ .55f, transform.position.z + (Random.Range(-.1f, .1f)));
                 AP.text_Damage_Pool[i].transform.rotation = current_Rotation;
                 AP.text_Damage_Pool[i].GetComponentInChildren<TextMeshProUGUI>().text = dmg.ToString();
                 AP.text_Damage_Pool[i].SetActive(true);
