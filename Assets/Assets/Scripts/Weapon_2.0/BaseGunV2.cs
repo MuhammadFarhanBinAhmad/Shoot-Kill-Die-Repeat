@@ -43,8 +43,9 @@ public class BaseGunV2 : MonoBehaviour
     private void Start()
     {
         go_current_Weapon_Equipped = current_WM_Installed[current_Weapon_Equipped].weapon_GameObject;
-        GameObject GO =Instantiate(go_current_Weapon_Equipped, transform.position, transform.rotation);
+        GameObject GO = Instantiate(go_current_Weapon_Equipped, transform.position, transform.rotation);
         GO.transform.parent = GameObject.Find("t_Pistol").transform;
+        GO.transform.localPosition = new Vector3(0, 0, 0);
         WM_Installed_GameObject.Add(GO);
         go_current_Weapon_Equipped = GO;
         bullet_Spawn_Point = go_current_Weapon_Equipped.transform.Find("SpawnBullet_Pos").transform;
@@ -73,7 +74,8 @@ public class BaseGunV2 : MonoBehaviour
             GameObject GO = Instantiate(go_current_Weapon_Equipped, transform.position, transform.rotation);
             //Place new place in new position
             GO.transform.parent = weapon_Pos[current_WM_Installed[current_Weapon_Equipped].weapon_Code].transform;
-            GO.transform.position = new Vector3(0,0,0);
+            GO.transform.localPosition = new Vector3(0, 0, 0);
+
 
             //Grab all necessary stats/values
             WM_Installed_GameObject[current_Weapon_Equipped] = go_current_Weapon_Equipped;
@@ -160,7 +162,6 @@ public class BaseGunV2 : MonoBehaviour
                     {
                         the_Ammo_Pool.bullet_Player_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
                         the_Ammo_Pool.bullet_Player_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
-                        the_Ammo_Pool.bullet_Player_Pool[i].SetActive(true);
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().enabled = true;
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Active_Time = current_WM_Installed[current_Weapon_Equipped].bullet_Active_Time;
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Speed= 1000;//get damage value
@@ -168,6 +169,7 @@ public class BaseGunV2 : MonoBehaviour
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().damage_Max = current_WM_Installed[current_Weapon_Equipped].max_Damage;
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().damage_Min = current_WM_Installed[current_Weapon_Equipped].min_Damage;
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().round_Type = current_WM_Installed[current_Weapon_Equipped].current_Round_Type;//set bullet type
+                        the_Ammo_Pool.bullet_Player_Pool[i].SetActive(true);
                         //the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats>().ElementType(the_Element_Type);//set bullet type
                         //the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats>().is_Rocket = is_Rocket;
                         //update Weapon UI
@@ -201,7 +203,6 @@ public class BaseGunV2 : MonoBehaviour
                                 bullet_Spawn_Point.transform.eulerAngles.z);
                             the_Ammo_Pool.bullet_Player_Pool[i].transform.rotation = q;
 
-                            the_Ammo_Pool.bullet_Player_Pool[i].SetActive(true);
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().enabled = true;
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Active_Time = current_WM_Installed[current_Weapon_Equipped].bullet_Active_Time;
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Speed = 1000;//get damage value
@@ -209,6 +210,7 @@ public class BaseGunV2 : MonoBehaviour
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().damage_Max = current_WM_Installed[current_Weapon_Equipped].max_Damage;
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().damage_Min = current_WM_Installed[current_Weapon_Equipped].min_Damage;
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().round_Type = current_WM_Installed[current_Weapon_Equipped].current_Round_Type;//set bullet type
+                            the_Ammo_Pool.bullet_Player_Pool[i].SetActive(true);
                             //the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().ElementType(the_Element_Type);//set bullet type
                             the_Ammo_Pool.bullet_Player_Pool[i].gameObject.tag = "HurtEnemy";
                             //update Weapon UI

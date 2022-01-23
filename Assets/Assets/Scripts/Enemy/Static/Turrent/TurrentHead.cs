@@ -34,6 +34,17 @@ public class TurrentHead : MonoBehaviour
     public bool target_Lock;
     public Transform current_Target;
 
+    [Header("Special")]
+    public bool is_FireTurret;
+
+
+    /*Quaternion Q;
+    [SerializeField]
+    float Rot_1;
+    [SerializeField]
+    float Rot_2;
+    [SerializeField]
+    float new_rot_Pos;*/
     /*public Light mode_Light;
     float t = 0;
     float min = 25, max = 100;*/
@@ -43,7 +54,7 @@ public class TurrentHead : MonoBehaviour
         the_Ammo_Pool = FindObjectOfType<AmmoPool>();
         timer = time_Before_Reset;
         fire_Rate = the_EBS.unit_FireRate;
-
+        //new_rot_Pos = Rot_1;
     }
 
     // Update is called once per frame
@@ -61,6 +72,18 @@ public class TurrentHead : MonoBehaviour
                     //RaycastHit hit;
 
                     transform.Rotate(0, 1, 0);
+                    /*if (transform.localEulerAngles.y - 1 <= Rot_1)
+                    {
+                        new_rot_Pos = Rot_2;
+                        print("1");
+                    }
+                    else if (transform.localEulerAngles.y + 1 >= Rot_2)
+                    {
+                        new_rot_Pos = Rot_1;
+                    }
+                    print(transform.eulerAngles.y);
+                    Q = Quaternion.Euler(transform.rotation.x, new_rot_Pos, transform.rotation.z);
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, Q, (rotation_Speed/2));*/
                     if (timer < time_Before_Reset)
                     {
                         timer = time_Before_Reset;
@@ -69,6 +92,7 @@ public class TurrentHead : MonoBehaviour
                 }
             case 1:
                 {
+
                     if (current_Target != null)
                     {
                         TargetLock();
@@ -84,9 +108,12 @@ public class TurrentHead : MonoBehaviour
     void TargetLock()
     {
         //target located and lock
-        Vector3 direction = current_Target.position - transform.position;
-        Quaternion turrent_Rotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Lerp(transform.rotation, turrent_Rotation, (Time.deltaTime * rotation_Speed));
+        {
+            Vector3 direction = current_Target.position - transform.position;
+            Quaternion turrent_Rotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Lerp(transform.rotation, turrent_Rotation, (Time.deltaTime * rotation_Speed));
+        }
+            
 
         timer = time_Before_Reset;//reset timer each time target is lock
         if (is_MachineGun)
@@ -149,10 +176,15 @@ public class TurrentHead : MonoBehaviour
                         the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Speed = 1000;
                         the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Damage = the_EBS.unit_Damage;
                         the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().round_Type = the_EBS.unit_RoundType;
-                        the_Ammo_Pool.bullet_Enemy_Pool[i].gameObject.tag = "HurtPlayer";
                         the_Ammo_Pool.bullet_Enemy_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
                         the_Ammo_Pool.bullet_Enemy_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
+                        the_Ammo_Pool.bullet_Enemy_Pool[i].gameObject.tag = "HurtPlayer";
+                        if (is_FireTurret)
+                        {
+                            the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().is_FireTurret = true;
+                        }
                         the_Ammo_Pool.bullet_Enemy_Pool[i].SetActive(true);
+
                         break;
                     }
                 }

@@ -18413,6 +18413,8 @@ MonoBehaviour:
   is_MovingEnemy: 0
   unit_Speed: 0
   the_BMEC: {fileID: 0}
+  the_RME: {fileID: 0}
+  agent: {fileID: 0}
   is_StaticEnemy: 0
 --- !u!1 &3954717595983391127
 GameObject:
@@ -25124,6 +25126,7 @@ MonoBehaviour:
   rotation_Speed: 15
   target_Lock: 0
   current_Target: {fileID: 0}
+  is_FireTurret: 1
 --- !u!65 &3954717595878222716
 BoxCollider:
   m_ObjectHideFlags: 0

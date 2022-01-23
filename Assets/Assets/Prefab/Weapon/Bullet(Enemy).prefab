@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3231358006932315129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.488}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3911196248522965405}
@@ -73,7 +73,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.15
+  m_Time: 0.05
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.05
@@ -356,7 +356,10 @@ MonoBehaviour:
   acid_Smoke: {fileID: 0}
   small_Explosion: {fileID: 0}
   large_Explosion: {fileID: 0}
+  is_FireTurret: 0
+  vfx_Fire: {fileID: 7910950291428178257, guid: d728d13c8b438624ab0d7af27e71213a, type: 3}
   is_Rocket: 0
+  vfx_Spawned: {fileID: 0}
 --- !u!65 &2662800435853849923
 BoxCollider:
   m_ObjectHideFlags: 0

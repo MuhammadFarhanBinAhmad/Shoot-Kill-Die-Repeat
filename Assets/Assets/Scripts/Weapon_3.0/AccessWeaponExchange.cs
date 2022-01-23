@@ -16,7 +16,7 @@ public class AccessWeaponExchange : MonoBehaviour
         the_WeaponExchange = GetComponentInParent<WeaponExchange>();
     }
 
-    private void Update()
+    /*private void Update()
     {
         AccessGUNinator();
     }
@@ -38,20 +38,20 @@ public class AccessWeaponExchange : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
     void OpenStorePage()
     {
         the_PlayerManager.is_Store_Open = true;
         WeaponExchange_Store_Page.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
     void CloseStorePage()
     {
         the_PlayerManager.is_Store_Open = false;
         WeaponExchange_Store_Page.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
     void SendWeaponData()
     {
@@ -67,6 +67,7 @@ public class AccessWeaponExchange : MonoBehaviour
         if (other.GetComponent<PlayerManager>() != null)
         {
             the_PlayerManager = other.GetComponent<PlayerManager>();
+            OpenStorePage();
             SendWeaponData();
         }
     }
@@ -74,8 +75,9 @@ public class AccessWeaponExchange : MonoBehaviour
     {
         if (other.GetComponent<PlayerManager>() != null)
         {
+            CloseStorePage();
             RemoveWeaponData();
-            the_PlayerManager = null;
+            //the_PlayerManager = null;
         }
     }
 }

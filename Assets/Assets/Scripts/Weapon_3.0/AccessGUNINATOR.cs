@@ -5,6 +5,7 @@ using UnityEngine;
 public class AccessGUNINATOR : MonoBehaviour
 {
     GUNINATORV3 the_Guninator;
+    [SerializeField]
     PlayerManager the_PlayerManager;
 
     public GameObject GUNINATOR_Store_Page;
@@ -14,7 +15,7 @@ public class AccessGUNINATOR : MonoBehaviour
     {
         the_Guninator = GetComponentInParent<GUNINATORV3>();
     }
-    private void Update()
+    /*private void Update()
     {
         AccessGUNinator();
     }
@@ -36,20 +37,22 @@ public class AccessGUNINATOR : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
     void OpenStorePage()
     {
+        SendWeaponData();
         the_PlayerManager.is_Store_Open = true;
         GUNINATOR_Store_Page.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
     void CloseStorePage()
     {
         the_PlayerManager.is_Store_Open = false;
         GUNINATOR_Store_Page.SetActive(false);
+        the_Guninator.ClearWeaponList();
         Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
     void SendWeaponData()
     {
@@ -58,6 +61,7 @@ public class AccessGUNINATOR : MonoBehaviour
             the_Guninator.player_Installed_Weapons.Add(the_PlayerManager.the_BGV2.current_WM_Installed[i]);//send player install weapon into GUNINATOR
         }
         the_Guninator.selected_Weapon = the_PlayerManager.the_BGV2.current_WM_Installed[the_PlayerManager.the_BGV2.current_Weapon_Equipped];
+        the_Guninator.WeaponStatBar();
     }
     void RemoveWeaponData()
     {
@@ -68,15 +72,16 @@ public class AccessGUNINATOR : MonoBehaviour
         if (other.GetComponent<PlayerManager>() != null)
         {
             the_PlayerManager = other.GetComponent<PlayerManager>();
-
+            OpenStorePage();
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.GetComponent<PlayerManager>() != null)
         {
+            CloseStorePage();
             RemoveWeaponData();
-            the_PlayerManager = null;
+            //the_PlayerManager = null;
         }
     }
 }

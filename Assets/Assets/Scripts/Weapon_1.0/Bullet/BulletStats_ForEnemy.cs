@@ -13,11 +13,19 @@ public class BulletStats_ForEnemy : MonoBehaviour
 
     public GameObject acid_Smoke,small_Explosion,large_Explosion;
     //For Rocket Only
+    [Header("Special")]
+    public bool is_FireTurret;
+    [SerializeField]
+    GameObject vfx_Fire;
+
     public bool is_Rocket;
+    [SerializeField]
+    GameObject vfx_Spawned;
 
     private void Start()
     {
         the_RB = GetComponent<Rigidbody>();
+
     }
 
     private void FixedUpdate()
@@ -28,6 +36,12 @@ public class BulletStats_ForEnemy : MonoBehaviour
     void OnEnable()
     {
         Invoke("Destroy", 4f);//delete itself after a certain time has pass
+        if (is_FireTurret)
+        {
+            GameObject F = Instantiate(vfx_Fire, transform.position, transform.rotation);
+            F.transform.parent = this.transform;
+            vfx_Spawned = F;
+        }
     }
     void OnDisable()
     {
@@ -37,6 +51,11 @@ public class BulletStats_ForEnemy : MonoBehaviour
     {
         bullet_Damage = 0;
         enabled = false;
+        Destroy(vfx_Spawned);
+        if (is_FireTurret)
+        {
+            is_FireTurret = false;
+        }
         gameObject.SetActive(false);
     }
     /// <summary>
