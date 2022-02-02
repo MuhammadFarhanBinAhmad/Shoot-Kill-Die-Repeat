@@ -39,8 +39,9 @@ public class DisappearingPlatform : MonoBehaviour
     void PlatformDissolve()
     {
         test = Mathf.Lerp(test, newvalue, smooth * Time.deltaTime);
-        shader_Dissolving.materials[1].SetFloat("AlphaClip", test);
-        shader_Dissolving.materials[2].SetFloat("AlphaClip", test);
+        shader_Dissolving.materials[0].SetFloat("AlphaClip", test);
+        //shader_Dissolving.materials[1].SetFloat("AlphaClip", test);
+        //shader_Dissolving.materials[2].SetFloat("AlphaClip", test);
     }
     IEnumerator PlatformReappearTimer()
     {

@@ -62,7 +62,7 @@ public class BulletStats_ForPlayer : MonoBehaviour
             {
                 if (!the_AmmoPool.enemy_Hit_Spark_Pool[i].activeInHierarchy)
                 {
-                    the_AmmoPool.enemy_Hit_Spark_Pool[i].transform.position = other.transform.position;
+                    the_AmmoPool.enemy_Hit_Spark_Pool[i].transform.position = this.transform.position;
                     the_AmmoPool.enemy_Hit_Spark_Pool[i].transform.rotation = Quaternion.LookRotation(-transform.forward);
                     the_AmmoPool.enemy_Hit_Spark_Pool[i].SetActive(true);
                     break;
@@ -76,7 +76,7 @@ public class BulletStats_ForPlayer : MonoBehaviour
             {
                 if (!the_AmmoPool.misc_Spark_Pool[i].activeInHierarchy)
                 {
-                    the_AmmoPool.misc_Spark_Pool[i].transform.position = other.transform.position;
+                    the_AmmoPool.misc_Spark_Pool[i].transform.position = this.transform.position;
                     the_AmmoPool.misc_Spark_Pool[i].transform.rotation = Quaternion.LookRotation(-transform.forward);
                     the_AmmoPool.misc_Spark_Pool[i].SetActive(true);
                     break;

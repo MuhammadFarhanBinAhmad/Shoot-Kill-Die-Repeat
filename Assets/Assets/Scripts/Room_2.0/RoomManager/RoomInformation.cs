@@ -12,6 +12,7 @@ public class RoomInformation : MonoBehaviour
         if(enemy_Total.Count == 0)
         {
             barrier_Exit.SetActive(false);
+            
         }
     }
 }

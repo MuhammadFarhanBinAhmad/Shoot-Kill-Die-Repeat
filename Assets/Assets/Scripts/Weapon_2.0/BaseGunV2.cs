@@ -25,8 +25,8 @@ public class BaseGunV2 : MonoBehaviour
     [Header("Barrel & Bullet")]
     public GameObject bullet;
     public Transform bullet_Spawn_Point;
-    [Header("SFX & VFX")]
-    public GameObject muzzle_Flash;
+    [Header("WeaponSoundEffect")]
+    public List<AudioClip> sfx_Weapon_Sound;
     [SerializeField]
     Animator the_Anim;
 
@@ -162,6 +162,11 @@ public class BaseGunV2 : MonoBehaviour
                     {
                         the_Ammo_Pool.bullet_Player_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
                         the_Ammo_Pool.bullet_Player_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
+
+                        the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
+                        the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
+                        the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].GetComponent<AudioSource>().clip = sfx_Weapon_Sound[current_WM_Installed[current_Weapon_Equipped].weapon_Code];
+
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().enabled = true;
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Active_Time = current_WM_Installed[current_Weapon_Equipped].bullet_Active_Time;
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Speed= 1000;//get damage value
@@ -169,13 +174,15 @@ public class BaseGunV2 : MonoBehaviour
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().damage_Max = current_WM_Installed[current_Weapon_Equipped].max_Damage;
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().damage_Min = current_WM_Installed[current_Weapon_Equipped].min_Damage;
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().round_Type = current_WM_Installed[current_Weapon_Equipped].current_Round_Type;//set bullet type
+
                         the_Ammo_Pool.bullet_Player_Pool[i].SetActive(true);
+                        the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].SetActive(true);
                         //the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats>().ElementType(the_Element_Type);//set bullet type
                         //the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats>().is_Rocket = is_Rocket;
                         //update Weapon UI
                         current_WM_Installed[current_Weapon_Equipped].gun_current_Mag_Capacity--;
                         //the_Player_UI_HUD.AmmoUpdate(the_Player_Manager.current_Weapon);
-                        muzzle_Flash.GetComponent<ParticleSystem>().Play();
+                        //muzzle_Flash.GetComponent<ParticleSystem>().Play();
                         the_Ammo_Pool.bullet_Player_Pool[i].gameObject.tag = "HurtEnemy";
                         the_Player_UI_HUD.AmmoUpdateV2();
                         break;
@@ -203,6 +210,12 @@ public class BaseGunV2 : MonoBehaviour
                                 bullet_Spawn_Point.transform.eulerAngles.z);
                             the_Ammo_Pool.bullet_Player_Pool[i].transform.rotation = q;
 
+                            the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
+                            the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
+                            the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].GetComponent<AudioSource>().clip = sfx_Weapon_Sound[current_WM_Installed[current_Weapon_Equipped].weapon_Code];
+
+                            the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].SetActive(true);
+
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().enabled = true;
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Active_Time = current_WM_Installed[current_Weapon_Equipped].bullet_Active_Time;
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Speed = 1000;//get damage value
@@ -210,7 +223,9 @@ public class BaseGunV2 : MonoBehaviour
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().damage_Max = current_WM_Installed[current_Weapon_Equipped].max_Damage;
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().damage_Min = current_WM_Installed[current_Weapon_Equipped].min_Damage;
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().round_Type = current_WM_Installed[current_Weapon_Equipped].current_Round_Type;//set bullet type
+
                             the_Ammo_Pool.bullet_Player_Pool[i].SetActive(true);
+
                             //the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().ElementType(the_Element_Type);//set bullet type
                             the_Ammo_Pool.bullet_Player_Pool[i].gameObject.tag = "HurtEnemy";
                             //update Weapon UI

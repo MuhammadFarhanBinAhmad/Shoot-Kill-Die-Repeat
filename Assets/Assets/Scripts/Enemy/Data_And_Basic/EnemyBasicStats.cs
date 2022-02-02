@@ -15,6 +15,8 @@ public class EnemyBasicStats : MonoBehaviour
     public float unit_Health, unit_Damage;
     public bool destroy_Parent;
     public GameObject gameobject_Parent;
+    [SerializeField]
+    RoomInformation the_RM;
 
     internal bool stats_Multipled;
     bool dropped_Collectables;
@@ -36,6 +38,7 @@ public class EnemyBasicStats : MonoBehaviour
     [Header("ForStaticEnemy")]
     [SerializeField]
     bool is_StaticEnemy;
+
 
     private void Awake()
     {
@@ -60,7 +63,10 @@ public class EnemyBasicStats : MonoBehaviour
             GetComponentInParent<RoomInformation>().enemy_Total.Add(this) ;
         }
     }
-
+    private void Start()
+    {
+        the_RM = GetComponentInParent<RoomInformation>();
+    }
     internal void TakingDamage(int dmg,GameObject GO)
     {
         if (the_BMEC != null)
@@ -106,8 +112,8 @@ public class EnemyBasicStats : MonoBehaviour
                     GetComponent<DropCollectables>().SpawnCollectables();
                     dropped_Collectables = true;
                 }
-                FindObjectOfType<RoomInformation>().enemy_Total.Remove(this);
-                FindObjectOfType<RoomInformation>().CheckTotalEnemy();
+                the_RM.enemy_Total.Remove(this);
+                the_RM.CheckTotalEnemy();
                 Destroy(gameobject_Parent);
             }
         }

@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class RandomMovementEnemy : MonoBehaviour
 {
+    [SerializeField]
     PlayerManager the_PM;
     [SerializeField]
     GetRandomPoint the_GRP;
@@ -46,39 +47,51 @@ public class RandomMovementEnemy : MonoBehaviour
         {
             case unit_Task.Patrolling:
                 {
-                    print("Patrolling");
-                    if (agent.remainingDistance <= agent.stoppingDistance && the_PM == null)
+                    if (the_PM == null)
                     {
-                        the_GRP.GetPoint();
+                        if (agent.remainingDistance <= agent.stoppingDistance)
+                        {
+                            the_GRP.GetPoint();
+                            print("Patrol");
+                            return;
+                        }
                     }
-                    else
+                    if (the_PM != null)
                     {
+                        agent.speed = the_EBS.unit_Speed * 3;
                         current_UT = unit_Task.Attacking;
+                        print("Atatck");
                     }
                     break;
                 }
             case unit_Task.Attacking:
                 {
-                    print("Attacking");
-                    if (agent.remainingDistance <= agent.stoppingDistance & the_PM != null)
+                    if (the_PM != null)
                     {
-                        agent.destination = player_Pos;
-                        current_UT = unit_Task.Resting;
+                        if (agent.remainingDistance <= agent.stoppingDistance)
+                        {
+
+                            agent.destination = player_Pos;
+                            current_UT = unit_Task.Resting;
+                        }
                     }
-                    else if (the_PM == null)
+                    if (the_PM == null)
                     {
+                        agent.speed = the_EBS.unit_Speed;
                         current_UT = unit_Task.Patrolling;
                     }
                     break;
                 }
             case unit_Task.Resting:
                 {
+                    print("Rest");
                     if (unit_Current_Charging_Time >= 0)
                     {
                         unit_Current_Charging_Time -= Time.deltaTime;
                     }
-                    else if (unit_Current_Charging_Time <= 0)
+                    if (unit_Current_Charging_Time <= 0)
                     {
+                        unit_Current_Charging_Time = unit_Charging_Time; 
                         if (the_PM != null)
                         {
                             agent.isStopped = false;
@@ -89,6 +102,7 @@ public class RandomMovementEnemy : MonoBehaviour
                         {
                             agent.isStopped = false;
                             unit_Current_Charging_Time = unit_Charging_Time;
+                            agent.speed = the_EBS.unit_Speed;
                             current_UT = unit_Task.Patrolling;
                         }
 
@@ -98,20 +112,6 @@ public class RandomMovementEnemy : MonoBehaviour
         }
         
     }
-    /*public void GetPoint()
-    {
-        Vector3 pos = transform.position + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(pos,out hit,1,NavMesh.AllAreas))
-        {
-            new_Pos = hit.position;
-            agent.destination = new_Pos;
-        }
-        else
-        {
-            GetPoint();
-        }
-    }*/
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerManager>() != null)

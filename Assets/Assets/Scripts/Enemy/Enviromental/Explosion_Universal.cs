@@ -13,5 +13,9 @@ public class Explosion_Universal : MonoBehaviour
         {
             other.GetComponent<PlayerManager>().TakeDamage(Damage);
         }
+        if (other.GetComponent<DamageInput_HurtEnemy>() != null)
+        {
+            other.GetComponent<DamageInput_HurtEnemy>().TakeExplosionDamage(Damage);
+        }
     }
 }

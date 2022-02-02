@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 public class WeaponExchange : MonoBehaviour
 {
@@ -23,6 +23,15 @@ public class WeaponExchange : MonoBehaviour
     [SerializeField]
     Transform player_WeaponModes;
 
+    [Header("WeaponCost")]
+    [SerializeField] List<TextMeshProUGUI> ui_Weapon_Cost = new List<TextMeshProUGUI>();
+    [SerializeField] List<WeaponLevelSO> ui_WeaponLevelSO = new List<WeaponLevelSO>();
+
+    private void Start()
+    {
+        UpdateItemCost();
+    }
+
     public void ChangeWeapon(WeaponLevelSO WLSO)
     {
         if (LevelManager.weapon_Unlocked[WLSO.weapon_Code] && players_Gun.current_WM_Installed[players_Gun.current_Weapon_Equipped].weapon_Code != WLSO.weapon_Code)
@@ -33,10 +42,6 @@ public class WeaponExchange : MonoBehaviour
             players_Gun.the_Player_UI_HUD.AmmoUpdateV2();
             UpdateWeaponExchangeButtonsUI();
         }
-        else
-        {
-            print("Weapon not unlocked or of the same type");
-        }
     }
     public void UpdateWeaponExchangeButtonsUI()
     {
@@ -44,17 +49,24 @@ public class WeaponExchange : MonoBehaviour
             weapon_Eqipped_Code = players_Gun.current_WM_Installed[players_Gun.current_Weapon_Equipped].weapon_Code;
             list_Exchange_Button[weapon_Eqipped_Code].interactable = false;
     }
+    public void UpdateItemCost()
+    {
+        print("A");
+
+        for (int i = 1; i < LevelManager.weapon_Unlocked.Length;i++)
+        {
+            ui_Weapon_Cost[i].text = "X" + ui_WeaponLevelSO[i].weapon_Cost.ToString();
+            print("A");
+        }
+    }
     public void UnlockWeapon(WeaponLevelSO WLSO)
     {
-        if (PlayerManager.scrap_Total >= WLSO.weapon_Cost && !LevelManager.weapon_Unlocked[WLSO.weapon_Code])
+        if (PlayerManager.money_Total >= WLSO.weapon_Cost && !LevelManager.weapon_Unlocked[WLSO.weapon_Code])
         {
             LevelManager.weapon_Unlocked[WLSO.weapon_Code] = true;
             list_Unlock_Button[WLSO.weapon_Code].image.sprite = image_Unlock_Button;
             list_Unlock_Button[WLSO.weapon_Code].interactable = false;
-        }
-        else
-        {
-            print("Not enough scrap or is Unlocked");
+            ui_Weapon_Cost[WLSO.weapon_Code].text = "SOLD";
         }
     }
     public void AddWeaponSlot()

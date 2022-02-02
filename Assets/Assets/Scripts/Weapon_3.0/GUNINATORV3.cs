@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GUNINATORV3 : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class GUNINATORV3 : MonoBehaviour
     public Image bar_ReloadTime;
     public Image bar_MinMaxDamage;
     public Image bar_TotalAmmoMag;
+
+    public TextMeshProUGUI cost_FireRate;
+    public TextMeshProUGUI cost_ReloadTime;
+    public TextMeshProUGUI cost_MinMaxDamage;
+    public TextMeshProUGUI cost_TotalAmmoMag;
 
 
     public void UpgradeFireRate()
@@ -58,6 +64,42 @@ public class GUNINATORV3 : MonoBehaviour
         bar_ReloadTime.fillAmount = 0.25f * selected_Weapon.reload_Time_LEVEL;
         bar_MinMaxDamage.fillAmount = 0.25f * selected_Weapon.min_max_Damage_LEVEL;
         bar_TotalAmmoMag.fillAmount = 0.25f * selected_Weapon.total_Ammo_Mag_LEVEL;
+
+        if (selected_Weapon.fire_Rate_LEVEL == 4)
+        {
+            cost_FireRate.text = "MAX LEVEL";
+        }
+        else
+        {
+            cost_FireRate.text = "X" + selected_Weapon.the_WLSO.fire_Rate_COST[selected_Weapon.fire_Rate_LEVEL].ToString();
+        }
+
+        if (selected_Weapon.reload_Time_LEVEL == 4)
+        {
+            cost_ReloadTime.text = "MAX LEVEL";
+        }
+        else
+        {
+            cost_ReloadTime.text = "X" + selected_Weapon.the_WLSO.reload_Time_COST[selected_Weapon.reload_Time_LEVEL].ToString();
+        }
+
+        if (selected_Weapon.min_max_Damage_LEVEL == 4)
+        {
+            cost_MinMaxDamage.text = "MAX LEVEL";
+        }
+        else
+        {
+            cost_MinMaxDamage.text = "X" + selected_Weapon.the_WLSO.min_max_Damage_COST[selected_Weapon.min_max_Damage_LEVEL].ToString();
+        }
+
+        if (selected_Weapon.total_Ammo_Mag_LEVEL == 4)
+        {
+            cost_TotalAmmoMag.text = "MAX LEVEL";
+        }
+        else
+        {
+            cost_TotalAmmoMag.text = "X" + selected_Weapon.the_WLSO.total_Ammo_Mag_COST[selected_Weapon.total_Ammo_Mag_LEVEL].ToString();
+        }
 
     }
     internal void ClearWeaponList()

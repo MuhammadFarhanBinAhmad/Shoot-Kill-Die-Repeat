@@ -28,7 +28,6 @@ Transform:
   m_LocalRotation: {x: -0.00000026341797, y: 0.70710653, z: -0.0000005584456, w: 0.70710707}
   m_LocalPosition: {x: -0.1269, y: 0.034, z: 0.004}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 313583281085693792}
   m_RootOrder: 2
@@ -111,7 +110,6 @@ Transform:
   m_LocalRotation: {x: -1.1102231e-17, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -27.171108, y: 0.14908367, z: 4.592748}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 313583281085693792}
   m_Father: {fileID: 0}
@@ -142,8 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8c8418fb4595a499810fe07b613824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Explosion: {fileID: 4192428348461591357, guid: cf90767dfcedb67499b79d24d91ae91b,
-    type: 3}
+  Explosion: {fileID: 5606730913691709860, guid: 6324bd275ee6f2849988141da5685cdb, type: 3}
   is_Barrel: 1
 --- !u!1 &313583280703846493
 GameObject:
@@ -173,7 +170,6 @@ Transform:
   m_LocalRotation: {x: -0.00000055844566, y: -0.7071074, z: 0.00000026341831, w: 0.70710623}
   m_LocalPosition: {x: 0.1252, y: 0.034, z: 0.004}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 313583281085693792}
   m_RootOrder: 3
@@ -259,7 +255,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.212, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 313583281085693792}
   m_RootOrder: 5
@@ -1456,7 +1451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    rid: 0
+    id: 0
   m_Size: {x: -0.25, y: 0.538159, z: 0.25}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -1466,9 +1461,8 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.125, y: 0.2690795, z: 0.125}
   references:
-    version: 2
-    RefIds:
-    - rid: 0
+    version: 1
+    00000000:
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
 --- !u!23 &313583280755285325
 MeshRenderer:
@@ -1565,7 +1559,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.218, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 313583281085693792}
   m_RootOrder: 4
@@ -2762,7 +2755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    rid: 0
+    id: 0
   m_Size: {x: -0.25, y: 0.538159, z: 0.25}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -2772,9 +2765,8 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.125, y: 0.2690795, z: 0.125}
   references:
-    version: 2
-    RefIds:
-    - rid: 0
+    version: 1
+    00000000:
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
 --- !u!23 &313583281040642695
 MeshRenderer:
@@ -2871,7 +2863,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 313583281743217559}
   - {fileID: 313583281741982062}
@@ -4074,7 +4065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    rid: 0
+    id: 0
   m_Size: {x: -0.25, y: 0.538159, z: 0.25}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 0
@@ -4084,9 +4075,8 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.125, y: 0.2690795, z: 0.125}
   references:
-    version: 2
-    RefIds:
-    - rid: 0
+    version: 1
+    00000000:
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
 --- !u!23 &313583281085693795
 MeshRenderer:
@@ -4176,11 +4166,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313583281741982063}
-  m_LocalRotation: {x: -0.0000005811452, y: 0.00000013411044, z: -0.00000020861629,
-    w: 1}
+  m_LocalRotation: {x: -0.0000005811452, y: 0.00000013411044, z: -0.00000020861629, w: 1}
   m_LocalPosition: {x: 0, y: 0.034, z: -0.125}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 313583281085693792}
   m_RootOrder: 1
@@ -4263,7 +4251,6 @@ Transform:
   m_LocalRotation: {x: 0.00000020861623, y: 1, z: -0.00000058114523, w: 1.13686824e-13}
   m_LocalPosition: {x: 0, y: 0.034, z: 0.126}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 313583281085693792}
   m_RootOrder: 0

@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: 65859a535a819c54f91331fb9847bce4, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture3D:
@@ -47,10 +47,10 @@ Material:
     m_Floats:
     - AlphaClip: 0
     - EdgeThickness: 1
-    - EdgeWidth: 0.02
+    - EdgeWidth: 0.05
     - NoiseScale: 0.46
-    - NoiseScale_X: 45
-    - NoiseScale__Y: 45
+    - NoiseScale_X: 50
+    - NoiseScale__Y: 50
     - _AlphaClip: 0.06
     - _CutOffHeight: 0
     - _EdgeWidth: 0.05
@@ -59,5 +59,5 @@ Material:
     m_Colors:
     - BaseColour: {r: 2, g: 2, b: 2, a: 1}
     - _Albedo: {r: 0, g: 0, b: 0, a: 0}
-    - _EdgeColour: {r: 0, g: 2.8235295, b: 0.72156864, a: 1}
+    - _EdgeColour: {r: 0, g: 8, b: 0.4392157, a: 1}
   m_BuildTextureStacks: []

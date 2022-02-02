@@ -8503,12 +8503,12 @@ ParticleSystem:
     light: {fileID: 7521146849848503201, guid: 322648aa5f806b1429cd1682122a9f16, type: 3}
     randomDistribution: 0
     color: 1
-    range: 0
+    range: 1
     intensity: 0
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8611,7 +8611,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 15
+    maxLights: 5
   TrailModule:
     enabled: 0
     mode: 0
@@ -13204,12 +13204,12 @@ ParticleSystem:
       emitProbability: 1
   LightsModule:
     enabled: 0
-    ratio: 0
-    light: {fileID: 0}
-    randomDistribution: 1
+    ratio: 1
+    light: {fileID: 7521146849848503201, guid: 322648aa5f806b1429cd1682122a9f16, type: 3}
+    randomDistribution: 0
     color: 1
     range: 1
-    intensity: 1
+    intensity: 0
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -13316,7 +13316,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 20
+    maxLights: 1
   TrailModule:
     enabled: 0
     mode: 0

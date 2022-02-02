@@ -15,12 +15,14 @@ public class MovingEnemyDamageOutput : MonoBehaviour
     {
         if (other.GetComponent<PlayerManager>() != null)
         {
-            other.GetComponent<PlayerManager>().TakeDamage(the_EBS.unit_Damage);
             if (is_Kamikaze)
             {
                 Instantiate(explosion_VFX, transform.position, transform.rotation);
                 the_EBS.TakingDamage((int)the_EBS.unit_Health, this.gameObject);
-                Destroy(go_Parent.gameObject);
+            }
+            else
+            {
+                other.GetComponent<PlayerManager>().TakeDamage(the_EBS.unit_Damage);
             }
         }
     }

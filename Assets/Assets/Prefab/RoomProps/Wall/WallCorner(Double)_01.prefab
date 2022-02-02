@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5636446208653205210}
   m_Layer: 3
   m_Name: C_01
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4325945192721345600}
   m_Layer: 3
   m_Name: C_03
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 6446152443278276140}
   m_Layer: 3
   m_Name: C_04
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 437494504545157265}
   m_Layer: 3
   m_Name: C_02
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -313,7 +313,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 114e5f6bcf7df344abe77d639896d49b, type: 2}
+      objectReference: {fileID: 2100000, guid: a5db0a8b455d3a64ca728e8b5dcfa7fd, type: 2}
     - target: {fileID: -7511558181221131132, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -325,7 +325,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 114e5f6bcf7df344abe77d639896d49b, type: 2}
+      objectReference: {fileID: 2100000, guid: a5db0a8b455d3a64ca728e8b5dcfa7fd, type: 2}
     - target: {fileID: 919132149155446097, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
       propertyPath: m_Name
       value: corridor_wallCorner (2)
@@ -333,6 +333,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -415,7 +419,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 114e5f6bcf7df344abe77d639896d49b, type: 2}
+      objectReference: {fileID: 2100000, guid: a5db0a8b455d3a64ca728e8b5dcfa7fd, type: 2}
     - target: {fileID: -7511558181221131132, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -423,7 +427,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 114e5f6bcf7df344abe77d639896d49b, type: 2}
+      objectReference: {fileID: 2100000, guid: a5db0a8b455d3a64ca728e8b5dcfa7fd, type: 2}
     - target: {fileID: 919132149155446097, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
       propertyPath: m_Name
       value: corridor_wallCorner (3)
@@ -431,6 +435,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a12e63121e9b4374fbc9f78e0c75cbd4, type: 3}
       propertyPath: m_StaticEditorFlags

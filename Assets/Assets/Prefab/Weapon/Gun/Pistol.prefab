@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4480831099654777035}
   - component: {fileID: 4480831099654777034}
   - component: {fileID: 4480831099654777033}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4480831099900647010}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 4480831100054466821}
   - component: {fileID: 4480831100054466820}
   - component: {fileID: 4480831100054466827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prism_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 4480831100486610705}
   - component: {fileID: 4480831100486610704}
   - component: {fileID: 4480831100486610711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -999,7 +999,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2608019846702388694}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpawnBullet_Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1088,6 +1088,10 @@ PrefabInstance:
       value: Barrel_Single_01
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c9452fcf042fa5d4aac78f610856dd39, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c9452fcf042fa5d4aac78f610856dd39, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -1173,6 +1177,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grip_Pistol_03
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c7b67040a1a9fc140a4ae6dca2044b3b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7b67040a1a9fc140a4ae6dca2044b3b, type: 3}
 --- !u!4 &4153908029729474936 stripped
@@ -1255,6 +1263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel_Pistol_03
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ef8db8af82a16e54484bb06aa7e2c3d8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef8db8af82a16e54484bb06aa7e2c3d8, type: 3}
 --- !u!1001 &4480831101409752585
@@ -1331,6 +1343,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 713111e878bb63a4b9cfacf1cb9cadb5, type: 3}
       propertyPath: m_Name
       value: Body_Pistol_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 713111e878bb63a4b9cfacf1cb9cadb5, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 713111e878bb63a4b9cfacf1cb9cadb5, type: 3}
@@ -1409,6 +1425,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 08b9606b103492c41a0be6be4717cbac, type: 3}
       propertyPath: m_Name
       value: Cylinder_Pistol_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 08b9606b103492c41a0be6be4717cbac, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 08b9606b103492c41a0be6be4717cbac, type: 3}
       propertyPath: m_IsActive

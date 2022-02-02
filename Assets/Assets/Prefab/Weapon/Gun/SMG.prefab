@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5717923598177414266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpawnBullet_Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9198240689446584633}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SMG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 9198240689604135940}
   - component: {fileID: 9198240689604135941}
   - component: {fileID: 9198240689604135938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 9198240689937730264}
   - component: {fileID: 9198240689937730265}
   - component: {fileID: 9198240689937730246}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arch_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2455,7 +2455,7 @@ GameObject:
   - component: {fileID: 9198240690122749538}
   - component: {fileID: 9198240690122749539}
   - component: {fileID: 9198240690122749536}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4484,7 +4484,7 @@ GameObject:
   - component: {fileID: 9198240690206466820}
   - component: {fileID: 9198240690206466821}
   - component: {fileID: 9198240690206466818}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prism_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4789,7 +4789,7 @@ GameObject:
   - component: {fileID: 9198240690585129039}
   - component: {fileID: 9198240690585129036}
   - component: {fileID: 9198240690585129037}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prism_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5136,6 +5136,10 @@ PrefabInstance:
       value: Grip_SMG_02
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 67e7c9ed21cbf6d41adef94ea4246e5d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67e7c9ed21cbf6d41adef94ea4246e5d, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -5209,6 +5213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body_Sniper_04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7a027a3da08a1474491b650157f5011a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a027a3da08a1474491b650157f5011a, type: 3}
 --- !u!4 &8659311926066829435 stripped
@@ -5275,6 +5283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stock_Sniper_04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 45c9a3b9d46c1d44da7fdc04813dfb52, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45c9a3b9d46c1d44da7fdc04813dfb52, type: 3}
 --- !u!4 &8659311925995561145 stripped
@@ -5340,6 +5352,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c9452fcf042fa5d4aac78f610856dd39, type: 3}
       propertyPath: m_Name
       value: Barrel_Single_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c9452fcf042fa5d4aac78f610856dd39, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9452fcf042fa5d4aac78f610856dd39, type: 3}
@@ -5419,6 +5435,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cylinder_Pistol_02
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 08b9606b103492c41a0be6be4717cbac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08b9606b103492c41a0be6be4717cbac, type: 3}
 --- !u!4 &8659311925185758766 stripped
@@ -5484,6 +5504,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f78245a05f9e8fe4b8d493d1c203a865, type: 3}
       propertyPath: m_Name
       value: Grip_Sniper_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f78245a05f9e8fe4b8d493d1c203a865, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f78245a05f9e8fe4b8d493d1c203a865, type: 3}
       propertyPath: m_IsActive

@@ -13,8 +13,7 @@ public class PlayerManager : MonoBehaviour
     public float speed_Movement;
     public float health_Player;
     public float health_Player_Current;
-    public static int scrap_Total = 100;
-    public static int money_Total = 10000;
+    public static int money_Total = 1000;
     //Jumping
     Vector3 velocity;
     public float gravity = -9.81f;
@@ -23,6 +22,8 @@ public class PlayerManager : MonoBehaviour
     public float ground_Distance = 0.5f;
     public LayerMask ground_Layer;
     //bool is_Grounded;
+    [SerializeField]
+    int additional_Jumps;
     public int number_of_Jumps;
     public BaseGunV2 the_BGV2;
     //PlayerUI
@@ -56,7 +57,7 @@ public class PlayerManager : MonoBehaviour
     {
         MovePlayer();
         //JUMP//
-        if (Input.GetButtonDown("Jump") && number_of_Jumps < 1)
+        if (Input.GetButtonDown("Jump") && number_of_Jumps <= additional_Jumps)
         {
             JumpPlayer();
         }

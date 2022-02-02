@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &937642263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 937642264}
+  - component: {fileID: 937642265}
+  m_Layer: 0
+  m_Name: RaycastDectectPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &937642264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937642263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7829202774098169650}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &937642265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937642263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868412012a70d3149a7698bf65769252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  the_TH: {fileID: 7043695301040933077}
+  is_Melee: 0
+  is_Range: 0
 --- !u!1 &2273645273374219248
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,9 +70,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2273645273374219248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0.5859}
+  m_LocalPosition: {x: 0, y: -0, z: 0.6034}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 937642264}
   m_Father: {fileID: 7043695301040933076}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18407,6 +18454,7 @@ MonoBehaviour:
   unit_Damage: 0
   destroy_Parent: 1
   gameobject_Parent: {fileID: 7043695300741263941}
+  the_RM: {fileID: 0}
   is_ProjectileEnemy: 1
   unit_RoundType: 0
   unit_FireRate: 0
@@ -25113,6 +25161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   the_EBS: {fileID: 3954717595972823714}
+  current_Mode: 0
   fire_Rate: 2
   bullet_Spawn_Point: {fileID: 7829202774098169650}
   bullet_Sound: {fileID: 0}
@@ -25151,7 +25200,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 7.5
   m_Center: {x: 0, y: -0.00000011920929, z: 0}
 --- !u!1 &7043695301717779907
 GameObject:

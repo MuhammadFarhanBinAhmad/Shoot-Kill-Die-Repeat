@@ -9,7 +9,8 @@ public class AccessGUNINATOR : MonoBehaviour
     PlayerManager the_PlayerManager;
 
     public GameObject GUNINATOR_Store_Page;
-
+    public GameObject CrossHair;
+    public GameObject GunHolder;
 
     private void Start()
     {
@@ -67,11 +68,22 @@ public class AccessGUNINATOR : MonoBehaviour
     {
         the_Guninator.player_Installed_Weapons.Clear();
     }
+    void RemoveWeaponObjectAndUI()
+    {
+        CrossHair.SetActive(false);
+        GunHolder.SetActive(false);
+    }
+    void AddWeaponObjectAndUI()
+    {
+        CrossHair.SetActive(true);
+        GunHolder.SetActive(true);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerManager>() != null)
         {
             the_PlayerManager = other.GetComponent<PlayerManager>();
+            RemoveWeaponObjectAndUI();
             OpenStorePage();
         }
     }
@@ -79,6 +91,7 @@ public class AccessGUNINATOR : MonoBehaviour
     {
         if (other.GetComponent<PlayerManager>() != null)
         {
+            AddWeaponObjectAndUI();
             CloseStorePage();
             RemoveWeaponData();
             //the_PlayerManager = null;
