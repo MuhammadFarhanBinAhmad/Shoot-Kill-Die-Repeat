@@ -66,6 +66,7 @@ public class WeaponExchange : MonoBehaviour
             LevelManager.weapon_Unlocked[WLSO.weapon_Code] = true;
             list_Unlock_Button[WLSO.weapon_Code].image.sprite = image_Unlock_Button;
             list_Unlock_Button[WLSO.weapon_Code].interactable = false;
+            PlayerManager.money_Total -= WLSO.weapon_Cost;
             ui_Weapon_Cost[WLSO.weapon_Code].text = "SOLD";
         }
     }

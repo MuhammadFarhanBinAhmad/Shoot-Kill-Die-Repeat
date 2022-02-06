@@ -17,7 +17,7 @@ public class HealthPack : MonoBehaviour
                 PM.health_Player_Current += health_To_Give;
                 FindObjectOfType<PlayerUIHUD>().HealthUpdate();
             }
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

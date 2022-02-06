@@ -15,9 +15,9 @@ MonoBehaviour:
   placeholderName: Rifle
   weapon_Gameobject: {fileID: 6227517802974696791, guid: 4e757c45ee7078f4ead93a4ed28f3bac, type: 3}
   weapon_Code: 2
-  weapon_Cost: 10
+  weapon_Cost: 70
   fire_Rate_LEVEL: 0
-  fire_Rate_COST: 0a00000019000000320000006400000064000000
+  fire_Rate_COST: 2d000000640000008c000000c3000000fa000000
   fire_Rate:
   - 1
   - 0.75
@@ -25,7 +25,7 @@ MonoBehaviour:
   - 1.5
   - 2.5
   reload_Time_LEVEL: 0
-  reload_Time_COST: 0f0000001e000000370000005000000050000000
+  reload_Time_COST: 2d000000500000007d0000009b000000be000000
   reload_Time:
   - 1
   - 1.25
@@ -33,12 +33,12 @@ MonoBehaviour:
   - 0.9
   - 0.8
   min_max_Damage_LEVEL: 0
-  min_max_Damage_COST: 1400000028000000410000005a0000005a000000
+  min_max_Damage_COST: 6400000096000000e10000001801000059010000
   min_Damage: 320000004b000000640000007d00000096000000
   max_Damage: 500000006e00000096000000e1000000fa000000
   total_Ammo_Mag_LEVEL: 0
   bullet_Active_Time: 7
-  total_Ammo_Mag_COST: 0f0000001e000000370000005000000050000000
+  total_Ammo_Mag_COST: 370000006900000091000000be000000e1000000
   total_Ammo: 64000000780000008c000000a0000000c8000000
   mag_Capacity: 0a0000000c0000000e0000001000000014000000
   weapon_Firing_Mechanism: 0

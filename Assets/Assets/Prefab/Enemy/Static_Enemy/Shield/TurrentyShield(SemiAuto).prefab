@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3050359434610312682}
   - component: {fileID: 2006760285176806782}
   - component: {fileID: 6478959503845238613}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: HitBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -95,12 +95,15 @@ MonoBehaviour:
   unit_Damage: 0
   destroy_Parent: 1
   gameobject_Parent: {fileID: 0}
+  the_RM: {fileID: 0}
   is_ProjectileEnemy: 1
   unit_RoundType: 0
   unit_FireRate: 0
   is_MovingEnemy: 0
   unit_Speed: 0
   the_BMEC: {fileID: 0}
+  the_RME: {fileID: 0}
+  agent: {fileID: 0}
   is_StaticEnemy: 0
 --- !u!1 &6687902102241483916
 GameObject:
@@ -116,9 +119,9 @@ GameObject:
   - component: {fileID: 8337707426155959610}
   - component: {fileID: 1297296698863378138}
   - component: {fileID: 3459098550026955954}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: TurrentyShield(SemiAuto)
-  m_TagString: Enemy
+  m_TagString: ForceField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,7 +228,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2808787585742348380
 PrefabInstance:
@@ -292,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7788c3819b3f34f43b15fe76cd69fbed, type: 2}
     - target: {fileID: 570127074719945593, guid: 3156b48990ef6a14984c9c15bf3ffcd2, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3156b48990ef6a14984c9c15bf3ffcd2, type: 3}
       propertyPath: m_Name
@@ -300,7 +303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3156b48990ef6a14984c9c15bf3ffcd2, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3156b48990ef6a14984c9c15bf3ffcd2, type: 3}

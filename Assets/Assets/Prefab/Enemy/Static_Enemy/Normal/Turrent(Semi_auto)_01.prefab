@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9145485702272184957}
   - component: {fileID: 5511305207655164254}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RaycastDectectPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   the_TH: {fileID: 8004019770474855558}
+  _enemy_Attacking_Range: {fileID: 576352232}
+  is_Melee: 0
+  is_Range: 0
 --- !u!1 &4807638439628790892
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,7 +58,7 @@ GameObject:
   - component: {fileID: 3071178237998156911}
   - component: {fileID: 7979267824753396040}
   - component: {fileID: 6382512746006355206}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8004019768586984005}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Battery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +202,7 @@ GameObject:
   - component: {fileID: 8004019768724066709}
   - component: {fileID: 8004019768724066708}
   - component: {fileID: 8701897931529969485}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3635,7 +3638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8004019769701041685}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Turrent(Semi_auto)_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3670,7 +3673,7 @@ GameObject:
   - component: {fileID: 8004019770474855559}
   - component: {fileID: 8004019770474855558}
   - component: {fileID: 576352232}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3747,7 +3750,7 @@ GameObject:
   - component: {fileID: 8701897929823917988}
   - component: {fileID: 8701897929823917979}
   - component: {fileID: 8701897929823917978}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Signal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4409,7 +4412,7 @@ GameObject:
   - component: {fileID: 8701897929943557075}
   - component: {fileID: 8701897929943557074}
   - component: {fileID: 8701897929943557073}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5897,7 +5900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8701897929946411707}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5935,7 +5938,7 @@ GameObject:
   - component: {fileID: 8701897930219210069}
   - component: {fileID: 8701897930219210068}
   - component: {fileID: 8701897930219210059}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6351,7 +6354,7 @@ GameObject:
   - component: {fileID: 8701897930364493316}
   - component: {fileID: 8701897930364493435}
   - component: {fileID: 8701897930364493434}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sphere_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8634,7 +8637,7 @@ GameObject:
   - component: {fileID: 8701897930433349120}
   - component: {fileID: 8701897930433349127}
   - component: {fileID: 8701897930433349126}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10594,7 +10597,7 @@ GameObject:
   - component: {fileID: 8701897930440317521}
   - component: {fileID: 8701897930440317520}
   - component: {fileID: 208521391533154601}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BottomStand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12087,7 +12090,7 @@ GameObject:
   - component: {fileID: 8701897930564712748}
   - component: {fileID: 8701897930564712739}
   - component: {fileID: 8701897930564712738}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12498,7 +12501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8701897930730830111}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MagazineRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12535,7 +12538,7 @@ GameObject:
   - component: {fileID: 8701897930812990113}
   - component: {fileID: 8701897930812990112}
   - component: {fileID: 8701897930812990119}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14495,7 +14498,7 @@ GameObject:
   - component: {fileID: 8701897930922668055}
   - component: {fileID: 8701897930922668054}
   - component: {fileID: 8701897930922668053}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16271,7 +16274,7 @@ GameObject:
   - component: {fileID: 8701897931064132130}
   - component: {fileID: 8701897931064132129}
   - component: {fileID: 8701897931064132128}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Drum_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17757,7 +17760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8701897931092622168}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17793,7 +17796,7 @@ GameObject:
   - component: {fileID: 8701897931134530672}
   - component: {fileID: 8701897931134530679}
   - component: {fileID: 8701897931134530678}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18273,7 +18276,7 @@ GameObject:
   - component: {fileID: 8701897931216962459}
   - component: {fileID: 8701897931216962458}
   - component: {fileID: 8701897931216962457}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Suppresor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19512,7 +19515,7 @@ GameObject:
   - component: {fileID: 8701897931260225971}
   - component: {fileID: 8701897931260225970}
   - component: {fileID: 8701897931260225969}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HitBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -19593,6 +19596,7 @@ MonoBehaviour:
   unit_Damage: 0
   destroy_Parent: 1
   gameobject_Parent: {fileID: 8004019769701041686}
+  the_RM: {fileID: 0}
   is_ProjectileEnemy: 1
   unit_RoundType: 0
   unit_FireRate: 0
@@ -19616,7 +19620,7 @@ GameObject:
   - component: {fileID: 8701897931305747225}
   - component: {fileID: 8701897931305747224}
   - component: {fileID: 8701897931305747231}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21576,7 +21580,7 @@ GameObject:
   - component: {fileID: 8701897931378851280}
   - component: {fileID: 8701897931378851287}
   - component: {fileID: 8701897931378851286}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23536,7 +23540,7 @@ GameObject:
   - component: {fileID: 8701897931484667972}
   - component: {fileID: 8701897931484668091}
   - component: {fileID: 8701897931484668090}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Drum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25027,7 +25031,7 @@ GameObject:
   - component: {fileID: 8701897931606697141}
   - component: {fileID: 8701897931606697140}
   - component: {fileID: 8701897931606697131}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}

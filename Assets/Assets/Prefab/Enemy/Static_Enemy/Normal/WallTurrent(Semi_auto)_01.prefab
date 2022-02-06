@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5426303613364656030}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MagazineRound_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4186835106960471773}
   - component: {fileID: 6127531890372142515}
   - component: {fileID: 156127842267136635}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4186835107268791374}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WallTurrent(Semi_auto)_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 6385107179202330}
   - component: {fileID: 6351791128694897191}
   - component: {fileID: 7785634527703627766}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1022,7 @@ GameObject:
   - component: {fileID: 5070788807186626433}
   - component: {fileID: 4338004682861013429}
   - component: {fileID: 5004662615867153330}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2392,7 +2392,7 @@ GameObject:
   - component: {fileID: 867706325452391884}
   - component: {fileID: 4783618411744452139}
   - component: {fileID: 1507220444857373494}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7200,7 +7200,7 @@ GameObject:
   - component: {fileID: 4384372561792708234}
   - component: {fileID: 4384372561792708229}
   - component: {fileID: 4384372561792708228}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10595,7 +10595,7 @@ GameObject:
   - component: {fileID: 4384372562343436586}
   - component: {fileID: 4384372562343436581}
   - component: {fileID: 4384372562343436580}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11410,7 +11410,7 @@ GameObject:
   - component: {fileID: 4384372562469444515}
   - component: {fileID: 4384372562469444514}
   - component: {fileID: 4384372562469444541}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Drum_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12226,7 +12226,7 @@ GameObject:
   - component: {fileID: 4384372562566649252}
   - component: {fileID: 4384372562566649255}
   - component: {fileID: 4384372562566649254}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14171,7 +14171,7 @@ GameObject:
   - component: {fileID: 4384372562711886480}
   - component: {fileID: 4384372562711886483}
   - component: {fileID: 4384372562711886482}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Suppresor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15392,7 +15392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4384372562727931151}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15425,7 +15425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4384372563447637878}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MagazineRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15461,7 +15461,7 @@ GameObject:
   - component: {fileID: 4029995907339796602}
   - component: {fileID: 4261203283999113357}
   - component: {fileID: 473012290874158356}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17745,7 +17745,7 @@ GameObject:
   - component: {fileID: 2597796024548339724}
   - component: {fileID: 1258684515009689250}
   - component: {fileID: 316051106263803422}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19095,7 +19095,7 @@ GameObject:
   - component: {fileID: 4907570704336269511}
   - component: {fileID: 4907570704336269510}
   - component: {fileID: 4907570704336269509}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HitBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -19176,6 +19176,7 @@ MonoBehaviour:
   unit_Damage: 0
   destroy_Parent: 1
   gameobject_Parent: {fileID: 4186835107268791373}
+  the_RM: {fileID: 0}
   is_ProjectileEnemy: 1
   unit_RoundType: 0
   unit_FireRate: 0
@@ -19198,7 +19199,7 @@ GameObject:
   - component: {fileID: 3481409882664978993}
   - component: {fileID: 1461141261292612278}
   - component: {fileID: 7349352781638794662}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Drum_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20011,7 +20012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4540934166248974992}
   - component: {fileID: 724858740764809999}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RaycastDectectPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20045,6 +20046,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   the_TH: {fileID: 4186835106960471773}
+  _enemy_Attacking_Range: {fileID: 6127531890372142515}
+  is_Melee: 0
+  is_Range: 0
 --- !u!1 &6022790009046243756
 GameObject:
   m_ObjectHideFlags: 0
@@ -20058,7 +20062,7 @@ GameObject:
   - component: {fileID: 1874143559908621345}
   - component: {fileID: 8936695056914175674}
   - component: {fileID: 3858702941011848709}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -160,8 +160,17 @@ public class BaseGunV2 : MonoBehaviour
                 {
                     if (!the_Ammo_Pool.bullet_Player_Pool[i].activeInHierarchy)
                     {
+                        float r_x = Random.Range(-1.5f, 1.5f);
+                        float r_y = Random.Range(-1.5f, 1.5f);
+
                         the_Ammo_Pool.bullet_Player_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
-                        the_Ammo_Pool.bullet_Player_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
+
+                        //round spread
+                        Quaternion q = Quaternion.Euler
+                            (bullet_Spawn_Point.transform.eulerAngles.x + r_x,
+                            bullet_Spawn_Point.transform.eulerAngles.y + r_y,
+                            bullet_Spawn_Point.transform.eulerAngles.z);
+                        the_Ammo_Pool.bullet_Player_Pool[i].transform.rotation = q;
 
                         the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
                         the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;

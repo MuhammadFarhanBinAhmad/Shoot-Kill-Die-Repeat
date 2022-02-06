@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6970625280694553351}
   - component: {fileID: 1512853456238418801}
   - component: {fileID: 9079006209436631168}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arch_09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -836,7 +836,7 @@ GameObject:
   - component: {fileID: 2031656335186221365}
   - component: {fileID: 5877569567487147080}
   - component: {fileID: 1670902491986621652}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arch_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1658,7 +1658,7 @@ GameObject:
   - component: {fileID: 1054659367114223785}
   - component: {fileID: 3709539550128713327}
   - component: {fileID: 300765900938810410}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arch_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2478,7 +2478,7 @@ GameObject:
   - component: {fileID: 829649268534809845}
   - component: {fileID: 829649268534914389}
   - component: {fileID: 829649268526413943}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WFX_FlameThrower Big Alt Looped
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7193,7 +7193,7 @@ GameObject:
   - component: {fileID: 829649268515410359}
   - component: {fileID: 829649268534809847}
   - component: {fileID: 829649268534914391}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11798,7 +11798,7 @@ GameObject:
   - component: {fileID: 1720398740956108538}
   - component: {fileID: 6268132662263775143}
   - component: {fileID: 6060294790679261823}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arch_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12620,7 +12620,7 @@ GameObject:
   - component: {fileID: 8813536758021750026}
   - component: {fileID: 7380546604724277842}
   - component: {fileID: 8882168769295891616}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arch_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13442,7 +13442,7 @@ GameObject:
   - component: {fileID: 6628789196420644221}
   - component: {fileID: 692285873122307318}
   - component: {fileID: 4947365364417588715}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arch_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14264,7 +14264,7 @@ GameObject:
   - component: {fileID: 1997908874369981619}
   - component: {fileID: 6666002172534053107}
   - component: {fileID: 4165310095087594808}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arch_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15086,7 +15086,7 @@ GameObject:
   - component: {fileID: 3509666055975668894}
   - component: {fileID: 6721277638845791565}
   - component: {fileID: 4772197950548438501}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arch_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15910,7 +15910,7 @@ GameObject:
   - component: {fileID: 8747875284122243956}
   - component: {fileID: 8747875284122243957}
   - component: {fileID: 8891054858993323599}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BuffMaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20882,8 +20882,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd112c4c8071dc54e9ff9dcda8600087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  the_PM: {fileID: 0}
   the_GRP: {fileID: 0}
   the_EBS: {fileID: 3452054623422976103}
+  agent: {fileID: 0}
   unit_Charging_Time: 2
   unit_Current_Charging_Time: 0
   is_Hit: 0
@@ -20901,7 +20903,7 @@ GameObject:
   - component: {fileID: 8747875284209730816}
   - component: {fileID: 8747875284209730817}
   - component: {fileID: 8747875284209730818}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Signal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21894,7 +21896,7 @@ GameObject:
   - component: {fileID: 8747875284438083572}
   - component: {fileID: 8747875284438083573}
   - component: {fileID: 8747875284438083574}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arch_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22716,7 +22718,7 @@ GameObject:
   - component: {fileID: 8747875284658140917}
   - component: {fileID: 8747875284658140918}
   - component: {fileID: 8747875284658140919}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23210,7 +23212,7 @@ GameObject:
   - component: {fileID: 8747875284814849121}
   - component: {fileID: 8747875284814849122}
   - component: {fileID: 8747875284814849123}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Torus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34890,7 +34892,7 @@ GameObject:
   - component: {fileID: 8747875284942241872}
   - component: {fileID: 8747875284942241873}
   - component: {fileID: 8747875284942241874}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37177,7 +37179,7 @@ GameObject:
   - component: {fileID: 8747875285068376092}
   - component: {fileID: 8747875285068376093}
   - component: {fileID: 8747875285068376094}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arch_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37999,7 +38001,7 @@ GameObject:
   - component: {fileID: 8747875285408741922}
   - component: {fileID: 8747875285408741923}
   - component: {fileID: 8747875285408741924}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arch_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38821,7 +38823,7 @@ GameObject:
   - component: {fileID: 8747875286070057218}
   - component: {fileID: 8747875286070057219}
   - component: {fileID: 8747875286070057220}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41271,7 +41273,7 @@ GameObject:
   - component: {fileID: 8747875286077017693}
   - component: {fileID: 8747875286077017694}
   - component: {fileID: 8747875286077017695}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42093,7 +42095,7 @@ GameObject:
   - component: {fileID: 8747875286126276671}
   - component: {fileID: 8747875286126276670}
   - component: {fileID: 8747875286126276669}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43467,7 +43469,7 @@ GameObject:
   - component: {fileID: 8747875286172207621}
   - component: {fileID: 8747875286172207622}
   - component: {fileID: 8747875286172207623}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Torus_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55193,12 +55195,28 @@ PrefabInstance:
       value: BuffHitBox
       objectReference: {fileID: 0}
     - target: {fileID: 5123619805353988090, guid: 5503b13e24b1ec04a90410cd3a919efc, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123619805353988090, guid: 5503b13e24b1ec04a90410cd3a919efc, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7323789445608661495, guid: 5503b13e24b1ec04a90410cd3a919efc, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7323789450644337211, guid: 5503b13e24b1ec04a90410cd3a919efc, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7449555523914014467, guid: 5503b13e24b1ec04a90410cd3a919efc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729764724700173122, guid: 5503b13e24b1ec04a90410cd3a919efc, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5503b13e24b1ec04a90410cd3a919efc, type: 3}
@@ -55231,6 +55249,10 @@ PrefabInstance:
     - target: {fileID: 6237093348998890458, guid: 87c781d8d4773174f9bc1efb2ec1011d, type: 3}
       propertyPath: m_Name
       value: HitBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237093348998890458, guid: 87c781d8d4773174f9bc1efb2ec1011d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6237093348998890459, guid: 87c781d8d4773174f9bc1efb2ec1011d, type: 3}
       propertyPath: m_RootOrder

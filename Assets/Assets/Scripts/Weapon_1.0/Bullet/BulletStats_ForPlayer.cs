@@ -69,7 +69,7 @@ public class BulletStats_ForPlayer : MonoBehaviour
                 }
             }
         }
-        if (other.gameObject.layer == LayerMask.NameToLayer("Ground") || other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground") || other.gameObject.layer == LayerMask.NameToLayer("Wall") || other.gameObject.tag == "ForceField")
         {
             bullet_Speed = 0;
             for (int i = 0; i < the_AmmoPool.misc_Spark_Pool.Count; i++)

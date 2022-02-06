@@ -28,6 +28,6 @@ public class AmmoBox : MonoBehaviour
         }
         FindObjectOfType<PlayerUIHUD>().AmmoUpdateV2();
         //PM.weapon_Inventory[PM.current_Weapon].AddAmmo(ammo_To_Give[ammo_Type]);
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +26,7 @@ public class TurrentHead : MonoBehaviour
     public bool is_MachineGun;
     [SerializeField] Vector3 barrel_Vector;
     [SerializeField] float barrel_Rot_Speed;
-    [SerializeField]float Rev_Up_Time;
+    [SerializeField] float Rev_Up_Time;
     float current_Rev_Up_Time;
     [Header("Time and Target")]
     public float time_Before_Reset;
@@ -34,7 +34,7 @@ public class TurrentHead : MonoBehaviour
     public float rotation_Speed;
     public bool target_Lock;
     public Transform current_Target;
-
+    [SerializeField]
     [Header("Special")]
     public bool is_FireTurret;
 
@@ -70,18 +70,15 @@ public class TurrentHead : MonoBehaviour
         {
             case 0:
                 {
-                    //transform.Rotate(0, 1, 0
-                    if (current_Target !=null)
+
+                    if (current_Target != null)
                     {
                         current_Mode = 1;
                     }
-                    /*else
+                    else
                     {
-                        if (timer < time_Before_Reset)
-                        {
-                            timer = time_Before_Reset;
-                        }
-                    }*/
+                        transform.Rotate(0, 1, 0);
+                    }
                     break;
                 }
             case 1:
@@ -112,17 +109,6 @@ public class TurrentHead : MonoBehaviour
                     {
                         current_Mode = 1;
                     }
-                    /*else
-                    {
-                        target_Lock = false;
-                        TargetLost();
-                    }*/
-
-                    /*if (!target_Lock)
-                    {
-                        TargetLost();
-                        target_Lock = false;
-                    }*/
                     break;
                 }
         }
@@ -135,7 +121,7 @@ public class TurrentHead : MonoBehaviour
         ///if (target lock) is left
         ///player cant outrun turret but when behind a wall, the turret will still face the player
         //if (target_Lock)
-        if (current_Target !=null)
+        if (current_Target != null)
         {
             Vector3 direction = current_Target.position - transform.position;
             Quaternion turrent_Rotation = Quaternion.LookRotation(direction);
@@ -150,22 +136,21 @@ public class TurrentHead : MonoBehaviour
 
     }
     internal void TargetLost()
-    {
-        //if no target is lock within a period of time, the turrent resets
 
-        /*if (timer >= 0)
+    {
+        if (is_MachineGun)
         {
-            timer -= Time.deltaTime;
-        }*/
-        else
-        {
-            if (is_MachineGun)
-            {
-                barrel_Rot_Speed = 0;
-            }
-            current_Mode = 0;
+            barrel_Rot_Speed = 0;
         }
+        current_Mode = 0;
     }
+    //if no target is lock within a period of time, the turrent resets
+
+    /*if (timer >= 0)
+    {
+        timer -= Time.deltaTime;
+    }*/
+
     void Shooting()
     {
         {
@@ -200,7 +185,7 @@ public class TurrentHead : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerManager>() !=null)
+        if (other.GetComponent<PlayerManager>() != null)
         {
             current_Target = other.GetComponent<PlayerManager>().transform;
         }
@@ -210,7 +195,7 @@ public class TurrentHead : MonoBehaviour
     {
         if (other.GetComponent<PlayerManager>() != null && current_Target != null)
         {
-            current_Target =  null;
+            current_Target = null;
             target_Lock = false;
         }
     }

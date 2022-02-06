@@ -8,9 +8,15 @@ public class MusicSelection : MonoBehaviour
     public AudioSource music_Player;
     private void Start()
     {
+        StartCoroutine("PlayNewMusic");
+    }
+    IEnumerator PlayNewMusic()
+    {
         int M = Random.Range(0, music.Count);
-
         music_Player.clip = music[M];
         music_Player.Play();
+        yield return new WaitForSeconds(music_Player.clip.length+5);
+        StartCoroutine("PlayNewMusic");
     }
+
 }

@@ -7,6 +7,8 @@ public class RaycastDetectPlayer : MonoBehaviour
     [SerializeField]
     TurrentHead the_TH;
     [SerializeField]
+    SphereCollider _enemy_Attacking_Range;
+    [SerializeField]
     bool is_Melee, is_Range;
     // Update is called once per frame
     void Update()
@@ -27,6 +29,7 @@ public class RaycastDetectPlayer : MonoBehaviour
                     }
                     else
                     {
+                        print("NotPlayer");
                         the_TH.target_Lock = false;
                     }
                 }
@@ -37,7 +40,7 @@ public class RaycastDetectPlayer : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Vector3 direction = transform.TransformDirection(Vector3.forward) * 10;
+        Vector3 direction = transform.TransformDirection(Vector3.forward) * _enemy_Attacking_Range.radius;
         Gizmos.DrawRay(transform.position, direction);
     }
 }

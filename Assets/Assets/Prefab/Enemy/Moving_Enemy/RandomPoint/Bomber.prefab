@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2550467353458470378}
   - component: {fileID: 2550467353458470377}
   - component: {fileID: 2550467353458470376}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1375,7 +1375,7 @@ GameObject:
   - component: {fileID: 2550467353610506735}
   - component: {fileID: 2550467353610506734}
   - component: {fileID: 2550467353610506733}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2201,7 +2201,7 @@ GameObject:
   - component: {fileID: 2550467353619544116}
   - component: {fileID: 2550467353619544115}
   - component: {fileID: 2550467353619544114}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Torus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9861,7 +9861,7 @@ GameObject:
   - component: {fileID: 2550467353851998930}
   - component: {fileID: 2550467353851998929}
   - component: {fileID: 2550467353851998928}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Blade_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10420,7 +10420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2550467353862732919}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10455,7 +10455,7 @@ GameObject:
   - component: {fileID: 2550467354056248889}
   - component: {fileID: 2550467354056248888}
   - component: {fileID: 2550467354056249031}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Blade_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11020,7 +11020,7 @@ GameObject:
   - component: {fileID: 2550467354224487703}
   - component: {fileID: 2550467354224487702}
   - component: {fileID: 2550467354224487691}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13235,7 +13235,7 @@ GameObject:
   - component: {fileID: 2550467354468310638}
   - component: {fileID: 2550467354468310637}
   - component: {fileID: 2550467354468310636}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16165,7 +16165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2550467354477721438}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bomber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16202,7 +16202,7 @@ GameObject:
   - component: {fileID: 2550467354588391996}
   - component: {fileID: 2550467354588391995}
   - component: {fileID: 2550467354588391994}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17213,7 +17213,7 @@ GameObject:
   - component: {fileID: 2550467355367220040}
   - component: {fileID: 2550467355367220055}
   - component: {fileID: 2550467355367220054}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18039,7 +18039,7 @@ GameObject:
   - component: {fileID: 2550467355400237559}
   - component: {fileID: 2550467355400237558}
   - component: {fileID: 2550467355400237557}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Blade_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18599,7 +18599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5946112404893245720}
   - component: {fileID: 5946112404893245721}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RandomPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18648,7 +18648,7 @@ GameObject:
   - component: {fileID: 8206052414574232452}
   - component: {fileID: 8206052414574232451}
   - component: {fileID: 8206052414574232450}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19210,7 +19210,7 @@ GameObject:
   - component: {fileID: 8206052415111281857}
   - component: {fileID: 8206052415111281871}
   - component: {fileID: 5946112403100723016}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bomber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19268,7 +19268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosive_Mine: {fileID: 93838835657319769, guid: bd7a7bd2f3f67b44e8b733ab6edd84fa, type: 3}
-  spawn_Time: 5
+  spawn_Time: 15
   spawn_Point: {fileID: 2550467353862732919}
 --- !u!114 &5946112403100723016
 MonoBehaviour:
@@ -19282,6 +19282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd112c4c8071dc54e9ff9dcda8600087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  the_PM: {fileID: 0}
   the_GRP: {fileID: 5946112404893245721}
   the_EBS: {fileID: 2550467353484450061}
   agent: {fileID: 0}
@@ -19302,6 +19303,10 @@ PrefabInstance:
     - target: {fileID: 6237093348998890458, guid: 87c781d8d4773174f9bc1efb2ec1011d, type: 3}
       propertyPath: m_Name
       value: HitBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237093348998890458, guid: 87c781d8d4773174f9bc1efb2ec1011d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6237093348998890459, guid: 87c781d8d4773174f9bc1efb2ec1011d, type: 3}
       propertyPath: m_RootOrder

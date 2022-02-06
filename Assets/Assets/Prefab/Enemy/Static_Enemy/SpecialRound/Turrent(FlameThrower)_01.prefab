@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 937642264}
   - component: {fileID: 937642265}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RaycastDectectPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   the_TH: {fileID: 7043695301040933077}
+  _enemy_Attacking_Range: {fileID: 1068415362269387707}
   is_Melee: 0
   is_Range: 0
 --- !u!1 &2273645273374219248
@@ -55,7 +56,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7829202774098169650}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BulletSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +93,7 @@ GameObject:
   - component: {fileID: 3954717594522686034}
   - component: {fileID: 3954717594522686035}
   - component: {fileID: 3954717594522685998}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GasTank_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1599,7 +1600,7 @@ GameObject:
   - component: {fileID: 3954717595015175251}
   - component: {fileID: 3954717595015175252}
   - component: {fileID: 3954717595015175253}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2592,7 +2593,7 @@ GameObject:
   - component: {fileID: 3954717595149897697}
   - component: {fileID: 8969945154487810556}
   - component: {fileID: 1951359361769767390}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BottomPlate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2948,7 +2949,7 @@ GameObject:
   - component: {fileID: 3954717595169968081}
   - component: {fileID: 3954717595169968082}
   - component: {fileID: 3954717595169968083}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4428,7 +4429,7 @@ GameObject:
   - component: {fileID: 3954717595230090879}
   - component: {fileID: 3954717595230090848}
   - component: {fileID: 3954717595230090849}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TurrentBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6380,7 +6381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3954717595261045372}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Turrent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6416,7 +6417,7 @@ GameObject:
   - component: {fileID: 3954717595292165634}
   - component: {fileID: 3954717595292165635}
   - component: {fileID: 3954717595292165636}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8496,7 +8497,7 @@ GameObject:
   - component: {fileID: 3954717595372816013}
   - component: {fileID: 3954717595372816014}
   - component: {fileID: 3954717595372816015}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9488,7 +9489,7 @@ GameObject:
   - component: {fileID: 3954717595623931768}
   - component: {fileID: 3954717595623931769}
   - component: {fileID: 3954717595623931770}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11568,7 +11569,7 @@ GameObject:
   - component: {fileID: 3954717595720818153}
   - component: {fileID: 3954717595720818154}
   - component: {fileID: 3954717595720818155}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13648,7 +13649,7 @@ GameObject:
   - component: {fileID: 3954717595728456242}
   - component: {fileID: 3954717595728456243}
   - component: {fileID: 3954717595728456244}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackEnd_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15835,7 +15836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3954717595813190885}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15875,7 +15876,7 @@ GameObject:
   - component: {fileID: 3954717595922603269}
   - component: {fileID: 3954717595922603270}
   - component: {fileID: 3954717595922603265}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GasTank_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17382,7 +17383,7 @@ GameObject:
   - component: {fileID: 3954717595929790320}
   - component: {fileID: 3954717595929790321}
   - component: {fileID: 3954717595929790322}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18373,7 +18374,7 @@ GameObject:
   - component: {fileID: 3954717595972823712}
   - component: {fileID: 3954717595972823713}
   - component: {fileID: 3954717595972823714}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HitBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -18478,7 +18479,7 @@ GameObject:
   - component: {fileID: 3954717595983391123}
   - component: {fileID: 3954717595983391124}
   - component: {fileID: 3954717595983391125}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20558,7 +20559,7 @@ GameObject:
   - component: {fileID: 3954717596188125673}
   - component: {fileID: 3954717596188125674}
   - component: {fileID: 3954717596188125675}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21550,7 +21551,7 @@ GameObject:
   - component: {fileID: 3954717596376760665}
   - component: {fileID: 3954717596376760666}
   - component: {fileID: 3954717596376760667}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22372,7 +22373,7 @@ GameObject:
   - component: {fileID: 3954717596541837580}
   - component: {fileID: 3954717596541837581}
   - component: {fileID: 3954717596541837582}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23032,7 +23033,7 @@ GameObject:
   - component: {fileID: 3954717596570645730}
   - component: {fileID: 3954717596570645731}
   - component: {fileID: 3954717596570645732}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23854,7 +23855,7 @@ GameObject:
   - component: {fileID: 2283233794533321243}
   - component: {fileID: 5159529395669182426}
   - component: {fileID: 5163660196392712395}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25089,7 +25090,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7043695300741263942}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Turrent(FlameThrower)_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25125,7 +25126,7 @@ GameObject:
   - component: {fileID: 7043695301040933077}
   - component: {fileID: 3954717595878222716}
   - component: {fileID: 1068415362269387707}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25216,7 +25217,7 @@ GameObject:
   - component: {fileID: 7043695301717779910}
   - component: {fileID: 7043695301717779911}
   - component: {fileID: 3954717596631680956}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

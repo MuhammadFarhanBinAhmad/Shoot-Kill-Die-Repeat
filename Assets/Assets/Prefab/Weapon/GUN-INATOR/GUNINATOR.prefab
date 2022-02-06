@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1198678212972165588}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 6003002700192159183}
   - component: {fileID: 7712641610868828299}
   - component: {fileID: 2542471764820545874}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7323598661071826168}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Upgrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,6 +141,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 3636077942295558274}
   - {fileID: 426554679944438350}
   - {fileID: 3159837043371070870}
   m_Father: {fileID: 7208200051670998672}
@@ -163,7 +164,7 @@ GameObject:
   - component: {fileID: 1366762742084646178}
   - component: {fileID: 2792312482425940359}
   - component: {fileID: 4575657860358417123}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +297,7 @@ GameObject:
   - component: {fileID: 2993615995764344675}
   - component: {fileID: 1406018547354898453}
   - component: {fileID: 3235082401109312941}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +372,7 @@ GameObject:
   - component: {fileID: 5247542263379121185}
   - component: {fileID: 3590633794161609016}
   - component: {fileID: 4294423832531320375}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +447,7 @@ GameObject:
   - component: {fileID: 6776791564682858898}
   - component: {fileID: 2639109066317539390}
   - component: {fileID: 3129050354403528646}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CurrentUpgradeStat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +526,7 @@ GameObject:
   - component: {fileID: 1048737500707923683}
   - component: {fileID: 661761887911460458}
   - component: {fileID: 3341273756675299665}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -659,7 +660,7 @@ GameObject:
   - component: {fileID: 3636077941528120299}
   - component: {fileID: 3636077941528120301}
   - component: {fileID: 3636077941528120300}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,7 +735,7 @@ GameObject:
   - component: {fileID: 3636077941625580367}
   - component: {fileID: 3636077941625580337}
   - component: {fileID: 3636077941625580336}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -868,7 +869,7 @@ GameObject:
   - component: {fileID: 3636077941789976810}
   - component: {fileID: 3636077941789976812}
   - component: {fileID: 3636077941789976811}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,7 +944,7 @@ GameObject:
   - component: {fileID: 3636077941930951632}
   - component: {fileID: 3636077941930951634}
   - component: {fileID: 3636077941930951633}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1019,7 +1020,7 @@ GameObject:
   - component: {fileID: 3636077941951051557}
   - component: {fileID: 3636077941951051556}
   - component: {fileID: 3636077941951051555}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1152,7 +1153,7 @@ GameObject:
   - component: {fileID: 3636077942032669486}
   - component: {fileID: 3636077942032669456}
   - component: {fileID: 3636077942032669487}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1227,7 +1228,7 @@ GameObject:
   - component: {fileID: 3636077942082183333}
   - component: {fileID: 3636077942082183335}
   - component: {fileID: 3636077942082183334}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1362,7 +1363,7 @@ GameObject:
   - component: {fileID: 3636077942114043149}
   - component: {fileID: 3636077942114043148}
   - component: {fileID: 3636077942114043147}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1495,7 +1496,7 @@ GameObject:
   - component: {fileID: 3636077942219806216}
   - component: {fileID: 3636077942219806217}
   - component: {fileID: 3636077942219806218}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CurrentUpgradeStat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1574,7 +1575,7 @@ GameObject:
   - component: {fileID: 3636077942232715936}
   - component: {fileID: 3636077942232715937}
   - component: {fileID: 3636077942232715938}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CurrentUpgradeStat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1653,7 +1654,7 @@ GameObject:
   - component: {fileID: 3636077942242513161}
   - component: {fileID: 3636077942242513163}
   - component: {fileID: 3636077942242513162}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1728,7 +1729,7 @@ GameObject:
   - component: {fileID: 3636077942262315200}
   - component: {fileID: 3636077942262315202}
   - component: {fileID: 3636077942262315201}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1862,7 +1863,7 @@ GameObject:
   - component: {fileID: 3636077942295558274}
   - component: {fileID: 3636077942295558276}
   - component: {fileID: 3636077942295558275}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Screen_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1876,16 +1877,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3636077942295558273}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalRotation: {x: 1.740155e-13, y: -0, z: 1.32381255e-14, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 56.000904}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 426554679944438350}
+  m_Father: {fileID: 7323598661071826168}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.49, y: -1.46}
+  m_AnchoredPosition: {x: 15.5100765, y: 30.939991}
   m_SizeDelta: {x: 852.94, y: 316.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3636077942295558276
@@ -1937,7 +1938,7 @@ GameObject:
   - component: {fileID: 3636077942348447703}
   - component: {fileID: 3636077942348447705}
   - component: {fileID: 3636077942348447704}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LEVELUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2071,7 +2072,7 @@ GameObject:
   - component: {fileID: 3636077942350262548}
   - component: {fileID: 3636077942350262550}
   - component: {fileID: 3636077942350262549}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2146,7 +2147,7 @@ GameObject:
   - component: {fileID: 3636077942353514291}
   - component: {fileID: 3636077942353514293}
   - component: {fileID: 3636077942353514292}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2221,7 +2222,7 @@ GameObject:
   - component: {fileID: 3636077942413287660}
   - component: {fileID: 3636077942413287662}
   - component: {fileID: 3636077942413287661}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2355,7 +2356,7 @@ GameObject:
   - component: {fileID: 3636077942460950712}
   - component: {fileID: 3636077942460950714}
   - component: {fileID: 3636077942460950713}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LEVELUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2489,7 +2490,7 @@ GameObject:
   - component: {fileID: 3636077942632637528}
   - component: {fileID: 3636077942632637530}
   - component: {fileID: 3636077942632637529}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2564,7 +2565,7 @@ GameObject:
   - component: {fileID: 3636077942818292122}
   - component: {fileID: 3636077942818292124}
   - component: {fileID: 3636077942818292123}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2639,7 +2640,7 @@ GameObject:
   - component: {fileID: 3636077942934626920}
   - component: {fileID: 3636077942934626922}
   - component: {fileID: 3636077942934626921}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2714,7 +2715,7 @@ GameObject:
   - component: {fileID: 3636077943054236496}
   - component: {fileID: 3636077943054236498}
   - component: {fileID: 3636077943054236497}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2789,7 +2790,7 @@ GameObject:
   - component: {fileID: 3636077943131300024}
   - component: {fileID: 3636077943131300026}
   - component: {fileID: 3636077943131300025}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2864,7 +2865,7 @@ GameObject:
   - component: {fileID: 3636077943201531219}
   - component: {fileID: 3636077943201531221}
   - component: {fileID: 3636077943201531220}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LEVELUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2998,7 +2999,7 @@ GameObject:
   - component: {fileID: 3636077943239135760}
   - component: {fileID: 3636077943239135791}
   - component: {fileID: 3636077943239135790}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CurrentUpgradeStat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3078,7 +3079,7 @@ GameObject:
   - component: {fileID: 3636077943315221536}
   - component: {fileID: 3636077943315221567}
   - component: {fileID: 3636077943315221566}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3211,7 +3212,7 @@ GameObject:
   - component: {fileID: 8341592932767377707}
   - component: {fileID: 3273820888955557558}
   - component: {fileID: 2381642213713376386}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3284,7 +3285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7811422432722894408}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ReloadTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3324,7 +3325,7 @@ GameObject:
   - component: {fileID: 4339655680831133280}
   - component: {fileID: 6503731717412913068}
   - component: {fileID: 1905427721904170066}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3458,7 +3459,7 @@ GameObject:
   - component: {fileID: 8101575548760476514}
   - component: {fileID: 7145496470307499875}
   - component: {fileID: 7833572542035535510}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3532,7 +3533,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2348116544507784833}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Firerate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3572,7 +3573,7 @@ GameObject:
   - component: {fileID: 7679843540628389456}
   - component: {fileID: 2472429544865347795}
   - component: {fileID: 1834574409048310772}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3706,7 +3707,7 @@ GameObject:
   - component: {fileID: 6039431036066881947}
   - component: {fileID: 1872161257256196288}
   - component: {fileID: 6698061566740908349}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LvlBorder_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3915,7 +3916,7 @@ GameObject:
   - component: {fileID: 426554679944438350}
   - component: {fileID: 2047698826109295924}
   - component: {fileID: 8027284282130495286}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3932,15 +3933,14 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 56}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3636077942295558274}
+  m_Children: []
   m_Father: {fileID: 7323598661071826168}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16, y: 32.4}
-  m_SizeDelta: {x: 750, y: 300}
+  m_AnchoredPosition: {x: 15.61, y: 32.4}
+  m_SizeDelta: {x: 807.23, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2047698826109295924
 CanvasRenderer:
@@ -3991,7 +3991,7 @@ GameObject:
   - component: {fileID: 7541648807897469348}
   - component: {fileID: 4842396158171187923}
   - component: {fileID: 8576231928339119605}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4125,7 +4125,7 @@ GameObject:
   - component: {fileID: 5740318557114450629}
   - component: {fileID: 1579139806245533112}
   - component: {fileID: 283889383784127666}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4199,7 +4199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5378704202789333625}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Ammo & Mag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4240,13 +4240,13 @@ GameObject:
   - component: {fileID: 7208200051670998765}
   - component: {fileID: 7208200051670998674}
   - component: {fileID: 7208200051670998675}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: GUNINATOR_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7208200051670998672
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4265,7 +4265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.58, y: 0.392}
+  m_AnchoredPosition: {x: -0.1, y: 0.392}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!223 &7208200051670998765
@@ -4401,7 +4401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7208200052536133818}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PostProcess
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5035,7 +5035,7 @@ GameObject:
   - component: {fileID: 4901096571274314074}
   - component: {fileID: 4852250215765819929}
   - component: {fileID: 1000793747003486827}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5109,7 +5109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3159837043371070870}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: GuninatorButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5132,7 +5132,7 @@ RectTransform:
   - {fileID: 1198678212972165588}
   - {fileID: 5378704202789333625}
   m_Father: {fileID: 7323598661071826168}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5250,7 +5250,7 @@ GameObject:
   - component: {fileID: 3230903937949121640}
   - component: {fileID: 4128059206538813195}
   - component: {fileID: 441273985253501325}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LEVELUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5679,10 +5679,6 @@ PrefabInstance:
     - target: {fileID: 8329510810364603936, guid: ae040d29c40c1484bb9ad412d6ab0b59, type: 3}
       propertyPath: m_Name
       value: PostProcessStore
-      objectReference: {fileID: 0}
-    - target: {fileID: 8329510810364603936, guid: ae040d29c40c1484bb9ad412d6ab0b59, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8329510810364603965, guid: ae040d29c40c1484bb9ad412d6ab0b59, type: 3}
       propertyPath: m_RootOrder

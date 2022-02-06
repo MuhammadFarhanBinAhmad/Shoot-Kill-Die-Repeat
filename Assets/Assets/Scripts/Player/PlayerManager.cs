@@ -8,19 +8,24 @@ public class PlayerManager : MonoBehaviour
     CharacterController the_CC;
     CameraBob the_CB;
     PlayerCamera the_PC;
-    //Basic
+    [Header("Health")]
     public BasicCharacterDataStats the_Basic_Stats;
-    public float speed_Movement;
     public float health_Player;
     public float health_Player_Current;
-    public static int money_Total = 1000;
-    //Jumping
+    [Header("Money")]
+    public static int money_Total = 100;
+    [Header("Movements")]
+    //Speed
+    public float speed_Movement;
     Vector3 velocity;
+    //Jumping
     public float gravity = -9.81f;
     public float jump_Force = 9.81f;
     public Transform check_Ground;
     public float ground_Distance = 0.5f;
     public LayerMask ground_Layer;
+    //Dashing
+    public float DashSpeed;
     //bool is_Grounded;
     [SerializeField]
     int additional_Jumps;
@@ -29,9 +34,9 @@ public class PlayerManager : MonoBehaviour
     //PlayerUI
     PlayerUIHUD the_Player_UI_HUD;
     public GameObject press_E;
-    //Effect
+    //Debuff Effect
     internal float speed_Debuff_Time, sight_Debuff_Time, fire_Debuff_Time;
-
+    public float speed_Collectables_Magnet;
     //Others
     public GUNINATORGunCreation the_GUNINATOR;
     public ATM the_ATM;
@@ -83,7 +88,10 @@ public class PlayerManager : MonoBehaviour
         //Movement
         Vector3 move = transform.right * H + transform.forward * V;
         the_CC.Move(move * speed_Movement * Time.deltaTime);
-
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            PlayerDashing(move);
+        }
         if (H != 0 || V != 0)
         {
             the_CB.isWalking = true;
@@ -100,6 +108,10 @@ public class PlayerManager : MonoBehaviour
         {
             velocity.y = -2f;
         }
+    }
+    void PlayerDashing(Vector3 move)
+    {
+        the_CC.Move(move * DashSpeed * Time.deltaTime);
     }
 
     //check if player grounded
@@ -121,11 +133,6 @@ public class PlayerManager : MonoBehaviour
         velocity.y = Mathf.Sqrt(jump_Force * -2 * gravity);
         number_of_Jumps++;
     }
-    void SwitchWeaponV2()
-    {
-
-    }
-
     internal void TakeDamage(float Dmg)
     {
         health_Player_Current -= Dmg;
