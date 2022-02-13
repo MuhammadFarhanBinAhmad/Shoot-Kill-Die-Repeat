@@ -24,6 +24,9 @@ public class PlayerUIHUD : MonoBehaviour
     public Image p_HealthBar;
     public GameObject p_DamageEffect;
     public TextMeshProUGUI t_HealthBar;
+    [Header("CrossHair")]
+    public GameObject CrossHair;
+
     private void Awake()
     {
         the_BGV2 = the_PM.the_BGV2;

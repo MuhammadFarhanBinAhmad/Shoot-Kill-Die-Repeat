@@ -51,12 +51,9 @@ public class WeaponExchange : MonoBehaviour
     }
     public void UpdateItemCost()
     {
-        print("A");
-
         for (int i = 1; i < LevelManager.weapon_Unlocked.Length;i++)
         {
             ui_Weapon_Cost[i].text = "X" + ui_WeaponLevelSO[i].weapon_Cost.ToString();
-            print("A");
         }
     }
     public void UnlockWeapon(WeaponLevelSO WLSO)

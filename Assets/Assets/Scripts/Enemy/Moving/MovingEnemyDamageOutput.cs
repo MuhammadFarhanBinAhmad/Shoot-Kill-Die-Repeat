@@ -17,7 +17,17 @@ public class MovingEnemyDamageOutput : MonoBehaviour
         {
             if (is_Kamikaze)
             {
-                Instantiate(explosion_VFX, transform.position, transform.rotation);
+                AmmoPool AP = FindObjectOfType<AmmoPool>();
+                for (int i = 0; i < AP.Explosion_Universal_Pool.Count; i++)
+                {
+                    if (!AP.Explosion_Universal_Pool[i].activeInHierarchy)
+                    {
+                        AP.Explosion_Universal_Pool[i].transform.position = this.transform.position;
+                        AP.Explosion_Universal_Pool[i].transform.rotation = this.transform.rotation;
+                        AP.Explosion_Universal_Pool[i].SetActive(true);
+                        break;
+                    }
+                }
                 the_EBS.TakingDamage((int)the_EBS.unit_Health, this.gameObject);
             }
             else

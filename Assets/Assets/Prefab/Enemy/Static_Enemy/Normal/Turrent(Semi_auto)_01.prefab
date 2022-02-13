@@ -19561,7 +19561,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f257d9c1ba44da4f99a226e3c3c8a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion_Effect: {fileID: 8170782747127229968, guid: 45b48e2828e690341a884e42f4d9d2a3, type: 3}
+  the_EBS: {fileID: 8701897931260225969}
+  is_Explosive_Universal: 0
+  is_Explosive_Normal: 1
 --- !u!114 &8701897931260225970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19604,7 +19606,6 @@ MonoBehaviour:
   unit_Speed: 0
   the_BMEC: {fileID: 0}
   the_RME: {fileID: 0}
-  agent: {fileID: 0}
   is_StaticEnemy: 0
 --- !u!1 &8701897931305747229
 GameObject:

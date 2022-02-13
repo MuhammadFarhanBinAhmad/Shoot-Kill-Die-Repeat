@@ -17,8 +17,6 @@ public class EnemyBasicStats : MonoBehaviour
     public GameObject gameobject_Parent;
     [SerializeField]
     RoomInformation the_RM;
-
-    internal bool stats_Multipled;
     bool dropped_Collectables;
 
     [Header("ForEnemyShootingProjectile")]
@@ -32,8 +30,6 @@ public class EnemyBasicStats : MonoBehaviour
     public float unit_Speed;
     public BasicMovingEnemyComponents the_BMEC;
     public RandomMovementEnemy the_RME;
-    [SerializeField]
-    NavMeshAgent agent;
 
     [Header("ForStaticEnemy")]
     [SerializeField]
@@ -46,7 +42,6 @@ public class EnemyBasicStats : MonoBehaviour
         unit_Damage = (EBSSO.damage * FindObjectOfType<LevelManager>().stats_Multiplier[LevelManager.CURRENTLEVEL]);
         if (is_MovingEnemy)
         {
-            agent = GetComponent<NavMeshAgent>();
             unit_Speed = EBSSO.speed;
         }
         if (is_ProjectileEnemy)
@@ -116,34 +111,6 @@ public class EnemyBasicStats : MonoBehaviour
                 the_RM.CheckTotalEnemy();
                 Destroy(gameobject_Parent);
             }
-        }
-    }
-
-    internal void MultipleStats(int buff_Multiplier)
-    {
-        if (is_MovingEnemy)
-        {
-            unit_Speed *= buff_Multiplier;
-            agent.speed = unit_Speed;
-        }
-        unit_Health *= buff_Multiplier;
-        unit_Damage *= buff_Multiplier;
-        stats_Multipled = true;
-        StartCoroutine(ResetStats(buff_Multiplier));
-    }
-    internal IEnumerator ResetStats(int multiplier)
-    {
-        yield return new WaitForSeconds(5);
-        if (stats_Multipled)
-        {
-            if (is_MovingEnemy)
-            {
-                unit_Speed /= multiplier;
-                agent.speed = unit_Speed;
-            }
-            unit_Health /= multiplier;
-            unit_Damage /= multiplier;
-            stats_Multipled = false;
         }
     }
 }

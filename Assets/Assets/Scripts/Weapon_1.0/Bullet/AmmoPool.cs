@@ -9,6 +9,8 @@ public class AmmoPool : MonoBehaviour
     public GameObject misc_Spark;
     public GameObject enemy_Hit_Spark;
     public GameObject muzzle_Flash_Spark;
+    public GameObject Explosion_Universal;
+    public GameObject Explosion_Normal;
     public GameObject text_Damage;
 
     public int pooled_Amount = 100;
@@ -18,6 +20,8 @@ public class AmmoPool : MonoBehaviour
     internal List<GameObject> misc_Spark_Pool = new List<GameObject>();
     internal List<GameObject> enemy_Hit_Spark_Pool = new List<GameObject>();
     internal List<GameObject> muzzle_Flash_Spark_Pool = new List<GameObject>();
+    internal List<GameObject> Explosion_Universal_Pool = new List<GameObject>();
+    internal List<GameObject> Explosion_Normal_Pool = new List<GameObject>();
     internal List<GameObject> text_Damage_Pool = new List<GameObject>();
 
     GameObject group_Player_Bullet;
@@ -25,6 +29,8 @@ public class AmmoPool : MonoBehaviour
     GameObject group_misc_Spark;
     GameObject group_enemy_Hit_Spark;
     GameObject group_muzzle_Flash_Spark;
+    GameObject group_Explosion_Universal;
+    GameObject group_Explosion_Normal;
     GameObject group_text_Damage;
 
     private void Start()
@@ -34,6 +40,8 @@ public class AmmoPool : MonoBehaviour
         group_misc_Spark = new GameObject("MiscSparkPool");
         group_enemy_Hit_Spark = new GameObject("EnemyHitSparkPool");
         group_muzzle_Flash_Spark = new GameObject("MuzzleFlashPool");
+        group_Explosion_Universal = new GameObject("ExplosionUniversalPool");
+        group_Explosion_Normal = new GameObject("ExplosionNormalPool");
         group_text_Damage = new GameObject("TextDamagePool");
 
         //creating object pool of ammo game object
@@ -44,6 +52,8 @@ public class AmmoPool : MonoBehaviour
             GameObject MS = Instantiate(misc_Spark);
             GameObject EHS = Instantiate(enemy_Hit_Spark);
             GameObject MFS = Instantiate(muzzle_Flash_Spark);
+            GameObject EU = Instantiate(Explosion_Universal);
+            GameObject EN = Instantiate(Explosion_Normal);
             GameObject TD = Instantiate(text_Damage);
 
             bullet_Player_Pool.Add(O);
@@ -51,6 +61,8 @@ public class AmmoPool : MonoBehaviour
             misc_Spark_Pool.Add(MS);
             enemy_Hit_Spark_Pool.Add(EHS);
             muzzle_Flash_Spark_Pool.Add(MFS);
+            Explosion_Universal_Pool.Add(EU);
+            Explosion_Normal_Pool.Add(EN);
             text_Damage_Pool.Add(TD);
 
             O.transform.parent = group_Player_Bullet.transform;
@@ -63,6 +75,10 @@ public class AmmoPool : MonoBehaviour
             EHS.SetActive(false);
             MFS.transform.parent = group_muzzle_Flash_Spark.transform;
             MFS.SetActive(false);
+            EU.transform.parent = group_Explosion_Universal.transform;
+            EU.SetActive(false);
+            EN.transform.parent = group_Explosion_Normal.transform;
+            EN.SetActive(false);
             TD.transform.parent = group_text_Damage.transform;
             TD.SetActive(false);
         }
@@ -71,6 +87,8 @@ public class AmmoPool : MonoBehaviour
         GameObject.DontDestroyOnLoad(group_misc_Spark);
         GameObject.DontDestroyOnLoad(group_enemy_Hit_Spark);
         GameObject.DontDestroyOnLoad(group_muzzle_Flash_Spark);
+        GameObject.DontDestroyOnLoad(group_Explosion_Universal);
+        GameObject.DontDestroyOnLoad(group_Explosion_Normal);
         GameObject.DontDestroyOnLoad(group_text_Damage);
 
     }
@@ -83,6 +101,8 @@ public class AmmoPool : MonoBehaviour
             Destroy(misc_Spark_Pool[i]);
             Destroy(enemy_Hit_Spark_Pool[i]);
             Destroy(muzzle_Flash_Spark_Pool[i]);
+            Destroy(Explosion_Universal_Pool[i]);
+            Destroy(Explosion_Normal_Pool[i]);
             Destroy(text_Damage_Pool[i]);
         }
     }

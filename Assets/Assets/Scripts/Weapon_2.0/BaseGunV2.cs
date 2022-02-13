@@ -11,6 +11,7 @@ public class BaseGunV2 : MonoBehaviour
     AccessGUNINATOR the_AccessGUNINATOR;
     AccessWeaponExchange the_AccessWeaponExchange;
 
+
     /// -------- WeaponData
     [Header("WeaponData")]
     public int current_Weapon_Equipped;
@@ -18,6 +19,8 @@ public class BaseGunV2 : MonoBehaviour
     public List<WeaponMode> current_WM_Installed = new List<WeaponMode>();
     public List<GameObject> WM_Installed_GameObject = new List<GameObject>();
     public List<Transform> weapon_Pos = new List<Transform>();
+    public float accuracy_Reset_Time;
+    public float current_Accuracy_Reset_Timing;
 
     string round_Type_Name;
     bool currently_Shooting;
@@ -29,7 +32,8 @@ public class BaseGunV2 : MonoBehaviour
     public List<AudioClip> sfx_Weapon_Sound;
     [SerializeField]
     Animator the_Anim;
-
+    [SerializeField]
+    RectTransform the_Crosshair_RectTransform;
     void Awake()
     {
         //ammo pool
@@ -42,14 +46,18 @@ public class BaseGunV2 : MonoBehaviour
     }
     private void Start()
     {
+        //Set weapon hierarchy
         go_current_Weapon_Equipped = current_WM_Installed[current_Weapon_Equipped].weapon_GameObject;
         GameObject GO = Instantiate(go_current_Weapon_Equipped, transform.position, transform.rotation);
         GO.transform.parent = GameObject.Find("t_Pistol").transform;
         GO.transform.localPosition = new Vector3(0, 0, 0);
         WM_Installed_GameObject.Add(GO);
         go_current_Weapon_Equipped = GO;
+        //Set Weapon bullet pos
         bullet_Spawn_Point = go_current_Weapon_Equipped.transform.Find("SpawnBullet_Pos").transform;
         bullet_Spawn_Point.transform.position = go_current_Weapon_Equipped.transform.Find("SpawnBullet_Pos").position;
+
+
     }
     private void Update()
     {
@@ -60,6 +68,11 @@ public class BaseGunV2 : MonoBehaviour
             current_WM_Installed[current_Weapon_Equipped].gun_current_Ammo > 0)
         {
             StartReloading();
+        }
+        if (current_Accuracy_Reset_Timing <= accuracy_Reset_Time)
+        {
+            current_Accuracy_Reset_Timing += Time.deltaTime;
+            the_Crosshair_RectTransform.sizeDelta = new Vector2(Mathf.Lerp(the_Crosshair_RectTransform.rect.width, 20, .1f), Mathf.Lerp(the_Crosshair_RectTransform.rect.width, 20, .1f));
         }
     }
     internal void ChangeWeaponModel()
@@ -145,6 +158,21 @@ public class BaseGunV2 : MonoBehaviour
             }
         }
     }
+    void SpawnMuzzleFlash()
+    {
+        for (int i = 0; i < the_Ammo_Pool.bullet_Player_Pool.Count; i++)
+        {
+            if (!the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].activeInHierarchy)
+            {
+                the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
+                the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
+                the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].GetComponent<AudioSource>().clip = sfx_Weapon_Sound[current_WM_Installed[current_Weapon_Equipped].weapon_Code];
+                the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].SetActive(true);
+                break;
+            }
+
+        }
+    }
     void ShootWeapon()
     {
         //Stop all reloading
@@ -160,21 +188,30 @@ public class BaseGunV2 : MonoBehaviour
                 {
                     if (!the_Ammo_Pool.bullet_Player_Pool[i].activeInHierarchy)
                     {
-                        float r_x = Random.Range(-1.5f, 1.5f);
-                        float r_y = Random.Range(-1.5f, 1.5f);
+                        if (current_Accuracy_Reset_Timing >= accuracy_Reset_Time)
+                        {
+                            the_Ammo_Pool.bullet_Player_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
+                            the_Ammo_Pool.bullet_Player_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
+                        }
+                        else
+                        {
+                            float r_x = Random.Range(-1.5f, 1.5f);
+                            float r_y = Random.Range(-1.5f, 1.5f);
 
-                        the_Ammo_Pool.bullet_Player_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
+                            the_Ammo_Pool.bullet_Player_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
 
-                        //round spread
-                        Quaternion q = Quaternion.Euler
-                            (bullet_Spawn_Point.transform.eulerAngles.x + r_x,
-                            bullet_Spawn_Point.transform.eulerAngles.y + r_y,
-                            bullet_Spawn_Point.transform.eulerAngles.z);
-                        the_Ammo_Pool.bullet_Player_Pool[i].transform.rotation = q;
+                            //round spread
+                            Quaternion q = Quaternion.Euler
+                                (bullet_Spawn_Point.transform.eulerAngles.x + r_x,
+                                bullet_Spawn_Point.transform.eulerAngles.y + r_y,
+                                bullet_Spawn_Point.transform.eulerAngles.z);
+                            the_Ammo_Pool.bullet_Player_Pool[i].transform.rotation = q;
+                        }
 
-                        the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
-                        the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
-                        the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].GetComponent<AudioSource>().clip = sfx_Weapon_Sound[current_WM_Installed[current_Weapon_Equipped].weapon_Code];
+                        current_Accuracy_Reset_Timing = 0;
+                        the_Crosshair_RectTransform.sizeDelta = new Vector2(60, 60);
+
+                        SpawnMuzzleFlash();
 
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().enabled = true;
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Active_Time = current_WM_Installed[current_Weapon_Equipped].bullet_Active_Time;
@@ -185,7 +222,6 @@ public class BaseGunV2 : MonoBehaviour
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().round_Type = current_WM_Installed[current_Weapon_Equipped].current_Round_Type;//set bullet type
 
                         the_Ammo_Pool.bullet_Player_Pool[i].SetActive(true);
-                        the_Ammo_Pool.muzzle_Flash_Spark_Pool[i].SetActive(true);
                         //the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats>().ElementType(the_Element_Type);//set bullet type
                         //the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats>().is_Rocket = is_Rocket;
                         //update Weapon UI

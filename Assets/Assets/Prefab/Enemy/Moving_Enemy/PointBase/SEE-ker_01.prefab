@@ -17371,7 +17371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   the_EBS: {fileID: 363608150096673210}
-  go_Parent: {fileID: 0}
+  go_Parent: {fileID: 5464657555867488767}
   is_Kamikaze: 0
   explosion_VFX: {fileID: 8170782747127229968, guid: 45b48e2828e690341a884e42f4d9d2a3, type: 3}
 --- !u!1 &5464657555867488767
@@ -26036,7 +26036,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f257d9c1ba44da4f99a226e3c3c8a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion_Effect: {fileID: 8170782747127229968, guid: 45b48e2828e690341a884e42f4d9d2a3, type: 3}
+  the_EBS: {fileID: 363608150096673210}
+  is_Explosive_Universal: 0
+  is_Explosive_Normal: 1
 --- !u!114 &5464657555597200867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26053,7 +26055,7 @@ MonoBehaviour:
   - {fileID: 8355221085025975879, guid: 08eb8e5646c9041489acb6be1585eaec, type: 3}
   - {fileID: 6247218767408144247, guid: da9801a074f47d348b855c99454af8f4, type: 3}
   - {fileID: 3939202432181095791, guid: d4b2a2550d2a24b46afd3896857325aa, type: 3}
-  amount_Of_Drop: 010000000400000001000000
+  amount_Of_Drop: 010000000300000001000000
 --- !u!114 &363608150096673210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26080,7 +26082,6 @@ MonoBehaviour:
   unit_Speed: 0
   the_BMEC: {fileID: 6433095850664635625}
   the_RME: {fileID: 0}
-  agent: {fileID: 0}
   is_StaticEnemy: 0
 --- !u!1 &6633120270707934326
 GameObject:

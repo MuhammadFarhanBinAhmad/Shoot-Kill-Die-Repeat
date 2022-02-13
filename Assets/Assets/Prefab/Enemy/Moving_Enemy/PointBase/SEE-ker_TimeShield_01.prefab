@@ -306,9 +306,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1265617882217767115}
     m_Modifications:
+    - target: {fileID: 718087703, guid: b76cda7eb1e04c941bb562229f593dfb, type: 3}
+      propertyPath: amount_Of_Drop.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 371927802187181957, guid: b76cda7eb1e04c941bb562229f593dfb, type: 3}
       propertyPath: m_VersionIndex
       value: 267
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337762120472087637, guid: b76cda7eb1e04c941bb562229f593dfb, type: 3}
+      propertyPath: the_EBS
+      value: 
+      objectReference: {fileID: 1024719594693286280}
+    - target: {fileID: 1337762120472087637, guid: b76cda7eb1e04c941bb562229f593dfb, type: 3}
+      propertyPath: is_Explosive_Normal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1337762120472087642, guid: b76cda7eb1e04c941bb562229f593dfb, type: 3}
       propertyPath: m_Layer
@@ -399,9 +411,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5901220304848241965, guid: b76cda7eb1e04c941bb562229f593dfb, type: 3}
+      propertyPath: go_Parent
+      value: 
+      objectReference: {fileID: 1265617882217767113}
+    - target: {fileID: 5901220304848241965, guid: b76cda7eb1e04c941bb562229f593dfb, type: 3}
       propertyPath: explosion_VFX
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8170782747127229968, guid: 45b48e2828e690341a884e42f4d9d2a3, type: 3}
     - target: {fileID: 6008941915951013731, guid: b76cda7eb1e04c941bb562229f593dfb, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -539,5 +555,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63968f8142a53e440a0f450f09af34ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1024719594693286280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5682864020516328014, guid: b76cda7eb1e04c941bb562229f593dfb, type: 3}
+  m_PrefabInstance: {fileID: 4676178686811704262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79b7c71fb61bef4ab98fbab4832bbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

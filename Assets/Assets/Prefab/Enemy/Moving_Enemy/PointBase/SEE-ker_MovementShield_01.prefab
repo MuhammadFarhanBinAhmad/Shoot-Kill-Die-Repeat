@@ -21882,7 +21882,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f257d9c1ba44da4f99a226e3c3c8a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion_Effect: {fileID: 8170782747127229968, guid: 45b48e2828e690341a884e42f4d9d2a3, type: 3}
+  the_EBS: {fileID: 0}
+  is_Explosive_Universal: 0
+  is_Explosive_Normal: 0
 --- !u!114 &8860255393313542540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21899,7 +21901,7 @@ MonoBehaviour:
   - {fileID: 8355221085025975879, guid: 08eb8e5646c9041489acb6be1585eaec, type: 3}
   - {fileID: 6247218767408144247, guid: da9801a074f47d348b855c99454af8f4, type: 3}
   - {fileID: 3939202432181095791, guid: d4b2a2550d2a24b46afd3896857325aa, type: 3}
-  amount_Of_Drop: 010000000400000001000000
+  amount_Of_Drop: 010000000500000001000000
 --- !u!114 &3758365909081990613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21926,7 +21928,6 @@ MonoBehaviour:
   unit_Speed: 0
   the_BMEC: {fileID: 9024626752401069748}
   the_RME: {fileID: 0}
-  agent: {fileID: 0}
   is_StaticEnemy: 0
 --- !u!1 &8282831239542118118
 GameObject:

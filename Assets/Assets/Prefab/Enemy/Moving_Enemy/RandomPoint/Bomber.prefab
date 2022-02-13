@@ -16179,7 +16179,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2550467354477721437}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.534727, y: 0.716, z: -1.265725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19297,9 +19297,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 8206052415111281870}
     m_Modifications:
     - target: {fileID: 6237093348998890456, guid: 87c781d8d4773174f9bc1efb2ec1011d, type: 3}
+      propertyPath: the_EBS
+      value: 
+      objectReference: {fileID: 2550467353484450061}
+    - target: {fileID: 6237093348998890456, guid: 87c781d8d4773174f9bc1efb2ec1011d, type: 3}
       propertyPath: explosion_Effect
       value: 
       objectReference: {fileID: 8170782747127229968, guid: 45b48e2828e690341a884e42f4d9d2a3, type: 3}
+    - target: {fileID: 6237093348998890456, guid: 87c781d8d4773174f9bc1efb2ec1011d, type: 3}
+      propertyPath: is_Explosive_Normal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6237093348998890458, guid: 87c781d8d4773174f9bc1efb2ec1011d, type: 3}
       propertyPath: m_Name
       value: HitBox
@@ -19352,6 +19360,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6237093348998890463, guid: 87c781d8d4773174f9bc1efb2ec1011d, type: 3}
+      propertyPath: EBSSO
+      value: 
+      objectReference: {fileID: 11400000, guid: c1915e60de9d33a458fb0904967384a9, type: 2}
     - target: {fileID: 6237093348998890463, guid: 87c781d8d4773174f9bc1efb2ec1011d, type: 3}
       propertyPath: agent
       value: 

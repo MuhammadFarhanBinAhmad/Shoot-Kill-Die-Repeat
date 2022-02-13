@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class DamageInput_HurtEnemy : MonoBehaviour
 {
-
-    public GameObject explosion_Effect;
-
+    [SerializeField]
     internal EnemyBasicStats the_EBS;
+
+    public bool is_Explosive_Universal, is_Explosive_Normal;
+
     private void Start()
     {
         the_EBS = GetComponent<EnemyBasicStats>();
     }
+
     internal void TakeBulletDamage(BulletStats_ForPlayer BSFP)
     {
         int new_Bullet_Damage;
@@ -24,7 +26,7 @@ public class DamageInput_HurtEnemy : MonoBehaviour
 
         if (the_EBS.unit_Health <= 0)
         {
-            Instantiate(explosion_Effect, transform.position, transform.rotation);
+            EnemyDeath();
         }
     }
     internal void TakeExplosionDamage(int DMG)
@@ -32,7 +34,46 @@ public class DamageInput_HurtEnemy : MonoBehaviour
         the_EBS.TakingDamage(DMG, this.gameObject);
         if (the_EBS.unit_Health <= 0)
         {
-            Instantiate(explosion_Effect, transform.position, transform.rotation);
+            EnemyDeath();
+        }
+    }
+    void ExplosiveUniversal()
+    {
+        AmmoPool AP = FindObjectOfType<AmmoPool>();
+        for (int i = 0; i < AP.Explosion_Universal_Pool.Count; i++)
+        {
+            if (!AP.Explosion_Universal_Pool[i].activeInHierarchy)
+            {
+                AP.Explosion_Universal_Pool[i].transform.position = this.transform.position;
+                AP.Explosion_Universal_Pool[i].transform.rotation = this.transform.rotation;
+                AP.Explosion_Universal_Pool[i].SetActive(true);
+                break;
+            }
+        }
+    }
+    void ExplosiveNormal()
+    {
+        AmmoPool AP = FindObjectOfType<AmmoPool>();
+        for (int i = 0; i < AP.Explosion_Normal_Pool.Count; i++)
+        {
+            if (!AP.Explosion_Normal_Pool[i].activeInHierarchy)
+            {
+                AP.Explosion_Normal_Pool[i].transform.position = this.transform.position;
+                AP.Explosion_Normal_Pool[i].transform.rotation = this.transform.rotation;
+                AP.Explosion_Normal_Pool[i].SetActive(true);
+                break;
+            }
+        }
+    }
+    void EnemyDeath()
+    {
+        if (is_Explosive_Universal)
+        {
+            ExplosiveUniversal();
+        }
+        if (is_Explosive_Normal)
+        {
+            ExplosiveNormal();
         }
     }
     private void OnTriggerEnter(Collider other)

@@ -52,7 +52,6 @@ public class RandomMovementEnemy : MonoBehaviour
                         if (agent.remainingDistance <= agent.stoppingDistance)
                         {
                             the_GRP.GetPoint();
-                            print("Patrol");
                             return;
                         }
                     }
@@ -60,7 +59,6 @@ public class RandomMovementEnemy : MonoBehaviour
                     {
                         agent.speed = the_EBS.unit_Speed * 3;
                         current_UT = unit_Task.Attacking;
-                        print("Atatck");
                     }
                     break;
                 }
@@ -84,7 +82,6 @@ public class RandomMovementEnemy : MonoBehaviour
                 }
             case unit_Task.Resting:
                 {
-                    print("Rest");
                     if (unit_Current_Charging_Time >= 0)
                     {
                         unit_Current_Charging_Time -= Time.deltaTime;

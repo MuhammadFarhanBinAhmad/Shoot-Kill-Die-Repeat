@@ -39,6 +39,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2897708012563565039}
     m_Modifications:
+    - target: {fileID: 2006760285176806782, guid: 9636714f036e3514a878b300ea836965, type: 3}
+      propertyPath: amount_Of_Drop.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006760285176806782, guid: 9636714f036e3514a878b300ea836965, type: 3}
+      propertyPath: amount_Of_Drop.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006760285176806782, guid: 9636714f036e3514a878b300ea836965, type: 3}
+      propertyPath: droppable_Collectables.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006760285176806782, guid: 9636714f036e3514a878b300ea836965, type: 3}
+      propertyPath: droppable_Collectables.Array.data[2]
+      value: 
+      objectReference: {fileID: 3939202432181095791, guid: d4b2a2550d2a24b46afd3896857325aa, type: 3}
     - target: {fileID: 2383440908062356261, guid: 9636714f036e3514a878b300ea836965, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -47,6 +63,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3050359434610312682, guid: 9636714f036e3514a878b300ea836965, type: 3}
+      propertyPath: the_EBS
+      value: 
+      objectReference: {fileID: 5335783952456652399}
     - target: {fileID: 4351184477875606440, guid: 9636714f036e3514a878b300ea836965, type: 3}
       propertyPath: m_Layer
       value: 2
