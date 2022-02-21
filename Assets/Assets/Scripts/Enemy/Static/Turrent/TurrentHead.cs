@@ -74,6 +74,7 @@ public class TurrentHead : MonoBehaviour
                     if (current_Target != null)
                     {
                         current_Mode = 1;
+                        print("Mode 0");
                     }
                     else
                     {
@@ -87,10 +88,12 @@ public class TurrentHead : MonoBehaviour
                     if (target_Lock)
                     {
                         current_Mode = 2;
+                        print("Mode 1");
                     }
                     else
                     {
                         TargetLost();
+                        print("TargetLost");
                     }
                     break;
                 }

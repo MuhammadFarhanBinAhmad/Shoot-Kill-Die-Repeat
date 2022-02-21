@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
     public float health_Player;
     public float health_Player_Current;
     [Header("Money")]
-    public static int money_Total = 50;
+    public static int money_Total = 100;
     [Header("Movements")]
     //Speed
     public float speed_Movement;
@@ -75,9 +75,13 @@ public class PlayerManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            the_BGV2.current_Weapon_Equipped = 1;
-            the_BGV2.ChangeWeaponModel();
-            the_Player_UI_HUD.AmmoUpdateV2();
+
+            if (the_BGV2.current_WM_Installed[1] !=null)
+            {
+                the_BGV2.current_Weapon_Equipped = 1;
+                the_BGV2.ChangeWeaponModel();
+                the_Player_UI_HUD.AmmoUpdateV2();
+            }
         }
     }
     void MovePlayer()

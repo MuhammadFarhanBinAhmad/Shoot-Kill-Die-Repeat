@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5400758459955510476}
   - component: {fileID: 5033583037246428450}
   - component: {fileID: 1137121475216007224}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 1487945926124494135}
   - component: {fileID: 796008423731622754}
   - component: {fileID: 955180652545024658}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1067,7 +1067,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.02, z: 0.15}
+  m_Size: {x: 0.2, y: 0.02, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &796008423731622754
 Rigidbody:

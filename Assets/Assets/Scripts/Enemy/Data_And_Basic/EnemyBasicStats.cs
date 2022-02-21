@@ -31,11 +31,6 @@ public class EnemyBasicStats : MonoBehaviour
     public BasicMovingEnemyComponents the_BMEC;
     public RandomMovementEnemy the_RME;
 
-    [Header("ForStaticEnemy")]
-    [SerializeField]
-    bool is_StaticEnemy;
-
-
     private void Awake()
     {
         unit_Health = (EBSSO.health * FindObjectOfType<LevelManager>().stats_Multiplier[LevelManager.CURRENTLEVEL]);
@@ -49,18 +44,10 @@ public class EnemyBasicStats : MonoBehaviour
             unit_RoundType = EBSSO.round_Type;
             unit_FireRate = EBSSO.Fire_Rate;
         }
-        if (is_StaticEnemy)
-        {
-
-        }
         if(GetComponentInParent<RoomInformation>() !=null)
         {
-            GetComponentInParent<RoomInformation>().enemy_Total.Add(this) ;
+            the_RM = GetComponentInParent<RoomInformation>();
         }
-    }
-    private void Start()
-    {
-        the_RM = GetComponentInParent<RoomInformation>();
     }
     internal void TakingDamage(int dmg,GameObject GO)
     {
@@ -96,8 +83,8 @@ public class EnemyBasicStats : MonoBehaviour
                     GetComponent<DropCollectables>().SpawnCollectables();
                     dropped_Collectables = true;
                 }
-                FindObjectOfType<RoomInformation>().enemy_Total.Remove(this);
-                FindObjectOfType<RoomInformation>().CheckTotalEnemy();
+                the_RM.enemy_In_Wave[the_RM.wave_Current].enemy.Remove(this.gameObject);
+                the_RM.CheckTotalEnemy();
                 Destroy(gameObject);
             }
             else
@@ -107,7 +94,7 @@ public class EnemyBasicStats : MonoBehaviour
                     GetComponent<DropCollectables>().SpawnCollectables();
                     dropped_Collectables = true;
                 }
-                the_RM.enemy_Total.Remove(this);
+                the_RM.enemy_In_Wave[the_RM.wave_Current].enemy.Remove(this.gameobject_Parent);
                 the_RM.CheckTotalEnemy();
                 Destroy(gameobject_Parent);
             }

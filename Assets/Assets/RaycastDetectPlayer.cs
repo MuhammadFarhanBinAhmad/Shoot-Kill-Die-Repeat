@@ -29,7 +29,7 @@ public class RaycastDetectPlayer : MonoBehaviour
                     }
                     else
                     {
-                        print("NotPlayer");
+                        print(hit.transform.name);
                         the_TH.target_Lock = false;
                     }
                 }
