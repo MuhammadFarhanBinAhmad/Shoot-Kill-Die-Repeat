@@ -175,6 +175,10 @@ public class BaseGunV2 : MonoBehaviour
     }
     void ShootWeapon()
     {
+        if (the_Ammo_Pool == null)
+        {
+            the_Ammo_Pool = FindObjectOfType<AmmoPool>();
+        }
         //Stop all reloading
         StopCoroutine("Reloading");
         currently_Reloading = false;

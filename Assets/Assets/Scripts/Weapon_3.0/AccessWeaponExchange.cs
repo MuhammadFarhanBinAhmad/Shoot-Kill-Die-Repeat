@@ -80,6 +80,7 @@ public class AccessWeaponExchange : MonoBehaviour
         if (other.GetComponent<PlayerManager>() != null)
         {
             the_PlayerManager = other.GetComponent<PlayerManager>();
+            GunHolder = the_PlayerManager.gameObject.transform.Find("/Player 1/Main Camera/WeaponCam/Weapons/BaseGun/GunHolder").gameObject;
             RemoveWeaponObjectAndUI();
             OpenStorePage();
             SendWeaponData();

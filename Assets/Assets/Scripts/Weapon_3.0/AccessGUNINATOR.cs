@@ -70,6 +70,7 @@ public class AccessGUNINATOR : MonoBehaviour
     }
     void RemoveWeaponObjectAndUI()
     {
+
         CrossHair.SetActive(false);
         GunHolder.SetActive(false);
     }
@@ -83,6 +84,7 @@ public class AccessGUNINATOR : MonoBehaviour
         if (other.GetComponent<PlayerManager>() != null)
         {
             the_PlayerManager = other.GetComponent<PlayerManager>();
+            GunHolder = the_PlayerManager.gameObject.transform.Find("/Player 1/Main Camera/WeaponCam/Weapons/BaseGun/GunHolder").gameObject;
             RemoveWeaponObjectAndUI();
             OpenStorePage();
         }

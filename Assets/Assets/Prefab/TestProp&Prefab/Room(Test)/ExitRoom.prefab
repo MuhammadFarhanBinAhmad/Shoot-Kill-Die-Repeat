@@ -9311,6 +9311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27e2752641452f4ea14a7537687653c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_Spawn_Pos: {fileID: 0}
   levels: []
 --- !u!1 &5324794501514555544
 GameObject:
@@ -9551,9 +9552,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27e2752641452f4ea14a7537687653c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_Spawn_Pos: {fileID: 0}
   levels:
   - Level_01
-  - MainMenu
+  - Level_02
   - Level_03
   - Level_04
   - Level_05

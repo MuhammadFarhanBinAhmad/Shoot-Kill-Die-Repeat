@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
     public float health_Player;
     public float health_Player_Current;
     [Header("Money")]
-    public static int money_Total = 100;
+    public static int money_Total = 500;
     [Header("Movements")]
     //Speed
     public float speed_Movement;
