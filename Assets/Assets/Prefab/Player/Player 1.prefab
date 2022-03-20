@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2146679296}
-  - component: {fileID: 1285871325}
   m_Layer: 0
   m_Name: t_Pistol
   m_TagString: Untagged
@@ -31,25 +30,6 @@ Transform:
   m_Father: {fileID: 6662670519171571959}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1285871325
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146679295}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1ced7fb1be2e2f145a485a2377b7f161, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1147856405395466791
 GameObject:
   m_ObjectHideFlags: 0
@@ -3814,7 +3794,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ff82d1c6b01bfab4091bb4c1fba3a44b, type: 3}
   - {fileID: 8300000, guid: 110b728e036367a44b3c2df5eed6150e, type: 3}
   - {fileID: 8300000, guid: f6d748c23adee8f429c3e4388a3a6dbb, type: 3}
-  the_Anim: {fileID: 1285871325}
+  the_Anim: {fileID: 0}
   the_Crosshair_RectTransform: {fileID: 0}
 --- !u!1 &6662670517489981917
 GameObject:
@@ -33185,6 +33165,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 472461cdba6303347a1a3762db908a25, type: 3}
+--- !u!4 &4433041385674743739 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7058227132290814492, guid: 472461cdba6303347a1a3762db908a25, type: 3}
+  m_PrefabInstance: {fileID: 6662670519185722791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4433041385674743738 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7058227132290814493, guid: 472461cdba6303347a1a3762db908a25, type: 3}
@@ -33196,11 +33181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30e14507eb4a2643b50c106510d06af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &4433041385674743739 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7058227132290814492, guid: 472461cdba6303347a1a3762db908a25, type: 3}
-  m_PrefabInstance: {fileID: 6662670519185722791}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6662670519220171243
 PrefabInstance:
   m_ObjectHideFlags: 0

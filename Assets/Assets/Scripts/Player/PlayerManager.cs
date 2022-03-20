@@ -83,6 +83,36 @@ public class PlayerManager : MonoBehaviour
                 the_Player_UI_HUD.AmmoUpdateV2();
             }
         }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+
+            if (the_BGV2.current_WM_Installed[2] != null)
+            {
+                the_BGV2.current_Weapon_Equipped = 2;
+                the_BGV2.ChangeWeaponModel();
+                the_Player_UI_HUD.AmmoUpdateV2();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+
+            if (the_BGV2.current_WM_Installed[3] != null)
+            {
+                the_BGV2.current_Weapon_Equipped = 3;
+                the_BGV2.ChangeWeaponModel();
+                the_Player_UI_HUD.AmmoUpdateV2();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+
+            if (the_BGV2.current_WM_Installed[4] != null)
+            {
+                the_BGV2.current_Weapon_Equipped = 4;
+                the_BGV2.ChangeWeaponModel();
+                the_Player_UI_HUD.AmmoUpdateV2();
+            }
+        }
     }
     void MovePlayer()
     {

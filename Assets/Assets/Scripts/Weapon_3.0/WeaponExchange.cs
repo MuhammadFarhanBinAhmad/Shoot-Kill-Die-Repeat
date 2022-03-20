@@ -20,8 +20,9 @@ public class WeaponExchange : MonoBehaviour
     [Header("AddWeaponSlot Buttons")]
     [SerializeField]
     WeaponMode weapon_Default;
-    [SerializeField]
     Transform player_WeaponModes;
+    [SerializeField] int cost_Add_Weapon;
+    [SerializeField] TextMeshProUGUI ui_Add_Weapon_Cost;
 
     [Header("WeaponCost")]
     [SerializeField] List<TextMeshProUGUI> ui_Weapon_Cost = new List<TextMeshProUGUI>();
@@ -30,6 +31,7 @@ public class WeaponExchange : MonoBehaviour
     private void Start()
     {
         UpdateItemCost();
+        ui_Add_Weapon_Cost.text = "x" + cost_Add_Weapon.ToString();
     }
 
     public void ChangeWeapon(WeaponLevelSO WLSO)
@@ -70,9 +72,15 @@ public class WeaponExchange : MonoBehaviour
     public void AddWeaponSlot()
     {
         //players_Gun.current_WM_Installed.Add(weapon_Default);
-        GameObject weapon_New = Instantiate(weapon_Default.gameObject, transform.position, transform.rotation);
-        players_Gun.current_WM_Installed.Add(weapon_New.GetComponent<WeaponMode>());
-        players_Gun.WM_Installed_GameObject.Add(weapon_New.GetComponent<WeaponMode>().weapon_GameObject);
-        weapon_New.transform.parent = players_Gun.transform.parent;
+        if (PlayerManager.money_Total >= cost_Add_Weapon)
+        {
+            PlayerManager.money_Total -= cost_Add_Weapon;
+            GameObject weapon_New = Instantiate(weapon_Default.gameObject, transform.position, transform.rotation);
+            players_Gun.current_WM_Installed.Add(weapon_New.GetComponent<WeaponMode>());
+            players_Gun.WM_Installed_GameObject.Add(weapon_New.GetComponent<WeaponMode>().weapon_GameObject);
+            weapon_New.transform.parent = players_Gun.transform.parent;
+            cost_Add_Weapon *= 2;
+            ui_Add_Weapon_Cost.text = cost_Add_Weapon.ToString();
+        }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BaseGunV2 : MonoBehaviour
 {
@@ -31,9 +32,12 @@ public class BaseGunV2 : MonoBehaviour
     [Header("WeaponSoundEffect")]
     public List<AudioClip> sfx_Weapon_Sound;
     [SerializeField]
-    Animator the_Anim;
-    [SerializeField]
     RectTransform the_Crosshair_RectTransform;
+    [Header("Animation")]
+    public Animator weapon_Anim;
+    [Header("UI")]
+    public Image ammo_Circle;
+
     void Awake()
     {
         //ammo pool
@@ -53,6 +57,9 @@ public class BaseGunV2 : MonoBehaviour
         GO.transform.localPosition = new Vector3(0, 0, 0);
         WM_Installed_GameObject.Add(GO);
         go_current_Weapon_Equipped = GO;
+        weapon_Anim = GO.GetComponent<Animator>();
+        //AmmoCircle
+        ammo_Circle = GO.transform.Find("Round/Canvas/Ammo").GetComponent<Image>();
         //Set Weapon bullet pos
         bullet_Spawn_Point = go_current_Weapon_Equipped.transform.Find("SpawnBullet_Pos").transform;
         bullet_Spawn_Point.transform.position = go_current_Weapon_Equipped.transform.Find("SpawnBullet_Pos").position;
@@ -93,6 +100,8 @@ public class BaseGunV2 : MonoBehaviour
             //Grab all necessary stats/values
             WM_Installed_GameObject[current_Weapon_Equipped] = go_current_Weapon_Equipped;
             go_current_Weapon_Equipped = GO;
+            ammo_Circle = GO.transform.Find("Round/Canvas/Ammo").GetComponent<Image>();
+            weapon_Anim = GO.GetComponent<Animator>();
             bullet_Spawn_Point = go_current_Weapon_Equipped.transform.Find("SpawnBullet_Pos").transform;
         }
 
@@ -139,6 +148,7 @@ public class BaseGunV2 : MonoBehaviour
             current_WM_Installed[current_Weapon_Equipped].gun_current_Ammo -= AU;
             current_WM_Installed[current_Weapon_Equipped].gun_current_Mag_Capacity = current_WM_Installed[current_Weapon_Equipped].gun_Total_Mag_Capacity;//Refill mag
             the_Player_UI_HUD.AmmoUpdateV2();//Update UI
+            IngameUIUpdate();
             currently_Reloading = false;
         }
         else
@@ -173,6 +183,10 @@ public class BaseGunV2 : MonoBehaviour
 
         }
     }
+    void IngameUIUpdate()
+    {
+        ammo_Circle.fillAmount = (((float)current_WM_Installed[current_Weapon_Equipped].gun_current_Mag_Capacity / (float)current_WM_Installed[current_Weapon_Equipped].gun_Total_Mag_Capacity));
+    }
     void ShootWeapon()
     {
         if (the_Ammo_Pool == null)
@@ -185,7 +199,7 @@ public class BaseGunV2 : MonoBehaviour
 
         if (current_WM_Installed[current_Weapon_Equipped].gun_current_Mag_Capacity > 0)
         {
-            the_Anim.SetTrigger("Shoot");
+            weapon_Anim.SetTrigger("Shoot");
             if (current_WM_Installed[current_Weapon_Equipped].is_Shotgun == false)
             {
                 for (int i = 0; i < the_Ammo_Pool.bullet_Player_Pool.Count; i++)
@@ -234,6 +248,8 @@ public class BaseGunV2 : MonoBehaviour
                         //muzzle_Flash.GetComponent<ParticleSystem>().Play();
                         the_Ammo_Pool.bullet_Player_Pool[i].gameObject.tag = "HurtEnemy";
                         the_Player_UI_HUD.AmmoUpdateV2();
+                        IngameUIUpdate();
+                        weapon_Anim.SetTrigger("Shoot");
                         break;
                     }
                 }

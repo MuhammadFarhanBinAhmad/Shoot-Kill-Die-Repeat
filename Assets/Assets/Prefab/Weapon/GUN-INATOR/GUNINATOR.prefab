@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 2566b8e4793f5ea4596310295fcf9421, type: 2}
+  m_Material: {fileID: 2100000, guid: bbbd991ae1749f94f8a95c00f5258103, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1546,7 +1546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 2566b8e4793f5ea4596310295fcf9421, type: 2}
+  m_Material: {fileID: 2100000, guid: bbbd991ae1749f94f8a95c00f5258103, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1625,7 +1625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 2566b8e4793f5ea4596310295fcf9421, type: 2}
+  m_Material: {fileID: 2100000, guid: bbbd991ae1749f94f8a95c00f5258103, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -3049,7 +3049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 2566b8e4793f5ea4596310295fcf9421, type: 2}
+  m_Material: {fileID: 2100000, guid: bbbd991ae1749f94f8a95c00f5258103, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -3845,13 +3845,13 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
+    rgba: 4278223103
+  m_fontColor: {r: 1, g: 0.50048995, b: 0, a: 1}
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.5849056, g: 0.0000000371873, b: 0, a: 1}
+    topRight: {r: 1, g: 0, b: 0.20549631, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
@@ -5439,7 +5439,7 @@ PrefabInstance:
     - target: {fileID: 3160172837283909919, guid: a9854461aecafce4780432d0f36decc3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5932104766089f34d94b3a987a03e6af, type: 2}
+      objectReference: {fileID: 2100000, guid: 870806d01a354fb42bcc25b6a5e1df56, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9854461aecafce4780432d0f36decc3, type: 3}
 --- !u!4 &1850629718047628695 stripped
@@ -5513,7 +5513,7 @@ PrefabInstance:
     - target: {fileID: 3160172837283909919, guid: a9854461aecafce4780432d0f36decc3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5932104766089f34d94b3a987a03e6af, type: 2}
+      objectReference: {fileID: 2100000, guid: 870806d01a354fb42bcc25b6a5e1df56, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9854461aecafce4780432d0f36decc3, type: 3}
 --- !u!4 &1850629718364119254 stripped
@@ -5587,7 +5587,7 @@ PrefabInstance:
     - target: {fileID: 3160172837283909919, guid: a9854461aecafce4780432d0f36decc3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5932104766089f34d94b3a987a03e6af, type: 2}
+      objectReference: {fileID: 2100000, guid: 870806d01a354fb42bcc25b6a5e1df56, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9854461aecafce4780432d0f36decc3, type: 3}
 --- !u!4 &1850629717295271702 stripped
@@ -5661,7 +5661,7 @@ PrefabInstance:
     - target: {fileID: 3160172837283909919, guid: a9854461aecafce4780432d0f36decc3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5932104766089f34d94b3a987a03e6af, type: 2}
+      objectReference: {fileID: 2100000, guid: 870806d01a354fb42bcc25b6a5e1df56, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9854461aecafce4780432d0f36decc3, type: 3}
 --- !u!4 &1850629717291649943 stripped

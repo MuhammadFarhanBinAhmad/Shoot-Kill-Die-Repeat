@@ -8,10 +8,10 @@ public class ForceFieldTimer : MonoBehaviour
     public GameObject the_FF_GameObject;
 
     public float forcefield_Time_Span;
-    public float forcefield_up_Time;
+    float forcefield_up_Time;
 
     public float time_Recharge_Needed;
-    public float time_Recharge;
+    float time_Recharge;
 
     enum ForceFieldStatus
     {

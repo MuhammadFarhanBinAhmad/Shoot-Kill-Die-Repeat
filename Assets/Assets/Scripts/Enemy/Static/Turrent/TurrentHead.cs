@@ -20,7 +20,6 @@ public class TurrentHead : MonoBehaviour
     public float fire_Rate;
     public Transform bullet_Spawn_Point;
     float next_Time_To_Fire = 0;
-    public AudioSource bullet_Sound;
     [Header("MachineGun")]
     public GameObject Barrel;
     public bool is_MachineGun;
@@ -28,6 +27,9 @@ public class TurrentHead : MonoBehaviour
     [SerializeField] float barrel_Rot_Speed;
     [SerializeField] float Rev_Up_Time;
     float current_Rev_Up_Time;
+    [Header("Missle")]
+    public bool is_Missle;
+    [SerializeField] GameObject _Missle;
     [Header("Time and Target")]
     public float time_Before_Reset;
     public float timer;
@@ -163,23 +165,31 @@ public class TurrentHead : MonoBehaviour
                 next_Time_To_Fire = Time.time + 1f / fire_Rate;
                 for (int i = 0; i < the_Ammo_Pool.bullet_Enemy_Pool.Count; i++)
                 {
-                    if (!the_Ammo_Pool.bullet_Enemy_Pool[i].activeInHierarchy)
+                    if (is_Missle)
                     {
-                        the_Ammo_Pool.bullet_Enemy_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
-                        the_Ammo_Pool.bullet_Enemy_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
-                        the_Ammo_Pool.bullet_Enemy_Pool[i].gameObject.tag = "HurtPlayer";
-                        the_Ammo_Pool.bullet_Enemy_Pool[i].SetActive(true);
-                        the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().enabled = true;
-                        the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Speed = 1000;
-                        the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Damage = the_EBS.unit_Damage;
-                        the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().round_Type = the_EBS.unit_RoundType;
-
-                        if (is_FireTurret)
-                        {
-                            the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().is_FireTurret = true;
-                        }
-
+                        Instantiate(_Missle, transform.position, transform.rotation);
                         break;
+                    }
+                    else
+                    {
+                        if (!the_Ammo_Pool.bullet_Enemy_Pool[i].activeInHierarchy)
+                        {
+                            the_Ammo_Pool.bullet_Enemy_Pool[i].transform.rotation = bullet_Spawn_Point.transform.rotation;
+                            the_Ammo_Pool.bullet_Enemy_Pool[i].transform.position = bullet_Spawn_Point.transform.position;
+                            the_Ammo_Pool.bullet_Enemy_Pool[i].gameObject.tag = "HurtPlayer";
+                            the_Ammo_Pool.bullet_Enemy_Pool[i].SetActive(true);
+                            the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().enabled = true;
+                            the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Speed = 1000;
+                            the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Damage = the_EBS.unit_Damage;
+                            the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().round_Type = the_EBS.unit_RoundType;
+
+                            if (is_FireTurret)
+                            {
+                                the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().is_FireTurret = true;
+                            }
+
+                            break;
+                        }
                     }
                 }
             }

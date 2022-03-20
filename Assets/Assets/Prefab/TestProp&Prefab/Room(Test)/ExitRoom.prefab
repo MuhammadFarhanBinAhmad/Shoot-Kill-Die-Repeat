@@ -9311,8 +9311,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27e2752641452f4ea14a7537687653c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_GO: {fileID: 0}
   player_Spawn_Pos: {fileID: 0}
   levels: []
+  anim: {fileID: 0}
 --- !u!1 &5324794501514555544
 GameObject:
   m_ObjectHideFlags: 0
@@ -9552,16 +9554,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27e2752641452f4ea14a7537687653c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_GO: {fileID: 0}
   player_Spawn_Pos: {fileID: 0}
   levels:
   - Level_01
   - Level_02
-  - Level_03
-  - Level_04
-  - Level_05
-  - Level_06
-  - Level_07
-  - Level_08
+  - Level_Boss_01
+  anim: {fileID: 0}
 --- !u!1 &6773654039950794079
 GameObject:
   m_ObjectHideFlags: 0

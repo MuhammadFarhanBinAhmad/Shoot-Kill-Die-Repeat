@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.UI;
 using TMPro;
 
 public class EnemyBasicStats : MonoBehaviour
@@ -9,10 +9,14 @@ public class EnemyBasicStats : MonoBehaviour
     [Header("UI")]
     [SerializeField]
     internal GameObject text_Damage;
+    [SerializeField] TextMeshProUGUI ui_Unit_name;
+    [SerializeField] Image ui_Unit_Health, ui_Unit_Armour;
 
     [Header("SharedStats/Variables")]
     public EnemyBasicStatsSO EBSSO;
-    public float unit_Health, unit_Damage;
+    public string unit_name;
+    public float unit_Health,unit_Armour, unit_Damage;
+    float fillAmount_Health, fillAmount_Armour;
     public bool destroy_Parent;
     public GameObject gameobject_Parent;
     [SerializeField]
@@ -33,8 +37,12 @@ public class EnemyBasicStats : MonoBehaviour
 
     private void Awake()
     {
+        unit_name = (EBSSO.name);
         unit_Health = (EBSSO.health * FindObjectOfType<LevelManager>().stats_Multiplier[LevelManager.CURRENTLEVEL]);
+        unit_Armour = (EBSSO.armour * FindObjectOfType<LevelManager>().stats_Multiplier[LevelManager.CURRENTLEVEL]);
         unit_Damage = (EBSSO.damage * FindObjectOfType<LevelManager>().stats_Multiplier[LevelManager.CURRENTLEVEL]);
+        fillAmount_Armour = unit_Armour;
+        fillAmount_Health = unit_Health;
         if (is_MovingEnemy)
         {
             unit_Speed = EBSSO.speed;
@@ -48,6 +56,8 @@ public class EnemyBasicStats : MonoBehaviour
         {
             the_RM = GetComponentInParent<RoomInformation>();
         }
+        ui_Unit_name.text = unit_name;
+        UpdateUI();
     }
     internal void TakingDamage(int dmg,GameObject GO)
     {
@@ -55,9 +65,15 @@ public class EnemyBasicStats : MonoBehaviour
         {
             the_BMEC.IsKnockBack();
         }
-
-        unit_Health -= dmg;
-
+        if (unit_Armour >0)
+        {
+            unit_Armour -= dmg;
+        }
+        else
+        {
+            unit_Health -= dmg;
+        }
+        //Damage text facing player
         Vector3 direction = FindObjectOfType<PlayerManager>().transform.position - transform.position;
         Quaternion current_Rotation = Quaternion.LookRotation(-direction);
         //GameObject TD = Instantiate(text_Damage, GO.transform.position, current_Rotation);
@@ -73,6 +89,7 @@ public class EnemyBasicStats : MonoBehaviour
                 break;
             }
         }
+        UpdateUI();
 
         if (unit_Health <= 0)
         {
@@ -99,5 +116,10 @@ public class EnemyBasicStats : MonoBehaviour
                 Destroy(gameobject_Parent);
             }
         }
+    }
+    void UpdateUI()
+    {
+        ui_Unit_Armour.fillAmount = unit_Armour/fillAmount_Armour;
+        ui_Unit_Health.fillAmount = unit_Health/fillAmount_Health;
     }
 }

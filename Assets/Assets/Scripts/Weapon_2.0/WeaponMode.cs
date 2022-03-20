@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponMode : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class WeaponMode : MonoBehaviour
     public int weapon_Code;
     public bool is_Shotgun;
     public GameObject weapon_GameObject;
+
 
     private void Awake()
     {
@@ -75,18 +77,20 @@ public class WeaponMode : MonoBehaviour
     {
         fire_Rate_LEVEL++;
         fire_Rate = the_WLSO.fire_Rate[fire_Rate_LEVEL];
+        current_Weapon_Level++;
     }
     public void UpgradeReloadTime()
     {
         reload_Time_LEVEL++;
         reload_Time = the_WLSO.reload_Time[reload_Time_LEVEL];
-
+        current_Weapon_Level++;
     }
     public void UpgradeMinMaxDamage()
     {
         min_max_Damage_LEVEL++;
         min_Damage = the_WLSO.min_Damage[min_max_Damage_LEVEL];
         max_Damage = the_WLSO.max_Damage[min_max_Damage_LEVEL];
+        current_Weapon_Level++;
     }
     public void UpgradeTotalAmmoMag()
     {
@@ -96,6 +100,6 @@ public class WeaponMode : MonoBehaviour
 
         gun_current_Ammo = gun_Total_Ammo;
         gun_current_Mag_Capacity = gun_Total_Mag_Capacity;
-
+        current_Weapon_Level++;
     }
 }

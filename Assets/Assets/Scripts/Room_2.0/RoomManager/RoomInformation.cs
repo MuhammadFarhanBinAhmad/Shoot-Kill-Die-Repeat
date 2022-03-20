@@ -27,7 +27,7 @@ public class RoomInformation : MonoBehaviour
     {
         for (int i = 0; i <= enemy_In_Wave[wave_Current].enemy.Count - 1; i++)
         {
-            Instantiate(_TeleBeam, enemy_In_Wave[wave_Current].enemy[i].transform.position, Quaternion.identity);
+            Instantiate(_TeleBeam, enemy_In_Wave[wave_Current].enemy[i].transform.position, enemy_In_Wave[wave_Current].enemy[i].transform.rotation);
             enemy_In_Wave[wave_Current].enemy[i].SetActive(true);
         }
     }

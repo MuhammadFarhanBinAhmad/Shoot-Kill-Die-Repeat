@@ -5,7 +5,6 @@ using UnityEngine;
 public class MovingEnemyDamageOutput : MonoBehaviour
 {
     public EnemyBasicStats the_EBS;
-    public GameObject go_Parent;
 
     [Header("For Kamikaze")]
     public bool is_Kamikaze;
