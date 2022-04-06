@@ -39,7 +39,20 @@ public class WeaponMode : MonoBehaviour
     public bool is_Shotgun;
     public GameObject weapon_GameObject;
 
+    [Header("SpecialWeaponUpgrade")]
+    [SerializeField] internal bool weapon_Special_Upgraded;
 
+    [SerializeField] internal int pistol_Upgrade_Type;
+    [SerializeField] internal int SMG_Upgrade_Type;
+    [SerializeField] internal int Rifle_Upgrade_Type;
+    [SerializeField] internal int ShotGun_Upgrade_Type;
+    [SerializeField] internal int AssaultRifle_Upgrade_Type;
+    [SerializeField] internal int HMG_Upgrade_Type;
+
+    [Header("SpecialAttribute")]
+    [SerializeField] internal bool burstfire;
+    [SerializeField] GameObject add_Launcher;
+    [SerializeField] Transform pos_Launcher;
     private void Awake()
     {
         ImplementWeaponData();
@@ -101,5 +114,47 @@ public class WeaponMode : MonoBehaviour
         gun_current_Ammo = gun_Total_Ammo;
         gun_current_Mag_Capacity = gun_Total_Mag_Capacity;
         current_Weapon_Level++;
+    }
+    internal void PistolSpecialUpgrade(int PUT)
+    {
+        pistol_Upgrade_Type = PUT;
+    }
+    internal void SMGSpecialUpgrade(int SUT)
+    {
+        SMG_Upgrade_Type = SUT;
+    }
+    internal void RifleSpecialUpgrade(int RUT)
+    {
+        if (RUT != 0)
+        {
+            Rifle_Upgrade_Type = RUT;
+        }
+        else
+        {
+            FindObjectOfType<BaseGunV2>().burstfire = true;
+            burstfire = true;
+        }
+    }
+    internal void ShotGunSpecialUpgrade(int SGUT)
+    {
+        ShotGun_Upgrade_Type = SGUT;
+    }
+    internal void AssaultRifleSpecialUpgrade(int ARUT)
+    {
+        if (ARUT !=0)
+        {
+            AssaultRifle_Upgrade_Type = ARUT;
+        }
+        else
+        {
+            print("SpawnLauncher");
+            pos_Launcher = FindObjectOfType<BaseGunV2>().go_current_Weapon_Equipped.transform.Find("SpawnLauncher");
+            GameObject L = Instantiate(add_Launcher,pos_Launcher.position,pos_Launcher.rotation);
+            //add_Launcher.transform.parent = pos_Launcher;
+        }
+    }
+    internal void HMGSpecialUpgrade(int HMGUT)
+    {
+        HMG_Upgrade_Type = HMGUT;
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5003835100462435920}
   - component: {fileID: 388122725092476376}
+  - component: {fileID: 7821657956458841928}
   - component: {fileID: 3050359434610312682}
   - component: {fileID: 2006760285176806782}
   - component: {fileID: 6478959503845238613}
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4351184477875606440}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: -0.054000854, y: -0.4539957, z: -0.71500003}
+  m_LocalPosition: {x: -0.101, y: -0.4539957, z: -0.715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2409540218690357175}
@@ -46,8 +47,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.47930467, y: 0.61446387, z: 0.5555625}
-  m_Center: {x: 0.0047088787, y: 0.30253878, z: 0.0026774406}
+  m_Size: {x: 0.5793705, y: 0.61446387, z: 0.5264529}
+  m_Center: {x: -0.045324028, y: 0.30253878, z: -0.09920663}
+--- !u!65 &7821657956458841928
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351184477875606440}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.51588726, y: 0.7879849, z: 0.5264529}
+  m_Center: {x: 0.716929, y: 0.44153556, z: -0.09920663}
 --- !u!114 &3050359434610312682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f257d9c1ba44da4f99a226e3c3c8a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  the_EBS: {fileID: 0}
   is_Explosive_Universal: 0
   is_Explosive_Normal: 1
 --- !u!114 &2006760285176806782
@@ -91,8 +106,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text_Damage: {fileID: 2010621070729509879, guid: 5b6a662ffaf77f64a90957a1130e833b, type: 3}
+  ui_Unit_Health: {fileID: 0}
+  ui_Unit_Armour: {fileID: 0}
   EBSSO: {fileID: 11400000, guid: db6d1ef88d0739f4c9f9a21183f04e7c, type: 2}
+  unit_name: 
   unit_Health: 0
+  unit_Armour: 0
   unit_Damage: 0
   destroy_Parent: 1
   gameobject_Parent: {fileID: 0}
@@ -104,8 +123,6 @@ MonoBehaviour:
   unit_Speed: 0
   the_BMEC: {fileID: 0}
   the_RME: {fileID: 0}
-  agent: {fileID: 0}
-  is_StaticEnemy: 0
 --- !u!1 &6687902102241483916
 GameObject:
   m_ObjectHideFlags: 0

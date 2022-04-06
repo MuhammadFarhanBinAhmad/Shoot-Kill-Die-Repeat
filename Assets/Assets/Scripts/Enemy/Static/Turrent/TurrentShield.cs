@@ -8,7 +8,10 @@ public class TurrentShield : MonoBehaviour
     {
         if (other.tag == "HurtEnemy")
         {
-            other.GetComponent<BulletStats_ForPlayer>().Destroy();
+            if (!other.GetComponent<BulletStats_ForPlayer>().round_Piercing)
+            {
+                other.GetComponent<BulletStats_ForPlayer>().Destroy();
+            }
         }
     }
 }

@@ -18,12 +18,12 @@ public class EndGame : MonoBehaviour
         if (other.GetComponent<PlayerManager>() !=null)
         {
             player_GO = other.gameObject;
-            StartCoroutine("LoadNextLevel");
+            StartCoroutine("LoadingScene");
             anim.SetTrigger("FadeIn");
 
         }
     }
-    IEnumerator LoadNextLevel()
+    IEnumerator LoadingScene()
     {
         yield return new WaitForSeconds(1);
         player_GO.SetActive(false);
@@ -31,7 +31,7 @@ public class EndGame : MonoBehaviour
         //insert fade in scene here
         player_GO.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
-        RoomSpawnerV2.current_Level++;
+        LevelManager.CURRENTLEVEL++;
         SceneManager.LoadScene("LoadingScreen");
         /*endgame_UI.SetActive(true);
         Time.timeScale = 0;*/

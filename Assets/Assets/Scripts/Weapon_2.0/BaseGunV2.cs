@@ -33,10 +33,18 @@ public class BaseGunV2 : MonoBehaviour
     public List<AudioClip> sfx_Weapon_Sound;
     [SerializeField]
     RectTransform the_Crosshair_RectTransform;
+    [Header("VFX")]
+    public GameObject round_Catridge;
+    public Transform transform_Catridge_Spawn_Pos;
     [Header("Animation")]
     public Animator weapon_Anim;
     [Header("UI")]
     public Image ammo_Circle;
+
+    [Header("SpecialAttribute")]
+    [SerializeField] internal bool burstfire;
+    int rounds_To_Fire = 3;
+    int rounds_Already_Fire;
 
     void Awake()
     {
@@ -63,7 +71,8 @@ public class BaseGunV2 : MonoBehaviour
         //Set Weapon bullet pos
         bullet_Spawn_Point = go_current_Weapon_Equipped.transform.Find("SpawnBullet_Pos").transform;
         bullet_Spawn_Point.transform.position = go_current_Weapon_Equipped.transform.Find("SpawnBullet_Pos").position;
-
+        transform_Catridge_Spawn_Pos = go_current_Weapon_Equipped.transform.Find("SpawnCatridge_Pos").transform;
+        transform_Catridge_Spawn_Pos.transform.position = go_current_Weapon_Equipped.transform.Find("SpawnCatridge_Pos").position;
 
     }
     private void Update()
@@ -103,6 +112,9 @@ public class BaseGunV2 : MonoBehaviour
             ammo_Circle = GO.transform.Find("Round/Canvas/Ammo").GetComponent<Image>();
             weapon_Anim = GO.GetComponent<Animator>();
             bullet_Spawn_Point = go_current_Weapon_Equipped.transform.Find("SpawnBullet_Pos").transform;
+            transform_Catridge_Spawn_Pos = go_current_Weapon_Equipped.transform.Find("SpawnCatridge_Pos").transform;
+            burstfire = current_WM_Installed[current_Weapon_Equipped].burstfire;
+
         }
 
     }
@@ -115,8 +127,17 @@ public class BaseGunV2 : MonoBehaviour
                 {
                     if (Input.GetMouseButtonDown(0) && Time.time >= current_WM_Installed[current_Weapon_Equipped].next_Time_To_Fire && !the_Player_Manager.is_Store_Open)
                     {
-                        ShootWeapon();
-                        current_WM_Installed[current_Weapon_Equipped].next_Time_To_Fire = Time.time + 1f / current_WM_Installed[current_Weapon_Equipped].fire_Rate;
+                        if (burstfire)
+                        {
+                            StartCoroutine("BurstFireShooting");
+                            current_WM_Installed[current_Weapon_Equipped].next_Time_To_Fire = Time.time + 1f / current_WM_Installed[current_Weapon_Equipped].fire_Rate;
+                        }
+                        else
+                        {
+                            ShootWeapon();
+                            current_WM_Installed[current_Weapon_Equipped].next_Time_To_Fire = Time.time + 1f / current_WM_Installed[current_Weapon_Equipped].fire_Rate;
+                        }
+                        
                     }
                 }
                 break;
@@ -187,6 +208,80 @@ public class BaseGunV2 : MonoBehaviour
     {
         ammo_Circle.fillAmount = (((float)current_WM_Installed[current_Weapon_Equipped].gun_current_Mag_Capacity / (float)current_WM_Installed[current_Weapon_Equipped].gun_Total_Mag_Capacity));
     }
+    void ImplementWeaponUpgrades(int i)
+    {
+        int WC = current_WM_Installed[current_Weapon_Equipped].weapon_Code;
+        switch (WC)
+        {
+            //Pistol Upgrade
+            case 0:
+                {
+                    print("PistolSpecialUpgrade");
+                    the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().SpecialPistolUpgrade(current_WM_Installed[current_Weapon_Equipped].pistol_Upgrade_Type);
+                    print("BulletStats_ForPlayer PistolUpgradeType = " + current_WM_Installed[current_Weapon_Equipped].pistol_Upgrade_Type);
+                    break;
+                }
+            //SMG Upgrade
+            case 1:
+                {
+                    print("SMGSpecialUpgrade");
+                    the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().SpecialSMGUpgrade(current_WM_Installed[current_Weapon_Equipped].SMG_Upgrade_Type);
+                    print("BulletStats_ForPlayer SMGUpgradeType = " + current_WM_Installed[current_Weapon_Equipped].SMG_Upgrade_Type);
+                    break;
+                }
+            //Rifle Upgrade
+            case 2:
+                {
+                    print("RifleSpecialUpgrade");
+                    if (current_WM_Installed[current_Weapon_Equipped].Rifle_Upgrade_Type != 0)
+                    {
+                        the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().SpecialRifleUpgrade(current_WM_Installed[current_Weapon_Equipped].Rifle_Upgrade_Type);
+                        print("BulletStats_ForPlayer RifleUpgradeType = " + current_WM_Installed[current_Weapon_Equipped].Rifle_Upgrade_Type);
+                    }
+
+                    break;
+                }
+            //ShotGun Upgrade
+            case 3:
+                {
+                    print("ShotGunUSpecialUpgrade");
+                    the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().SpecialShotGunUpgrade(current_WM_Installed[current_Weapon_Equipped].ShotGun_Upgrade_Type);
+                    print("BulletStats_ForPlayer ShotGunUpgradeType = " + current_WM_Installed[current_Weapon_Equipped].ShotGun_Upgrade_Type);
+                    break;
+                }
+            //AssaultRifle Upgrade
+            case 4:
+                {
+                    print("AssaultRifleSpecialUpgrade");
+                    the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().SpecialAssaultRifleUpgrade(current_WM_Installed[current_Weapon_Equipped].AssaultRifle_Upgrade_Type);
+                    print("BulletStats_ForPlayer AssaultRifleUpgradeType = " + current_WM_Installed[current_Weapon_Equipped].AssaultRifle_Upgrade_Type);
+                    break;
+                }
+            //HMG Upgrade
+            case 5:
+                {
+                    print("HMGSpecialUpgrade");
+                    the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().SpecialHMGUpgrade(current_WM_Installed[current_Weapon_Equipped].HMG_Upgrade_Type);
+                    print("BulletStats_ForPlayer HMGUpgradeType = " + current_WM_Installed[current_Weapon_Equipped].HMG_Upgrade_Type);
+                    break;
+                }
+        }
+
+    }
+    IEnumerator BurstFireShooting()
+    {
+        ShootWeapon();
+        yield return new WaitForSeconds(.1f);
+        rounds_Already_Fire++;
+        if (rounds_Already_Fire <rounds_To_Fire)
+        {
+            StartCoroutine("BurstFireShooting");
+        }
+        else
+        {
+            rounds_Already_Fire = 0;
+        }
+    }
     void ShootWeapon()
     {
         if (the_Ammo_Pool == null)
@@ -202,6 +297,7 @@ public class BaseGunV2 : MonoBehaviour
             weapon_Anim.SetTrigger("Shoot");
             if (current_WM_Installed[current_Weapon_Equipped].is_Shotgun == false)
             {
+
                 for (int i = 0; i < the_Ammo_Pool.bullet_Player_Pool.Count; i++)
                 {
                     if (!the_Ammo_Pool.bullet_Player_Pool[i].activeInHierarchy)
@@ -233,13 +329,31 @@ public class BaseGunV2 : MonoBehaviour
 
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().enabled = true;
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Active_Time = current_WM_Installed[current_Weapon_Equipped].bullet_Active_Time;
-                        the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Speed= 1000;//get damage value
+                        the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Speed= 700;//get damage value
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Damage = current_WM_Installed[current_Weapon_Equipped].max_Damage;//get damage value
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().damage_Max = current_WM_Installed[current_Weapon_Equipped].max_Damage;
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().damage_Min = current_WM_Installed[current_Weapon_Equipped].min_Damage;
+                        if (current_WM_Installed[current_Weapon_Equipped].weapon_Special_Upgraded)
+                        {
+                            ImplementWeaponUpgrades(i);
+                            print("ImplementingSpecialUpgrade");
+                        }
                         the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().round_Type = current_WM_Installed[current_Weapon_Equipped].current_Round_Type;//set bullet type
 
                         the_Ammo_Pool.bullet_Player_Pool[i].SetActive(true);
+
+                        for (int c = 0; c < the_Ammo_Pool.bullet_Catridge_Pool.Count; c++)
+                        {
+                            if (!the_Ammo_Pool.bullet_Catridge_Pool[c].activeInHierarchy)
+                            {
+                                Vector3 v = new Vector3(transform_Catridge_Spawn_Pos.position.x, transform_Catridge_Spawn_Pos.position.y, transform_Catridge_Spawn_Pos.position.z);
+                                the_Ammo_Pool.bullet_Catridge_Pool[c].transform.position = v;
+                                the_Ammo_Pool.bullet_Catridge_Pool[c].transform.position = v;
+                                the_Ammo_Pool.bullet_Catridge_Pool[c].SetActive(true);
+                                the_Ammo_Pool.bullet_Catridge_Pool[c].GetComponent<Rigidbody>().AddForce(transform.forward * Random.Range(30,70));
+                                break;
+                            }
+                        }
                         //the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats>().ElementType(the_Element_Type);//set bullet type
                         //the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats>().is_Rocket = is_Rocket;
                         //update Weapon UI
@@ -283,14 +397,25 @@ public class BaseGunV2 : MonoBehaviour
 
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().enabled = true;
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Active_Time = current_WM_Installed[current_Weapon_Equipped].bullet_Active_Time;
-                            the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Speed = 1000;//get damage value
+                            the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Speed = 700;//get damage value
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().bullet_Damage = current_WM_Installed[current_Weapon_Equipped].max_Damage;//get damage value
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().damage_Max = current_WM_Installed[current_Weapon_Equipped].max_Damage;
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().damage_Min = current_WM_Installed[current_Weapon_Equipped].min_Damage;
                             the_Ammo_Pool.bullet_Player_Pool[i].GetComponent<BulletStats_ForPlayer>().round_Type = current_WM_Installed[current_Weapon_Equipped].current_Round_Type;//set bullet type
 
                             the_Ammo_Pool.bullet_Player_Pool[i].SetActive(true);
-
+                            for (int c = 0; c < the_Ammo_Pool.bullet_Catridge_Pool.Count; c++)
+                            {
+                                if (!the_Ammo_Pool.bullet_Catridge_Pool[c].activeInHierarchy)
+                                {
+                                    Vector3 v = new Vector3(transform_Catridge_Spawn_Pos.position.x, transform_Catridge_Spawn_Pos.position.y, transform_Catridge_Spawn_Pos.position.z);
+                                    the_Ammo_Pool.bullet_Catridge_Pool[c].transform.position = v;
+                                    the_Ammo_Pool.bullet_Catridge_Pool[c].transform.position = v;
+                                    the_Ammo_Pool.bullet_Catridge_Pool[c].SetActive(true);
+                                    the_Ammo_Pool.bullet_Catridge_Pool[c].GetComponent<Rigidbody>().AddForce(transform.forward * Random.Range(30, 70));
+                                    break;
+                                }
+                            }
                             //the_Ammo_Pool.bullet_Pool[i].GetComponent<BulletStats>().ElementType(the_Element_Type);//set bullet type
                             the_Ammo_Pool.bullet_Player_Pool[i].gameObject.tag = "HurtEnemy";
                             //update Weapon UI

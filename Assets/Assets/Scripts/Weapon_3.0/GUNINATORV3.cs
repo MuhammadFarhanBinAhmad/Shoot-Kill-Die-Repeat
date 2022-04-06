@@ -9,6 +9,7 @@ public class GUNINATORV3 : MonoBehaviour
     public List<WeaponMode> WeaponTypes;
     public List<WeaponMode> player_Installed_Weapons = new List<WeaponMode>();
     public WeaponMode selected_Weapon;
+    public int selected_Weapon_Code;
 
     public Image bar_FireRate;
     public Image bar_ReloadTime;
@@ -20,6 +21,24 @@ public class GUNINATORV3 : MonoBehaviour
     public TextMeshProUGUI cost_MinMaxDamage;
     public TextMeshProUGUI cost_TotalAmmoMag;
 
+    [Header("PistolSpecialUpgrades")]
+    [SerializeField]int PistolSpecialUpgrades_Cost;
+    public TextMeshProUGUI PistolSpecialUpgrades_Text;
+
+
+    [Header("SMGSpecialUpgrades")]
+    [SerializeField] int SMGSpecialUpgrades_Cost;
+    public TextMeshProUGUI SMGSpecialUpgrades_Text;
+
+
+    [Header("RifleSpecialUpgrades")]
+    [SerializeField] int RifleSpecialUpgrades_Cost;
+    public TextMeshProUGUI RifleSpecialUpgrades_Text;
+
+
+    [Header("AssaultRifleSpecialUpgrades")]
+    [SerializeField] int AssaultRifleSpecialUpgrades_Cost;
+    public TextMeshProUGUI AssaultRifleSpecialUpgrades_Text;
 
     public void UpgradeFireRate()
     {
@@ -100,10 +119,110 @@ public class GUNINATORV3 : MonoBehaviour
         {
             cost_TotalAmmoMag.text = "X" + selected_Weapon.the_WLSO.total_Ammo_Mag_COST[selected_Weapon.total_Ammo_Mag_LEVEL].ToString();
         }
+        switch (selected_Weapon.weapon_Code)
+        {
+            case 0:
+                {
+                    if (!selected_Weapon.weapon_Special_Upgraded)
+                    {
+                        PistolSpecialUpgrades_Text.text = "x" + PistolSpecialUpgrades_Cost.ToString();
+                    }
+                    else
+                    {
+                        PistolSpecialUpgrades_Text.text = "WEAPON UPGRADED";
+                    }
+                    break;
+                }
+            case 1:
+                {
+                    if (!selected_Weapon.weapon_Special_Upgraded)
+                    {
+                        SMGSpecialUpgrades_Text.text = "x" + SMGSpecialUpgrades_Cost.ToString();
+                    }
+                    else
+                    {
+                        SMGSpecialUpgrades_Text.text = "WEAPON UPGRADED";
+                    }
+                    break;
+                }
+            case 2:
+                {
+                    if (!selected_Weapon.weapon_Special_Upgraded)
+                    {
+                        RifleSpecialUpgrades_Text.text = "x" + RifleSpecialUpgrades_Cost.ToString();
+                    }
+                    else
+                    {
+                        RifleSpecialUpgrades_Text.text = "WEAPON UPGRADED";
+                    }
+                    break;
+                }
+            case 4:
+                {
+                    if (!selected_Weapon.weapon_Special_Upgraded)
+                    {
+                        AssaultRifleSpecialUpgrades_Text.text = "x" + AssaultRifleSpecialUpgrades_Cost.ToString();
+                    }
+                    else
+                    {
+                        AssaultRifleSpecialUpgrades_Text.text = "WEAPON UPGRADED";
+                    }
+                    break;
+                }
+        }
+
 
     }
     internal void ClearWeaponList()
     {
         player_Installed_Weapons.Clear();
+    }
+
+    public void PistolSpecialUpgrade(int pistol_Upgrade_Type)
+    {
+        //0 - Piercing Round
+        //1 - Explosive Round
+        if (!selected_Weapon.weapon_Special_Upgraded && PlayerManager.money_Total >= PistolSpecialUpgrades_Cost)
+        {
+            selected_Weapon.weapon_Special_Upgraded = true;
+            selected_Weapon.PistolSpecialUpgrade(pistol_Upgrade_Type);
+            PlayerManager.money_Total -=PistolSpecialUpgrades_Cost;
+        }
+    }
+    public void SMGSpecialUpgrade(int SMG_Upgrade_Type)
+    {
+        //0 - Piercing Round
+        //1 - Fire Round
+        if (!selected_Weapon.weapon_Special_Upgraded && PlayerManager.money_Total >= SMGSpecialUpgrades_Cost)
+        {
+            selected_Weapon.weapon_Special_Upgraded = true;
+            selected_Weapon.SMGSpecialUpgrade(SMG_Upgrade_Type);
+            print("UpgradeType = " + SMG_Upgrade_Type);
+            PlayerManager.money_Total -= SMGSpecialUpgrades_Cost;
+        }
+    }
+    public void RifleSpecialUpgrade(int Rifle_Upgrade_Type)
+    {
+        //0 - BurstFire
+        //1 - Fire Round
+        if (!selected_Weapon.weapon_Special_Upgraded && PlayerManager.money_Total >= RifleSpecialUpgrades_Cost)
+        {
+            selected_Weapon.weapon_Special_Upgraded = true;
+            selected_Weapon.RifleSpecialUpgrade(Rifle_Upgrade_Type);
+            print("UpgradeType = " + Rifle_Upgrade_Type);
+            PlayerManager.money_Total -= RifleSpecialUpgrades_Cost;
+        }
+    }
+    public void AssaultRifleSpecialUpgrade(int AssaultRifle_Upgrade_Type)
+    {
+        //0 - BurstFire
+        //1 - Fire Round
+        if (!selected_Weapon.weapon_Special_Upgraded && PlayerManager.money_Total >= AssaultRifleSpecialUpgrades_Cost)
+        {
+            selected_Weapon.weapon_Special_Upgraded = true;
+            selected_Weapon.AssaultRifleSpecialUpgrade(AssaultRifle_Upgrade_Type);
+            print("UpgradeType = " + AssaultRifle_Upgrade_Type);
+            PlayerManager.money_Total -= AssaultRifleSpecialUpgrades_Cost;
+        }
     }
 }

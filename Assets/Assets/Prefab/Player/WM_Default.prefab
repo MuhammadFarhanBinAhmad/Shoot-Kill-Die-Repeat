@@ -44,12 +44,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   the_WLSO: {fileID: 11400000, guid: 43917116655bdb64c96e3ffb32aaeddc, type: 2}
+  current_Weapon_Name: 
   current_Weapon_Mode: 0
   current_Weapon_Level: 0
   current_Round_Type: 0
   total_Ammo_Mag_LEVEL: 0
   gun_current_Mag_Capacity: 0
   gun_current_Ammo: 0
+  bullet_Active_Time: 0
   reload_Time_LEVEL: 0
   reload_Time: 0
   fire_Rate_LEVEL: 0
@@ -61,3 +63,14 @@ MonoBehaviour:
   weapon_Firing_Mechanism: 0
   weapon_Code: 0
   is_Shotgun: 0
+  weapon_GameObject: {fileID: 0}
+  weapon_Special_Upgraded: 0
+  pistol_Upgrade_Type: 0
+  SMG_Upgrade_Type: 0
+  Rifle_Upgrade_Type: 0
+  ShotGun_Upgrade_Type: 0
+  AssaultRifle_Upgrade_Type: 0
+  HMG_Upgrade_Type: 0
+  burstfire: 0
+  add_Launcher: {fileID: 3800036462805315267, guid: cd0fe6d2b2fbd764f8563d0a2cd3b931, type: 3}
+  pos_Launcher: {fileID: 0}

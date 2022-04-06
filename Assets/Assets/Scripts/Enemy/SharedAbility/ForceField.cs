@@ -10,7 +10,6 @@ public class ForceField : MonoBehaviour
         if (other.tag == "HurtEnemy")
         {
             other.GetComponent<BulletStats_ForPlayer>().Destroy();
-            print("hit");
         }
 
     }

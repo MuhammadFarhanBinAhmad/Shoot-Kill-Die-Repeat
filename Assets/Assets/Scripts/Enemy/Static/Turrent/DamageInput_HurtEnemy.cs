@@ -7,7 +7,7 @@ public class DamageInput_HurtEnemy : MonoBehaviour
     [SerializeField]
     internal EnemyBasicStats the_EBS;
 
-    public bool is_Explosive_Universal, is_Explosive_Normal;
+    public bool is_Explosive_Universal, is_Explosive_Normal,is_Taking_Fire_Damage;
 
     private void Start()
     {
@@ -28,6 +28,11 @@ public class DamageInput_HurtEnemy : MonoBehaviour
         {
             EnemyDeath();
         }
+    }
+    internal void TakeFireDamage(int FD)
+    {
+        the_EBS.TakingDamage(FD,this.gameObject);
+        print("TakingFireDmg");
     }
     internal void TakeExplosionDamage(int DMG)
     {

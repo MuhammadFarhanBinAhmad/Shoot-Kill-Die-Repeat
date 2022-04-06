@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2491505706128677933}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: VendingMachine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,15 +45,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3636077942277109415, guid: a0c6b113ed9f1f94aa532c947bd65cdb, type: 3}
       propertyPath: m_VersionIndex
-      value: 6225
+      value: 6228
       objectReference: {fileID: 0}
-    - target: {fileID: 7208200052314577632, guid: a0c6b113ed9f1f94aa532c947bd65cdb, type: 3}
-      propertyPath: CrossHair
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7208200052314577632, guid: a0c6b113ed9f1f94aa532c947bd65cdb, type: 3}
-      propertyPath: GunHolder
-      value: 
+    - target: {fileID: 7208200051670998673, guid: a0c6b113ed9f1f94aa532c947bd65cdb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7208200053264882713, guid: a0c6b113ed9f1f94aa532c947bd65cdb, type: 3}
       propertyPath: m_RootOrder
@@ -127,7 +123,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1868850323393184284, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
       propertyPath: m_VersionIndex
-      value: 6639
+      value: 6648
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937713298724666821, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937713299193113610, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937713299960349897, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937713300021967931, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8679637941406086385, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
       propertyPath: m_IsActive
@@ -137,6 +149,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponExchange
       objectReference: {fileID: 0}
+    - target: {fileID: 8679637942477440514, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8679637942477440517, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
+      propertyPath: ui_Weapon_Cost.Array.data[0]
+      value: 
+      objectReference: {fileID: 4309010627439858468}
+    - target: {fileID: 8679637942477440517, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
+      propertyPath: ui_WeaponLevelSO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 43917116655bdb64c96e3ffb32aaeddc, type: 2}
+    - target: {fileID: 8679637942477440517, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
+      propertyPath: list_Unlock_Button.Array.data[0]
+      value: 
+      objectReference: {fileID: 2547367502390681644}
+    - target: {fileID: 8679637942477440517, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
+      propertyPath: list_Exchange_Button.Array.data[0]
+      value: 
+      objectReference: {fileID: 4007312552836506861}
     - target: {fileID: 8679637942477440518, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -185,13 +217,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8679637942663000679, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
-      propertyPath: CrossHair
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8679637942663000679, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
-      propertyPath: GunHolder
-      value: 
+    - target: {fileID: 8679637942663000677, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
@@ -200,3 +228,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8679637942477440521, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
   m_PrefabInstance: {fileID: 6570282947496649584}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2547367502390681644 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8679637941381153628, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
+  m_PrefabInstance: {fileID: 6570282947496649584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4007312552836506861 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7832463505349445533, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
+  m_PrefabInstance: {fileID: 6570282947496649584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4309010627439858468 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6981419252858728532, guid: 2eaf8c7c8a71e04419068a94e1f90cac, type: 3}
+  m_PrefabInstance: {fileID: 6570282947496649584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

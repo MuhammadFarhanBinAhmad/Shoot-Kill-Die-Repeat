@@ -9,7 +9,6 @@ public class EnemyBasicStats : MonoBehaviour
     [Header("UI")]
     [SerializeField]
     internal GameObject text_Damage;
-    [SerializeField] TextMeshProUGUI ui_Unit_name;
     [SerializeField] Image ui_Unit_Health, ui_Unit_Armour;
 
     [Header("SharedStats/Variables")]
@@ -56,7 +55,6 @@ public class EnemyBasicStats : MonoBehaviour
         {
             the_RM = GetComponentInParent<RoomInformation>();
         }
-        ui_Unit_name.text = unit_name;
         UpdateUI();
     }
     internal void TakingDamage(int dmg,GameObject GO)

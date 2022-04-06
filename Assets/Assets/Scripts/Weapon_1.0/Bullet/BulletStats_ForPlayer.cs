@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletStats_ForPlayer : MonoBehaviour
 {
+
     public float bullet_Speed;
     [SerializeField]
     internal int damage_Min, damage_Max;
@@ -18,11 +19,20 @@ public class BulletStats_ForPlayer : MonoBehaviour
     internal float bullet_Active_Time;
     [SerializeField]
     internal float bullet_Active_Up_Time;
-    //Element Type
-    public int element_Type;
-    public GameObject acid_Smoke, small_Explosion, large_Explosion;
-    //For Rocket Only
-    public bool is_Rocket;
+
+    internal int weapon_Code;
+    internal int weapon_Upgrade_Type;
+
+    [Header("SpecialWeaponUpgrade")]
+    [SerializeField] internal bool round_Piercing;
+
+    [SerializeField] internal bool round_Explosive;
+    Vector3 hit_Pos;
+    [SerializeField] GameObject explosion_vfx;
+
+    [SerializeField] internal bool round_Fire;
+
+    internal int pistol_Upgrade_Type;
 
     private void Start()
     {
@@ -52,52 +62,185 @@ public class BulletStats_ForPlayer : MonoBehaviour
         bullet_Active_Up_Time = bullet_Active_Time;
         gameObject.SetActive(false);
     }
-
+    internal void SpecialPistolUpgrade(int WP)
+    {
+        switch(WP)
+        {
+            case 0:
+                {
+                    print("PiercingRound");
+                    round_Piercing = true;
+                    bullet_Damage += 15;
+                    break;
+                }
+            case 1:
+                {
+                    print("ExplosiveRound");
+                    round_Explosive = true;
+                    break;
+                }
+        }
+    }
+    internal void SpecialSMGUpgrade(int WP)
+    {
+        switch (WP)
+        {
+            case 0:
+                {
+                    print("PiercingRound");
+                    round_Piercing = true;
+                    bullet_Damage += 15;
+                    break;
+                }
+            case 1:
+                {
+                    print("FireRound");
+                    round_Fire = true;
+                    break;
+                }
+        }
+    }
+    internal void SpecialRifleUpgrade(int WP)
+    {
+        switch (WP)
+        {
+            case 0:
+                {
+                    print("BurstFire");
+                    break;
+                }
+            case 1:
+                {
+                    print("FireRound");
+                    round_Fire = true;
+                    break;
+                }
+        }
+    }
+    internal void SpecialShotGunUpgrade(int WP)
+    {
+        switch (WP)
+        {
+            case 0:
+                {
+                    print("PiercingRound");
+                    round_Piercing = true;
+                    bullet_Damage += 15;
+                    break;
+                }
+            case 1:
+                {
+                    print("FireRound");
+                    round_Fire = true;
+                    break;
+                }
+        }
+    }
+    internal void SpecialAssaultRifleUpgrade(int WP)
+    {
+        switch (WP)
+        {
+            case 0:
+                {
+                    print("Launcher");
+                    break;
+                }
+            case 1:
+                {
+                    print("FireRound");
+                    round_Fire = true;
+                    break;
+                }
+        }
+    }
+    internal void SpecialHMGUpgrade(int WP)
+    {
+        switch (WP)
+        {
+            case 0:
+                {
+                    print("PiercingRound");
+                    round_Piercing = true;
+                    bullet_Damage += 15;
+                    break;
+                }
+            case 1:
+                {
+                    print("FireRound");
+                    round_Fire = true;
+                    break;
+                }
+        }
+    }
     void OnTriggerEnter(Collider other)
     {
+        hit_Pos = other.transform.position;
+        Vector3 p = other.ClosestPoint(transform.position);
         if (other.GetComponent<EnemyBasicStats>() != null)
         {
             bullet_Speed = 0;
+            if (round_Explosive)
+            {
+                for (int i = 0; i < the_AmmoPool.Explosion_Rounds_Pool.Count; i++)
+                {
+                    if (!the_AmmoPool.Explosion_Rounds_Pool[i].activeInHierarchy)
+                    {
+                        the_AmmoPool.Explosion_Rounds_Pool[i].transform.position = p;
+                        the_AmmoPool.Explosion_Rounds_Pool[i].transform.rotation = Quaternion.LookRotation(-transform.forward);
+                        the_AmmoPool.Explosion_Rounds_Pool[i].SetActive(true);
+                        break;
+                    }
+                }
+            }
+            if (round_Fire)
+            {
+                if (other.GetComponent<FireRoundPlayer>() ==null)
+                {
+                    other.gameObject.AddComponent<FireRoundPlayer>();
+                    print("AddedFiredamageScript");
+                }
+                else
+                {
+                    other.gameObject.GetComponent<FireRoundPlayer>().ResetTimer();
+                    print("ResetFiredamageTimer");
+                }
+            }
             for (int i = 0; i < the_AmmoPool.enemy_Hit_Spark_Pool.Count; i++)
             {
                 if (!the_AmmoPool.enemy_Hit_Spark_Pool[i].activeInHierarchy)
                 {
-                    the_AmmoPool.enemy_Hit_Spark_Pool[i].transform.position = this.transform.position;
+                    the_AmmoPool.enemy_Hit_Spark_Pool[i].transform.position = p;
                     the_AmmoPool.enemy_Hit_Spark_Pool[i].transform.rotation = Quaternion.LookRotation(-transform.forward);
                     the_AmmoPool.enemy_Hit_Spark_Pool[i].SetActive(true);
                     break;
                 }
             }
         }
-        if (other.gameObject.layer == LayerMask.NameToLayer("Ground") || other.gameObject.layer == LayerMask.NameToLayer("Wall") || other.gameObject.tag == "ForceField")
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground") || other.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
             bullet_Speed = 0;
+            if (round_Explosive)
+            {
+                for (int i = 0; i < the_AmmoPool.Explosion_Rounds_Pool.Count; i++)
+                {
+                    if (!the_AmmoPool.Explosion_Rounds_Pool[i].activeInHierarchy)
+                    {
+                        the_AmmoPool.Explosion_Rounds_Pool[i].transform.position = p;
+                        the_AmmoPool.Explosion_Rounds_Pool[i].transform.rotation = Quaternion.LookRotation(-transform.forward);
+                        the_AmmoPool.Explosion_Rounds_Pool[i].SetActive(true);
+                        break;
+                    }
+                }
+            }
             for (int i = 0; i < the_AmmoPool.misc_Spark_Pool.Count; i++)
             {
                 if (!the_AmmoPool.misc_Spark_Pool[i].activeInHierarchy)
                 {
-                    the_AmmoPool.misc_Spark_Pool[i].transform.position = this.transform.position;
+                    the_AmmoPool.misc_Spark_Pool[i].transform.position = p;
                     the_AmmoPool.misc_Spark_Pool[i].transform.rotation = Quaternion.LookRotation(-transform.forward);
                     the_AmmoPool.misc_Spark_Pool[i].SetActive(true);
                     break;
                 }
-            }
-            if (is_Rocket)
-            {
-                GameObject REE = Instantiate(large_Explosion, transform.position, transform.rotation);//Rocket Explosion
-                                                                                                      //REE.GetComponent<ElementalRocket>().element_Type = element_Type;
-                Destroy();
-            }
-            else if (round_Type == 1)
-            {
-                GameObject REE = Instantiate(small_Explosion, transform.position, transform.rotation);//Rocket Explosion
-                Destroy();
-            }
-            else
-            {
-
-                Destroy();
-
             }
         }
     }

@@ -14,7 +14,6 @@ public class RoomSpawnerV2 : MonoBehaviour
 
     int random_Value;
     public int room_To_Spawned;
-    public static int current_Level;
     public int room_Cleared;
     public int room_Spawned;
 

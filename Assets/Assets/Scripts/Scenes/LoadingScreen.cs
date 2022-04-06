@@ -10,10 +10,7 @@ public class LoadingScreen : MonoBehaviour
     public Image Loading_Bar;
     DontDestroyOnLoad the_DontDestroyOnLoad;
 
-    AsyncOperation async;
-
-    public List<string> levels = new List<string>();
-
+    [SerializeField] List<string> Levels = new List<string>();
 
     private void Start()
     {
@@ -22,29 +19,25 @@ public class LoadingScreen : MonoBehaviour
             the_DontDestroyOnLoad = FindObjectOfType<DontDestroyOnLoad>();
             the_DontDestroyOnLoad.gameObject.SetActive(false);
         }
-        StartCoroutine("LoadScene");
+        LoadLevel(Levels[LevelManager.CURRENTLEVEL+1]);
     }
-    
-    IEnumerator LoadScene()
-    {
-        async = SceneManager.LoadSceneAsync(levels[RoomSpawnerV2.current_Level]);
-        async.allowSceneActivation = false;
 
-        while(async.isDone == false)
+    public void LoadLevel(string level_Name)
+    {
+        StartCoroutine(LoadAsynchronously(level_Name));
+    }
+
+    IEnumerator LoadAsynchronously (string level_Name)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(level_Name);
+
+        while(!operation.isDone)
         {
-            Loading_Bar.fillAmount = async.progress;
-            if (async.progress == 0.9f)
-            {
-                Loading_Bar.fillAmount = 1;
-                async.allowSceneActivation = true;
-                //the_DontDestroyOnLoad.gameObject.SetActive(true);
-            }
+            float progess = Mathf.Clamp01(operation.progress / .9f);
+            Loading_Bar.fillAmount = progess;
+            print(operation.progress);
+
             yield return null;
         }
-        if (async.isDone)
-        {
-            the_DontDestroyOnLoad.gameObject.SetActive(true);
-        }
     }
-
 }

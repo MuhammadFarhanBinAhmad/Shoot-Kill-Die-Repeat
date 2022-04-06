@@ -14,7 +14,7 @@ public class TurrentHead : MonoBehaviour
     public EnemyBasicStats the_EBS;
     [SerializeField]
     internal int current_Mode;
-
+    [SerializeField]Animator the_Anim;//NOT FOR FLAMETHROWER
     [Header("Bullet Stats")]
     AmmoPool the_Ammo_Pool;
     public float fire_Rate;
@@ -39,6 +39,8 @@ public class TurrentHead : MonoBehaviour
     [SerializeField]
     [Header("Special")]
     public bool is_FireTurret;
+    [Header("VFX")]
+    public ParticleSystem muzzle_Flash;
 
 
     /*Quaternion Q;
@@ -57,6 +59,7 @@ public class TurrentHead : MonoBehaviour
         the_Ammo_Pool = FindObjectOfType<AmmoPool>();
         //timer = time_Before_Reset;
         fire_Rate = the_EBS.unit_FireRate;
+        the_Anim = GetComponent<Animator>();
         //new_rot_Pos = Rot_1;
     }
 
@@ -167,7 +170,8 @@ public class TurrentHead : MonoBehaviour
                 {
                     if (is_Missle)
                     {
-                        Instantiate(_Missle, transform.position, transform.rotation);
+                        Instantiate(_Missle, bullet_Spawn_Point.position, transform.rotation);
+                        the_Anim.SetTrigger("Fire");
                         break;
                     }
                     else
@@ -182,10 +186,12 @@ public class TurrentHead : MonoBehaviour
                             the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Speed = 1000;
                             the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().bullet_Damage = the_EBS.unit_Damage;
                             the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().round_Type = the_EBS.unit_RoundType;
-
+                            the_Anim.SetTrigger("Fire");
+                            muzzle_Flash.Play();
                             if (is_FireTurret)
                             {
                                 the_Ammo_Pool.bullet_Enemy_Pool[i].GetComponent<BulletStats_ForEnemy>().is_FireTurret = true;
+                                the_Anim.SetTrigger("Fire");
                             }
 
                             break;

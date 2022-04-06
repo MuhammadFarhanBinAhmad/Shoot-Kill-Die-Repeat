@@ -339,6 +339,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5914566287826072794, guid: 16bc5935d773f204e82d8b83dd68a9c1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.839
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914566287826072794, guid: 16bc5935d773f204e82d8b83dd68a9c1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.021
+      objectReference: {fileID: 0}
     - target: {fileID: 7862797671445636120, guid: 16bc5935d773f204e82d8b83dd68a9c1, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -406,6 +414,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3189663265677177104, guid: 16bc5935d773f204e82d8b83dd68a9c1, type: 3}
   m_PrefabInstance: {fileID: 4838176172477983013}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8708023532847594980 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4322816672513676481, guid: 16bc5935d773f204e82d8b83dd68a9c1, type: 3}
+  m_PrefabInstance: {fileID: 4838176172477983013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3978622367159365615 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8363818302404429514, guid: 16bc5935d773f204e82d8b83dd68a9c1, type: 3}
+  m_PrefabInstance: {fileID: 4838176172477983013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6574108400751693365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -425,6 +455,14 @@ PrefabInstance:
       propertyPath: the_EBS
       value: 
       objectReference: {fileID: 8356335471255235143}
+    - target: {fileID: 2939801709445997682, guid: 4966be9e964d6b34ca434f8ddebcd483, type: 3}
+      propertyPath: ui_Unit_Armour
+      value: 
+      objectReference: {fileID: 8708023532847594980}
+    - target: {fileID: 2939801709445997682, guid: 4966be9e964d6b34ca434f8ddebcd483, type: 3}
+      propertyPath: ui_Unit_Health
+      value: 
+      objectReference: {fileID: 3978622367159365615}
     - target: {fileID: 2939801709445997682, guid: 4966be9e964d6b34ca434f8ddebcd483, type: 3}
       propertyPath: gameobject_Parent
       value: 

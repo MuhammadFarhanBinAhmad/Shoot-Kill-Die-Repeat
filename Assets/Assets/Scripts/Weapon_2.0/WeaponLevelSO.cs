@@ -42,5 +42,6 @@ public class WeaponLevelSO : ScriptableObject
     //1-FullAuto
     public int weapon_Firing_Mechanism;
     public bool is_Shotgun;
-
+    [Header("SpecialAttribute")]
+    [SerializeField] internal bool burstfire;
 }
