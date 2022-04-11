@@ -38,11 +38,17 @@ public class WeaponExchange : MonoBehaviour
     {
         if (LevelManager.weapon_Unlocked[WLSO.weapon_Code] && players_Gun.current_WM_Installed[players_Gun.current_Weapon_Equipped].weapon_Code != WLSO.weapon_Code)
         {
+            print("0");
             players_Gun.current_WM_Installed[players_Gun.current_Weapon_Equipped].the_WLSO = WLSO;
+            print("1");
             players_Gun.current_WM_Installed[players_Gun.current_Weapon_Equipped].ImplementWeaponData();
+            print("2");
             players_Gun.ChangeWeaponModel();
+            print("3");
             players_Gun.the_Player_UI_HUD.AmmoUpdateV2();
+            print("4");
             UpdateWeaponExchangeButtonsUI();
+            print("5");
         }
     }
     public void UpdateWeaponExchangeButtonsUI()

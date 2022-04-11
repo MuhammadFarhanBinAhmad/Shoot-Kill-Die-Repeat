@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class ForceFieldPlayerDetection : MonoBehaviour
 {
     NavMeshAgent agent;
-    BasicMovingEnemyComponents the_BMEC;
+    [SerializeReference]BasicMovingEnemyComponents the_BMEC;
 
     public GameObject the_FF_GameObject;
 
@@ -25,7 +25,6 @@ public class ForceFieldPlayerDetection : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        the_BMEC = GetComponent<BasicMovingEnemyComponents>();
 
         the_FF_GameObject.SetActive(false);
         forcefield_Timer = forcefield_Down_Timer;

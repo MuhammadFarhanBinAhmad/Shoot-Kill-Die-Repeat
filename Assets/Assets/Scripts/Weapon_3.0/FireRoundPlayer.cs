@@ -26,6 +26,7 @@ public class FireRoundPlayer : MonoBehaviour
     }
     internal void ResetTimer()
     {
+        the_DIHE.TakeFireDamage(5);//if get hit by another collider
         timer = 5;
     }
 }

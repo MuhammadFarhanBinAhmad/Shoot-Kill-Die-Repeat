@@ -14,9 +14,13 @@ public class LoadingScreen : MonoBehaviour
 
     private void Start()
     {
-        if (FindObjectOfType<DontDestroyOnLoad>() !=null)
+        if (the_DontDestroyOnLoad == null)
         {
             the_DontDestroyOnLoad = FindObjectOfType<DontDestroyOnLoad>();
+            the_DontDestroyOnLoad.gameObject.SetActive(false);
+        }
+        if (the_DontDestroyOnLoad != null)
+        {
             the_DontDestroyOnLoad.gameObject.SetActive(false);
         }
         LoadLevel(Levels[LevelManager.CURRENTLEVEL+1]);
@@ -29,6 +33,7 @@ public class LoadingScreen : MonoBehaviour
 
     IEnumerator LoadAsynchronously (string level_Name)
     {
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(level_Name);
 
         while(!operation.isDone)
@@ -36,6 +41,13 @@ public class LoadingScreen : MonoBehaviour
             float progess = Mathf.Clamp01(operation.progress / .9f);
             Loading_Bar.fillAmount = progess;
             print(operation.progress);
+            if (progess == .9)
+            {
+                if (the_DontDestroyOnLoad != null)
+                {
+                    the_DontDestroyOnLoad.gameObject.SetActive(false);
+                }
+            }
 
             yield return null;
         }

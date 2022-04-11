@@ -24,15 +24,13 @@ public class BulletStats_ForPlayer : MonoBehaviour
     internal int weapon_Upgrade_Type;
 
     [Header("SpecialWeaponUpgrade")]
-    [SerializeField] internal bool round_Piercing;
-
-    [SerializeField] internal bool round_Explosive;
     Vector3 hit_Pos;
+
+    [SerializeField] internal bool round_Piercing;
+    [SerializeField] internal bool round_Explosive;
     [SerializeField] GameObject explosion_vfx;
 
     [SerializeField] internal bool round_Fire;
-
-    internal int pistol_Upgrade_Type;
 
     private void Start()
     {
@@ -57,10 +55,18 @@ public class BulletStats_ForPlayer : MonoBehaviour
     }
     internal void Destroy()
     {
+        Vector3 hit_Pos;
         bullet_Damage = 0;
+        ResetBulletStats();
         enabled = false;
         bullet_Active_Up_Time = bullet_Active_Time;
         gameObject.SetActive(false);
+    }
+    void ResetBulletStats()
+    {
+        round_Explosive = false;
+        round_Fire = false;
+        round_Piercing = false;
     }
     internal void SpecialPistolUpgrade(int WP)
     {
@@ -174,7 +180,6 @@ public class BulletStats_ForPlayer : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        hit_Pos = other.transform.position;
         Vector3 p = other.ClosestPoint(transform.position);
         if (other.GetComponent<EnemyBasicStats>() != null)
         {

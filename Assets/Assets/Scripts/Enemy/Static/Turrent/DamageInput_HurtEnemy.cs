@@ -32,7 +32,10 @@ public class DamageInput_HurtEnemy : MonoBehaviour
     internal void TakeFireDamage(int FD)
     {
         the_EBS.TakingDamage(FD,this.gameObject);
-        print("TakingFireDmg");
+        if (the_EBS.unit_Health <= 0)
+        {
+            EnemyDeath();
+        }
     }
     internal void TakeExplosionDamage(int DMG)
     {

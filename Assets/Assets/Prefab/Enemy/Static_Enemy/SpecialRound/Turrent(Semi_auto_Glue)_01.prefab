@@ -1103,7 +1103,7 @@ GameObject:
   - component: {fileID: 1931891955326779077}
   m_Layer: 2
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25494,6 +25494,7 @@ MonoBehaviour:
   the_EBS: {fileID: 6144154708356995734}
   is_Explosive_Universal: 0
   is_Explosive_Normal: 1
+  is_Taking_Fire_Damage: 0
 --- !u!114 &6144154708356995735
 MonoBehaviour:
   m_ObjectHideFlags: 0

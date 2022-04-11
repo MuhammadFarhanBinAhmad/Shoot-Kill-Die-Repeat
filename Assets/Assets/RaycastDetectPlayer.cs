@@ -24,12 +24,10 @@ public class RaycastDetectPlayer : MonoBehaviour
                 {
                     if (hit.transform.tag == "Player")
                     {
-                        print("HitPlayer");
                         the_TH.target_Lock = true;
                     }
                     else
                     {
-                        print(hit.transform.name);
                         the_TH.target_Lock = false;
                     }
                 }

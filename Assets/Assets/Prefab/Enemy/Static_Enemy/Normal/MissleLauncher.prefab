@@ -11670,6 +11670,7 @@ MonoBehaviour:
   the_EBS: {fileID: 7236100676860966951}
   is_Explosive_Universal: 0
   is_Explosive_Normal: 1
+  is_Taking_Fire_Damage: 0
 --- !u!114 &7236100676860966948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11855,6 +11856,7 @@ MonoBehaviour:
   target_Lock: 0
   current_Target: {fileID: 0}
   is_FireTurret: 0
+  muzzle_Flash: {fileID: 0}
 --- !u!135 &2065060040223522430
 SphereCollider:
   m_ObjectHideFlags: 0

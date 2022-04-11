@@ -43,5 +43,6 @@ public class WeaponLevelSO : ScriptableObject
     public int weapon_Firing_Mechanism;
     public bool is_Shotgun;
     [Header("SpecialAttribute")]
+    [SerializeField] internal bool weapon_Special_Upgraded;
     [SerializeField] internal bool burstfire;
 }

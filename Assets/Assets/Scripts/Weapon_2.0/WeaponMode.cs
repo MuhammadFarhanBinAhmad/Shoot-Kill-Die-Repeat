@@ -39,8 +39,6 @@ public class WeaponMode : MonoBehaviour
     public bool is_Shotgun;
     public GameObject weapon_GameObject;
 
-    [Header("SpecialWeaponUpgrade")]
-    [SerializeField] internal bool weapon_Special_Upgraded;
 
     [SerializeField] internal int pistol_Upgrade_Type;
     [SerializeField] internal int SMG_Upgrade_Type;
@@ -50,9 +48,9 @@ public class WeaponMode : MonoBehaviour
     [SerializeField] internal int HMG_Upgrade_Type;
 
     [Header("SpecialAttribute")]
+    [SerializeField] internal bool weapon_Special_Upgraded;
     [SerializeField] internal bool burstfire;
-    [SerializeField] GameObject add_Launcher;
-    [SerializeField] Transform pos_Launcher;
+
     private void Awake()
     {
         ImplementWeaponData();
@@ -85,6 +83,10 @@ public class WeaponMode : MonoBehaviour
 
         //weapon model
         weapon_GameObject = the_WLSO.weapon_Gameobject;
+
+        //SpecialWeaponAttribute
+        weapon_Special_Upgraded = the_WLSO.weapon_Special_Upgraded;
+        burstfire = the_WLSO.burstfire;
     }
     public void UpgradeFireRate()
     {
@@ -141,17 +143,35 @@ public class WeaponMode : MonoBehaviour
     }
     internal void AssaultRifleSpecialUpgrade(int ARUT)
     {
-        if (ARUT !=0)
+        print("hit");
+        switch (ARUT)
+        {
+            case 0:
+                {
+                    print("SpawnLauncher");
+                    FindObjectOfType<BaseGunV2>().go_current_Weapon_Equipped.GetComponent<SpawnLauncher>().SpawnMissleLauncher();
+                    FindObjectOfType<PlayerUIHUD>().SetActiveSpecialGauge();
+                    break;
+                }
+            case 1:
+                {
+                    print("SpawnFlameThrower");
+                    FindObjectOfType<BaseGunV2>().go_current_Weapon_Equipped.GetComponent<SpawnLauncher>().SpawnFlameThrower();
+                    FindObjectOfType<PlayerUIHUD>().SetActiveSpecialGauge();
+                    break;
+                }
+
+        }
+
+        /*if (ARUT !=0)
         {
             AssaultRifle_Upgrade_Type = ARUT;
         }
         else
         {
             print("SpawnLauncher");
-            pos_Launcher = FindObjectOfType<BaseGunV2>().go_current_Weapon_Equipped.transform.Find("SpawnLauncher");
-            GameObject L = Instantiate(add_Launcher,pos_Launcher.position,pos_Launcher.rotation);
-            //add_Launcher.transform.parent = pos_Launcher;
-        }
+            FindObjectOfType<BaseGunV2>().go_current_Weapon_Equipped.GetComponent<SpawnLauncher>().Spawn();
+        }*/
     }
     internal void HMGSpecialUpgrade(int HMGUT)
     {

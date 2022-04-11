@@ -3929,7 +3929,7 @@ GameObject:
   - component: {fileID: 4999302256714052855}
   m_Layer: 2
   m_Name: Head
-  m_TagString: Ground
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4763,7 +4763,6 @@ GameObject:
   - component: {fileID: 8701897929943557084}
   - component: {fileID: 8701897929943557075}
   - component: {fileID: 8701897929943557074}
-  - component: {fileID: 8701897929943557073}
   m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
@@ -6228,20 +6227,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8701897929943557079}
-  m_Mesh: {fileID: 0}
---- !u!64 &8701897929943557073
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8701897929943557079}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &8701897929946411706
 GameObject:
@@ -8988,7 +8973,6 @@ GameObject:
   - component: {fileID: 8701897930433349121}
   - component: {fileID: 8701897930433349120}
   - component: {fileID: 8701897930433349127}
-  - component: {fileID: 8701897930433349126}
   m_Layer: 2
   m_Name: Pipe_03
   m_TagString: Untagged
@@ -10920,20 +10904,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8701897930433349124}
-  m_Mesh: {fileID: 0}
---- !u!64 &8701897930433349126
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8701897930433349124}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &8701897930440317525
 GameObject:
@@ -12889,7 +12859,6 @@ GameObject:
   - component: {fileID: 8701897930812990114}
   - component: {fileID: 8701897930812990113}
   - component: {fileID: 8701897930812990112}
-  - component: {fileID: 8701897930812990119}
   m_Layer: 2
   m_Name: Pipe_01
   m_TagString: Untagged
@@ -14821,20 +14790,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8701897930812990117}
-  m_Mesh: {fileID: 0}
---- !u!64 &8701897930812990119
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8701897930812990117}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &8701897930922668043
 GameObject:
@@ -19916,6 +19871,7 @@ MonoBehaviour:
   the_EBS: {fileID: 8701897931260225969}
   is_Explosive_Universal: 0
   is_Explosive_Normal: 1
+  is_Taking_Fire_Damage: 0
 --- !u!114 &8701897931260225970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19975,7 +19931,6 @@ GameObject:
   - component: {fileID: 8701897931305747226}
   - component: {fileID: 8701897931305747225}
   - component: {fileID: 8701897931305747224}
-  - component: {fileID: 8701897931305747231}
   m_Layer: 2
   m_Name: Pipe_02
   m_TagString: Untagged
@@ -21907,20 +21862,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8701897931305747229}
-  m_Mesh: {fileID: 0}
---- !u!64 &8701897931305747231
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8701897931305747229}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &8701897931378851284
 GameObject:
@@ -27406,13 +27347,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c47a38090ea88fc49b95584681401e7b, type: 3}
---- !u!198 &615313834794548406 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 9028690869442693591, guid: c47a38090ea88fc49b95584681401e7b, type: 3}
-  m_PrefabInstance: {fileID: 8486560906686117217}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2988308792319950088 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6683000095443912809, guid: c47a38090ea88fc49b95584681401e7b, type: 3}
+  m_PrefabInstance: {fileID: 8486560906686117217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &615313834794548406 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9028690869442693591, guid: c47a38090ea88fc49b95584681401e7b, type: 3}
   m_PrefabInstance: {fileID: 8486560906686117217}
   m_PrefabAsset: {fileID: 0}

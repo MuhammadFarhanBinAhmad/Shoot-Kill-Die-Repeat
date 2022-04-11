@@ -215,8 +215,8 @@ public class GUNINATORV3 : MonoBehaviour
     }
     public void AssaultRifleSpecialUpgrade(int AssaultRifle_Upgrade_Type)
     {
-        //0 - BurstFire
-        //1 - Fire Round
+        //0 - MissleLauncher
+        //1 - FlameThrower
         if (!selected_Weapon.weapon_Special_Upgraded && PlayerManager.money_Total >= AssaultRifleSpecialUpgrades_Cost)
         {
             selected_Weapon.weapon_Special_Upgraded = true;

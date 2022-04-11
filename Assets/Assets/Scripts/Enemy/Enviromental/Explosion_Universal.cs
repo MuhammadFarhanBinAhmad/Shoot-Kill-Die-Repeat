@@ -6,9 +6,10 @@ public class Explosion_Universal : MonoBehaviour
 {
 
     public int Damage;
-
+    
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.GetComponent<PlayerManager>() !=null)
         {
             other.GetComponent<PlayerManager>().TakeDamage(Damage);
@@ -16,6 +17,7 @@ public class Explosion_Universal : MonoBehaviour
         if (other.GetComponent<DamageInput_HurtEnemy>() != null)
         {
             other.GetComponent<DamageInput_HurtEnemy>().TakeExplosionDamage(Damage);
+
         }
     }
 }

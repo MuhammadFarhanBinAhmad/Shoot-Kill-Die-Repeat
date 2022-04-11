@@ -2223,7 +2223,7 @@ GameObject:
   - component: {fileID: 1235433924077101902}
   - component: {fileID: 3328235178189027407}
   m_Layer: 8
-  m_Name: ExplosiveRound
+  m_Name: FlameThrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2276,9 +2276,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ExplosiveRound
-
-'
+  m_text: FlameThrower
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94d6f8f13b91a4f409080e35b86f7605, type: 2}
   m_sharedMaterial: {fileID: -571448792421508094, guid: 94d6f8f13b91a4f409080e35b86f7605, type: 2}
@@ -3817,7 +3815,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BurstFire
+  m_text: MissleLauncher
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94d6f8f13b91a4f409080e35b86f7605, type: 2}
   m_sharedMaterial: {fileID: -571448792421508094, guid: 94d6f8f13b91a4f409080e35b86f7605, type: 2}
@@ -10178,7 +10176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3216039014878887564}
   m_Layer: 8
-  m_Name: ExplosiveRound
+  m_Name: FlameThrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10420,7 +10418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5927757320702740659}
   m_Layer: 8
-  m_Name: Launcher
+  m_Name: MissleLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13391,7 +13389,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7208200053264882712}
         m_TargetAssemblyTypeName: GUNINATORV3, Assembly-CSharp
-        m_MethodName: RifleSpecialUpgrade
+        m_MethodName: AssaultRifleSpecialUpgrade
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

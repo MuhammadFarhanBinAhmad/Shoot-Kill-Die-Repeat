@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a817c67f993a43449802cd06842da2af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  the_BMEC: {fileID: 2980572680659860869}
   the_FF_GameObject: {fileID: 8860255392691372040}
   forcefield_Down_Timer: 5
 --- !u!1 &2643852150326990285
@@ -301,6 +302,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2643852150326990287}
     m_Modifications:
+    - target: {fileID: 363608150096673210, guid: 17141133cd22b2749aae617cf0644233, type: 3}
+      propertyPath: gameobject_Parent
+      value: 
+      objectReference: {fileID: 2643852150326990285}
     - target: {fileID: 1779317698084555470, guid: 17141133cd22b2749aae617cf0644233, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -472,3 +477,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5464657555867488760, guid: 17141133cd22b2749aae617cf0644233, type: 3}
   m_PrefabInstance: {fileID: 8078311594398929260}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2980572680659860869 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6433095850664635625, guid: 17141133cd22b2749aae617cf0644233, type: 3}
+  m_PrefabInstance: {fileID: 8078311594398929260}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63968f8142a53e440a0f450f09af34ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

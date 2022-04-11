@@ -1555,7 +1555,7 @@ Animator:
   m_GameObject: {fileID: 1554718013621750178}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 607f2f70e90bbad43abd285f27e115dd, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -16437,6 +16437,7 @@ MonoBehaviour:
   the_EBS: {fileID: 363608150096673210}
   is_Explosive_Universal: 0
   is_Explosive_Normal: 1
+  is_Taking_Fire_Damage: 0
 --- !u!114 &5464657555597200867
 MonoBehaviour:
   m_ObjectHideFlags: 0

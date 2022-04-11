@@ -32,7 +32,7 @@ public class AccessGUNINATOR : MonoBehaviour
     void CloseStorePage()
     {
         the_PlayerManager.is_Store_Open = false;
-        the_NextPage.page.Remove(the_NextPage.page[1]);
+        ResetGuninatorPage();
         GUNINATOR_Store_Page.SetActive(false);
         the_Guninator.ClearWeaponList();
         Cursor.lockState = CursorLockMode.Locked;
@@ -63,6 +63,12 @@ public class AccessGUNINATOR : MonoBehaviour
     {
         CrossHair.SetActive(true);
         GunHolder.SetActive(true);
+    }
+    void ResetGuninatorPage()
+    {
+        the_NextPage.page[0].SetActive(true);
+        the_NextPage.page[1].SetActive(false);
+        the_NextPage.page.Remove(the_NextPage.page[1]);
     }
     void SpecialWeaponUpgradeScreen()
     {
