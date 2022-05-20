@@ -28,16 +28,16 @@ public class AmmoPool : MonoBehaviour
     internal List<GameObject> Explosion_Rounds_Pool = new List<GameObject>();
     internal List<GameObject> text_Damage_Pool = new List<GameObject>();
 
-    GameObject group_Player_Bullet;
-    GameObject group_Enemy_Bullet;
-    GameObject group_Catridge_Bullet;
-    GameObject group_misc_Spark;
-    GameObject group_enemy_Hit_Spark;
-    GameObject group_muzzle_Flash_Spark;
-    GameObject group_Explosion_Universal;
-    GameObject group_Explosion_Normal;
-    GameObject group_Explosion_Rounds;
-    GameObject group_text_Damage;
+    internal GameObject group_Player_Bullet;
+    internal GameObject group_Enemy_Bullet;
+    internal GameObject group_Catridge_Bullet;
+    internal GameObject group_misc_Spark;
+    internal GameObject group_enemy_Hit_Spark;
+    internal GameObject group_muzzle_Flash_Spark;
+    internal GameObject group_Explosion_Universal;
+    internal GameObject group_Explosion_Normal;
+    internal GameObject group_Explosion_Rounds;
+    internal GameObject group_text_Damage;
 
     private void Start()
     {

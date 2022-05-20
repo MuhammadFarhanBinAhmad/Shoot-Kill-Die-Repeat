@@ -1147,7 +1147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2801212109840521708}
   m_Layer: 8
-  m_Name: ExplosiveRound
+  m_Name: FireRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1356,7 +1356,7 @@ GameObject:
   - component: {fileID: 2551230378416774725}
   - component: {fileID: 3357723617030563688}
   m_Layer: 8
-  m_Name: ExplosiveRound
+  m_Name: FireRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1409,9 +1409,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ExplosiveRound
-
-'
+  m_text: FireRound
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94d6f8f13b91a4f409080e35b86f7605, type: 2}
   m_sharedMaterial: {fileID: -571448792421508094, guid: 94d6f8f13b91a4f409080e35b86f7605, type: 2}

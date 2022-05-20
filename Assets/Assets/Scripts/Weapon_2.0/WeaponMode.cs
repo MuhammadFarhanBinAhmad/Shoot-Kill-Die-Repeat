@@ -143,7 +143,6 @@ public class WeaponMode : MonoBehaviour
     }
     internal void AssaultRifleSpecialUpgrade(int ARUT)
     {
-        print("hit");
         switch (ARUT)
         {
             case 0:

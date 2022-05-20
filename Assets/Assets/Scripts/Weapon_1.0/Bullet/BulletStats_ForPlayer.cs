@@ -28,7 +28,8 @@ public class BulletStats_ForPlayer : MonoBehaviour
 
     [SerializeField] internal bool round_Piercing;
     [SerializeField] internal bool round_Explosive;
-    [SerializeField] GameObject explosion_vfx;
+    [SerializeField] GameObject fire_vfx_Prefab;
+    GameObject fire_vfx;
 
     [SerializeField] internal bool round_Fire;
 
@@ -65,6 +66,11 @@ public class BulletStats_ForPlayer : MonoBehaviour
     void ResetBulletStats()
     {
         round_Explosive = false;
+        if (round_Fire)
+        {
+            round_Fire = false;
+            Destroy(fire_vfx);
+        }
         round_Fire = false;
         round_Piercing = false;
     }
@@ -102,6 +108,9 @@ public class BulletStats_ForPlayer : MonoBehaviour
                 {
                     print("FireRound");
                     round_Fire = true;
+                    GameObject F_VFX = Instantiate(fire_vfx_Prefab, this.transform.position, this.transform.rotation);
+                    fire_vfx = F_VFX;
+                    F_VFX.transform.parent = this.transform;
                     break;
                 }
         }
